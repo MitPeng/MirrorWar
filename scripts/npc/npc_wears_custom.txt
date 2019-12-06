@@ -1,0 +1,14 @@
+//npc饰品替换
+"npc_wears_custom"
+{
+    "npc_dota_hero_monkey_king"
+    {
+        "1" "npc_dota_hero_monkey_king_dummy_1"
+        "2" "npc_dota_hero_monkey_king_dummy_2"
+        "3" "npc_dota_hero_monkey_king_dummy_3"
+    }
+    "npc_dota_hero_drow_ranger"
+    {
+        "1" "npc_dota_hero_drow_ranger_dummy_1"
+    }
+}
