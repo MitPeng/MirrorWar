@@ -25,3 +25,10 @@ function spend_energy(keys)
     caster.energy = 0
 end
 
+-- 自动获取经验,0.3秒一次
+function exp_up(keys)
+    local caster = keys.caster
+    local level = caster:GetLevel()
+    local xp = 3.0 + level
+    caster:AddExperience(xp, 0, false, false)
+end

@@ -461,9 +461,9 @@
 
 	"item_battle_outpost"
 	{
-		"BaseClass"	"npc_dota_building"
-		"Ability1"	"ability_outpost"
-		"Ability2"	"ability_exp_up"
+		"BaseClass"	"npc_dota_creature"
+		"Ability1"	"dummy_unit_ability"
+		"Ability2"	""
 		"Ability3"	""
 		"Ability4"	""
 		"Ability5"	""
@@ -483,9 +483,5 @@
 		"ConsideredHero"	"0"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
 		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_NONE"
-		"RingRadius"	""
-		"SelectionGroup"	""
-		"TeamName"	""
-		"BoundsHullName"	"DOTA_HULL_SIZE_HERO"
 	}
 }

@@ -411,24 +411,6 @@
 				"ModifierName"	"modifier_vanquish_demon_debuff"
 			}
 		}
-		"OnChannelSucceeded"
-		{
-			"RemoveModifier"
-			{
-				"Target"	"CASTER"
-				"ModifierName"	"modifier_vanquish_demon_self_debuff"
-			}
-			"RemoveModifier"
-			{
-				"Target"	"CASTER"
-				"ModifierName"	"modifier_vanquish_demon_buff"
-			}
-			"RemoveModifier"
-			{
-				"Target"	"TARGET"
-				"ModifierName"	"modifier_vanquish_demon_debuff"
-			}
-		}
 		"Modifiers"
 		{
 			"modifier_vanquish_demon_buff"

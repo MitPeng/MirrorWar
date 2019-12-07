@@ -411,24 +411,6 @@
 				"ModifierName"	"modifier_vanquish_demon_debuff"
 			}
 		}
-		"OnChannelSucceeded"
-		{
-			"RemoveModifier"
-			{
-				"Target"	"CASTER"
-				"ModifierName"	"modifier_vanquish_demon_self_debuff"
-			}
-			"RemoveModifier"
-			{
-				"Target"	"CASTER"
-				"ModifierName"	"modifier_vanquish_demon_buff"
-			}
-			"RemoveModifier"
-			{
-				"Target"	"TARGET"
-				"ModifierName"	"modifier_vanquish_demon_debuff"
-			}
-		}
 		"Modifiers"
 		{
 			"modifier_vanquish_demon_buff"
@@ -1664,12 +1646,6 @@
 						"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
 						"Function"	"set_energy_count"
 					}
-					"RunScript"
-					{
-						"Target"	"CASTER"
-						"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
-						"Function"	"exp_up"
-					}
 				}
 				"ThinkInterval"	"0.3"
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
@@ -1690,7 +1666,6 @@
 	"ability_outpost"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"modifier_invulnerable"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Modifiers"
 		{

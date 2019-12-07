@@ -41,12 +41,12 @@ end
 -- 用于游戏初始化
 function CEventGameMode:InitGameMode()
     -- print("CEventGameMode:InitGameMode is loaded.")
-    --[[
+
     -- 监听事件
     ListenToGameEvent("game_rules_state_change",
                       Dynamic_Wrap(CEventGameMode, "OnGameRulesStateChange"),
                       self)
-
+    --[[
     -- 监听单位被击杀的事件
     ListenToGameEvent("entity_killed",
                       Dynamic_Wrap(CEventGameMode, "OnEntityKilled"), self)
@@ -88,7 +88,7 @@ function CEventGameMode:InitGameMode()
     -- 设置展示时间
     GameRules:SetShowcaseTime(0)
     -- 设置游戏准备时间
-    GameRules:SetPreGameTime(10.0)
+    GameRules:SetPreGameTime(0)
     -- 设置不能买活
     GameRules:GetGameModeEntity():SetBuybackEnabled(false)
     -- 设置每个队伍人数
@@ -109,12 +109,10 @@ function CEventGameMode:InitGameMode()
 
     GameRules:GetGameModeEntity():SetThink("OnThink", self, "GlobalThink", 2)
 end
---[[
+
 function CEventGameMode:OnGameRulesStateChange(keys)
     print("OnGameRulesStateChange")
     DeepPrintTable(keys) -- 详细打印传递进来的表
-
-    GameRules:SetPreGameTime(10.0)
 
     -- 获取游戏进度
     local newState = GameRules:State_Get()
@@ -126,11 +124,23 @@ function CEventGameMode:OnGameRulesStateChange(keys)
         print("Player ready game begin") -- 玩家处于游戏准备状态
 
     elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+        -- 游戏开始后生成战斗前哨
+        local vec = Vector(0, 0, 128)
+        local item_battle_outpost = CreateUnitByName("item_battle_outpost", vec,
+                                                     true, nil, nil,
+                                                     DOTA_TEAM_CUSTOM_1)
+        item_battle_outpost:SetOrigin(vec)
+        local count = item_battle_outpost:GetAbilityCount()
+        for i = 1, count do
+            ability = item_battle_outpost:GetAbilityByIndex(i)
+            if ability then ability:SetLevel(1) end
+        end
+
         print("Player game begin") -- 玩家开始游戏
 
     end
 end
-
+--[[
 function CEventGameMode:OnEntityKilled(keys)
     print("OnEntityKilled")
     DeepPrintTable(keys) -- 详细打印传递进来的表

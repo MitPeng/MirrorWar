@@ -463,7 +463,7 @@
 	{
 		"BaseClass"	"npc_dota_building"
 		"Ability1"	"ability_outpost"
-		"Ability2"	"ability_exp_up"
+		"Ability2"	""
 		"Ability3"	""
 		"Ability4"	""
 		"Ability5"	""
