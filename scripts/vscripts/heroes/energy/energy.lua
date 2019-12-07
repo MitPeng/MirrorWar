@@ -25,10 +25,12 @@ function spend_energy(keys)
     caster.energy = 0
 end
 
--- 自动获取经验,0.3秒一次
-function exp_up(keys)
+-- 自动获取经验、金钱,0.3秒一次
+function get_exp_and_gold(keys)
     local caster = keys.caster
     local level = caster:GetLevel()
     local xp = 3.0 + level / 1.5
     caster:AddExperience(xp, 0, false, false)
+    local gold = caster:GetGold() + 5
+    caster:SetGold(gold, false)
 end

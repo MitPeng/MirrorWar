@@ -1668,7 +1668,7 @@
 					{
 						"Target"	"CASTER"
 						"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
-						"Function"	"exp_up"
+						"Function"	"get_exp_and_gold"
 					}
 				}
 				"ThinkInterval"	"0.3"

@@ -77,10 +77,6 @@ function CEventGameMode:InitGameMode()
     -- 监听单位受到伤害事件
     ListenToGameEvent("entity_hurt",
                       Dynamic_Wrap(CEventGameMode, "OnEntityHurt"), self)
-    -- 设置金钱每次增长
-    GameRules:SetGoldPerTick(3)
-    -- 设置金钱增长间隔
-    GameRules:SetGoldTickTime(1)
     -- 设置选择英雄时间
     GameRules:SetHeroSelectionTime(30)
     -- 设置决策时间
@@ -91,6 +87,10 @@ function CEventGameMode:InitGameMode()
     GameRules:SetPreGameTime(0)
     -- 设置不能买活
     GameRules:GetGameModeEntity():SetBuybackEnabled(false)
+    -- 设置金钱每次增长
+    -- GameRules:SetGoldPerTick(3)
+    -- 设置金钱增长间隔
+    -- GameRules:SetGoldTickTime(1)
     -- 设置每个队伍人数
     GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 3)
     GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 3)
@@ -111,8 +111,6 @@ function CEventGameMode:InitGameMode()
 end
 
 function CEventGameMode:OnGameRulesStateChange(keys)
-    print("OnGameRulesStateChange")
-    DeepPrintTable(keys) -- 详细打印传递进来的表
 
     -- 获取游戏进度
     local newState = GameRules:State_Get()
@@ -124,6 +122,7 @@ function CEventGameMode:OnGameRulesStateChange(keys)
         print("Player ready game begin") -- 玩家处于游戏准备状态
 
     elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+
         -- 游戏开始后生成战斗前哨
         local vec = Vector(0, 0, 128)
         local item_battle_outpost = CreateUnitByName("item_battle_outpost", vec,
@@ -131,7 +130,7 @@ function CEventGameMode:OnGameRulesStateChange(keys)
                                                      DOTA_TEAM_CUSTOM_1)
         item_battle_outpost:SetOrigin(vec)
         local count = item_battle_outpost:GetAbilityCount()
-        for i = 1, count do
+        for i = 0, count - 1 do
             ability = item_battle_outpost:GetAbilityByIndex(i)
             if ability then ability:SetLevel(1) end
         end
