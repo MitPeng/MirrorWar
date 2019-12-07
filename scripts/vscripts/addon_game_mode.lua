@@ -87,6 +87,8 @@ function CEventGameMode:InitGameMode()
     GameRules:SetPreGameTime(0)
     -- 设置不能买活
     GameRules:GetGameModeEntity():SetBuybackEnabled(false)
+    -- 设置复活时间
+    GameRules:GetGameModeEntity():SetFixedRespawnTime(10.0)
     -- 设置金钱每次增长
     -- GameRules:SetGoldPerTick(3)
     -- 设置金钱增长间隔
