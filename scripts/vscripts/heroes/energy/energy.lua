@@ -29,6 +29,6 @@ end
 function exp_up(keys)
     local caster = keys.caster
     local level = caster:GetLevel()
-    local xp = 3.0 + level
+    local xp = 3.0 + level / 1.5
     caster:AddExperience(xp, 0, false, false)
 end
