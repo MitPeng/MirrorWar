@@ -411,6 +411,24 @@
 				"ModifierName"	"modifier_vanquish_demon_debuff"
 			}
 		}
+		"OnChannelSucceeded"
+		{
+			"RemoveModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"modifier_vanquish_demon_self_debuff"
+			}
+			"RemoveModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"modifier_vanquish_demon_buff"
+			}
+			"RemoveModifier"
+			{
+				"Target"	"TARGET"
+				"ModifierName"	"modifier_vanquish_demon_debuff"
+			}
+		}
 		"Modifiers"
 		{
 			"modifier_vanquish_demon_buff"
@@ -1646,6 +1664,12 @@
 						"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
 						"Function"	"set_energy_count"
 					}
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
+						"Function"	"get_exp_and_gold"
+					}
 				}
 				"ThinkInterval"	"0.3"
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
@@ -1668,6 +1692,10 @@
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"modifier_invulnerable"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"precache"
+		{
+			"particle"	"particles/world_outpost/world_outpost_channel_rings.vpcf"
+		}
 		"Modifiers"
 		{
 			"modifier_ability_outpost"
@@ -1680,63 +1708,20 @@
 					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
-			}
-		}
-	}
-
-	"ability_exp_up"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"keeper_of_the_light_illuminate"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
-		"Modifiers"
-		{
-			"modifier_ability_exp_up"
-			{
-				"_IsAura"	"0"
-				"Aura_Teams"	""
-				"Aura_Types"	""
-				"Aura_Flags"	""
-				"Aura_Radius"	""
 				"OnCreated"
 				{
-					"RunScript"
+					"ApplyModifier"
 					{
-						"Target"
-						{
-							"Types"	"DOTA_UNIT_TARGET_HERO"
-							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
-							"Center"	"CASTER"
-							"Radius"	"800"
-						}
-						"ScriptFile"	"scripts/vscripts/items/battle_outpost/battle_outpost.lua"
-						"Function"	"exp_up"
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_ability_outpost_effect"
 					}
 				}
-				"Aura"	""
-				"Aura_ApplyToCaster"	""
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"Target"
-						{
-							"Types"	"DOTA_UNIT_TARGET_HERO"
-							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
-							"Center"	"CASTER"
-							"Radius"	"800"
-						}
-						"ScriptFile"	"scripts/vscripts/items/battle_outpost/battle_outpost.lua"
-						"Function"	"exp_up"
-					}
-				}
-				"ThinkInterval"	"1.0"
-				"Passive"	"1"
+			}
+			"modifier_ability_outpost_effect"
+			{
+				"IsHidden"	"1"
+				"EffectAttachType"	""
+				"EffectName"	"particles/world_outpost/world_outpost_channel_rings.vpcf"
 			}
 		}
 	}

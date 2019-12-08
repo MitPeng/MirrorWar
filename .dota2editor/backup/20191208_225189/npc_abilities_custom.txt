@@ -411,6 +411,24 @@
 				"ModifierName"	"modifier_vanquish_demon_debuff"
 			}
 		}
+		"OnChannelSucceeded"
+		{
+			"RemoveModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"modifier_vanquish_demon_self_debuff"
+			}
+			"RemoveModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"modifier_vanquish_demon_buff"
+			}
+			"RemoveModifier"
+			{
+				"Target"	"TARGET"
+				"ModifierName"	"modifier_vanquish_demon_debuff"
+			}
+		}
 		"Modifiers"
 		{
 			"modifier_vanquish_demon_buff"
@@ -1646,6 +1664,12 @@
 						"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
 						"Function"	"set_energy_count"
 					}
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
+						"Function"	"get_exp_and_gold"
+					}
 				}
 				"ThinkInterval"	"0.3"
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
@@ -1680,27 +1704,6 @@
 					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
-			}
-		}
-	}
-
-	"ability_exp_up"
-	{
-		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"keeper_of_the_light_illuminate"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
-		"Modifiers"
-		{
-			"modifier_ability_exp_up"
-			{
-				"_IsAura"	"0"
-				"Aura_Teams"	""
-				"Aura_Types"	""
-				"Aura_Flags"	""
-				"Aura_Radius"	""
 				"OnCreated"
 				{
 					"RunScript"
@@ -1709,16 +1712,14 @@
 						{
 							"Types"	"DOTA_UNIT_TARGET_HERO"
 							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
 							"Center"	"CASTER"
-							"Radius"	"800"
+							"Radius"	"%radius"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
 						}
 						"ScriptFile"	"scripts/vscripts/items/battle_outpost/battle_outpost.lua"
-						"Function"	"exp_up"
+						"Function"	"get_team_point"
 					}
 				}
-				"Aura"	""
-				"Aura_ApplyToCaster"	""
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -1729,14 +1730,21 @@
 							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
 							"Center"	"CASTER"
-							"Radius"	"800"
+							"Radius"	"%radius"
 						}
 						"ScriptFile"	"scripts/vscripts/items/battle_outpost/battle_outpost.lua"
-						"Function"	"exp_up"
+						"Function"	"get_team_point"
 					}
 				}
 				"ThinkInterval"	"1.0"
-				"Passive"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"800"
 			}
 		}
 	}
