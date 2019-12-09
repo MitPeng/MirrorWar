@@ -1692,10 +1692,7 @@
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"modifier_invulnerable"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"precache"
-		{
-			"particle"	"particles/world_outpost/world_outpost_channel_rings.vpcf"
-		}
+		"AbilityCastAnimation"	""
 		"Modifiers"
 		{
 			"modifier_ability_outpost"
@@ -1708,14 +1705,60 @@
 					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
-				"OnCreated"	{}
-			}
-			"modifier_ability_outpost_effect"
-			{
-				"IsHidden"	"1"
-				"EffectAttachType"	"attach_origin"
-				"EffectName"	"particles/world_outpost/world_outpost_channel_rings.vpcf"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"Target"
+						{
+							"Types"	"DOTA_UNIT_TARGET_HERO"
+							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Center"	"CASTER"
+							"Radius"	"%radius"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
+						}
+						"ScriptFile"	"scripts/vscripts/items/battle_outpost/battle_outpost.lua"
+						"Function"	"get_team_point"
+					}
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"Target"
+						{
+							"Types"	"DOTA_UNIT_TARGET_HERO"
+							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
+							"Center"	"CASTER"
+							"Radius"	"%radius"
+						}
+						"ScriptFile"	"scripts/vscripts/items/battle_outpost/battle_outpost.lua"
+						"Function"	"get_team_point"
+					}
+				}
+				"ThinkInterval"	"1.0"
 			}
 		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"800"
+			}
+		}
+	}
+
+	"ability_outpost_anim"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"filler_ability"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityCastAnimation"	"ACT_DOTA_CHANNEL_ABILITY_1"
+		"AbilityChannelTime"	"5"
+		"AbilityChannelledManaCostPerSecond"	"0"
 	}
 }

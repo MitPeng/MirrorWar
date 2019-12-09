@@ -1692,6 +1692,11 @@
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"modifier_invulnerable"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastAnimation"	""
+		"precache"
+		{
+			"particle"	"particles/world_outpost/world_outpost_channel.vpcf"
+		}
 		"Modifiers"
 		{
 			"modifier_ability_outpost"
@@ -1737,6 +1742,8 @@
 					}
 				}
 				"ThinkInterval"	"1.0"
+				"EffectName"	"particles/world_outpost/world_outpost_channel.vpcf"
+				"EffectAttachType"	"follow_overhead"
 			}
 		}
 		"AbilitySpecial"

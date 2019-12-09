@@ -1668,7 +1668,7 @@
 					{
 						"Target"	"CASTER"
 						"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
-						"Function"	"exp_up"
+						"Function"	"get_exp_and_gold"
 					}
 				}
 				"ThinkInterval"	"0.3"
@@ -1692,6 +1692,11 @@
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"modifier_invulnerable"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastAnimation"	""
+		"precache"
+		{
+			"particle"	"particles/world_outpost/world_outpost_channel.vpcf"
+		}
 		"Modifiers"
 		{
 			"modifier_ability_outpost"
@@ -1704,6 +1709,49 @@
 					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"Target"
+						{
+							"Types"	"DOTA_UNIT_TARGET_HERO"
+							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Center"	"CASTER"
+							"Radius"	"%radius"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
+						}
+						"ScriptFile"	"scripts/vscripts/items/battle_outpost/battle_outpost.lua"
+						"Function"	"get_team_point"
+					}
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"Target"
+						{
+							"Types"	"DOTA_UNIT_TARGET_HERO"
+							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
+							"Center"	"CASTER"
+							"Radius"	"%radius"
+						}
+						"ScriptFile"	"scripts/vscripts/items/battle_outpost/battle_outpost.lua"
+						"Function"	"get_team_point"
+					}
+				}
+				"ThinkInterval"	"1.0"
+				"EffectName"	"particles/world_outpost/world_outpost_channel.vpcf"
+				"EffectAttachType"	"follow_overhead"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"800"
 			}
 		}
 	}

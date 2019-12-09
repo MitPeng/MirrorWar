@@ -461,7 +461,7 @@
 
 	"item_battle_outpost"
 	{
-		"BaseClass"	"npc_dota_building"
+		"BaseClass"	"npc_dota_creature"
 		"Ability1"	"ability_outpost"
 		"Ability2"	"ability_exp_up"
 		"Ability3"	""

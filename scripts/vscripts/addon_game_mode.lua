@@ -1,4 +1,5 @@
 require("timers")
+require("utils")
 -- Generated from template
 if CEventGameMode == nil then CEventGameMode = class({}) end
 
@@ -21,6 +22,9 @@ end
 LinkLuaModifier("modifier_energy", "modifiers/modifier_energy.lua",
                 LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_get_attacker", "modifiers/modifier_get_attacker.lua",
+                LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_outpost_vision",
+                "modifiers/modifier_outpost_vision.lua",
                 LUA_MODIFIER_MOTION_NONE)
 
 -- 英雄饰品
@@ -127,16 +131,24 @@ function CEventGameMode:OnGameRulesStateChange(keys)
 
         -- 游戏开始后生成战斗前哨
         local vec = Vector(0, 0, 128)
-        local item_battle_outpost = CreateUnitByName("item_battle_outpost", vec,
-                                                     true, nil, nil,
-                                                     DOTA_TEAM_CUSTOM_1)
+        local item_battle_outpost = Utils:create_unit_simple(
+                                        "item_battle_outpost", vec, true,
+                                        DOTA_TEAM_CUSTOM_1)
+        -- 设置位置与朝向
         item_battle_outpost:SetOrigin(vec)
-        local count = item_battle_outpost:GetAbilityCount()
-        for i = 0, count - 1 do
-            ability = item_battle_outpost:GetAbilityByIndex(i)
-            if ability then ability:SetLevel(1) end
-        end
-
+        item_battle_outpost:SetForwardVector(Vector(-1, -1, 0))
+        -- 设置动作
+        item_battle_outpost:StartGestureWithPlaybackRate(
+            ACT_DOTA_CHANNEL_ABILITY_1, 1)
+        -- 设置视野单位,获取战斗前哨视野
+        local vision_good = Utils:create_unit_simple("npc_dummy_unit", vec,
+                                                     false, DOTA_TEAM_GOODGUYS)
+        local vision_bad = Utils:create_unit_simple("npc_dummy_unit", vec,
+                                                    false, DOTA_TEAM_BADGUYS)
+        vision_good:AddNewModifier(vision_good, nil, "modifier_outpost_vision",
+                                   {duration = -1})
+        vision_bad:AddNewModifier(vision_bad, nil, "modifier_outpost_vision",
+                                  {duration = -1})
         print("Player game begin") -- 玩家开始游戏
 
     end
