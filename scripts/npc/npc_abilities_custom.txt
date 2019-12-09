@@ -1721,7 +1721,7 @@
 							"Radius"	"%radius"
 							"Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
 						}
-						"ScriptFile"	"scripts/vscripts/items/battle_outpost/battle_outpost.lua"
+						"ScriptFile"	"scripts/vscripts/units/battle_outpost/battle_outpost.lua"
 						"Function"	"get_team_point"
 					}
 				}
@@ -1737,7 +1737,7 @@
 							"Center"	"CASTER"
 							"Radius"	"%radius"
 						}
-						"ScriptFile"	"scripts/vscripts/items/battle_outpost/battle_outpost.lua"
+						"ScriptFile"	"scripts/vscripts/units/battle_outpost/battle_outpost.lua"
 						"Function"	"get_team_point"
 					}
 				}

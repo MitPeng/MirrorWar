@@ -131,14 +131,14 @@ function CEventGameMode:OnGameRulesStateChange(keys)
 
         -- 游戏开始后生成战斗前哨
         local vec = Vector(0, 0, 128)
-        local item_battle_outpost = Utils:create_unit_simple(
-                                        "item_battle_outpost", vec, true,
+        local unit_battle_outpost = Utils:create_unit_simple(
+                                        "unit_battle_outpost", vec, true,
                                         DOTA_TEAM_CUSTOM_1)
         -- 设置位置与朝向
-        item_battle_outpost:SetOrigin(vec)
-        item_battle_outpost:SetForwardVector(Vector(-1, -1, 0))
+        unit_battle_outpost:SetOrigin(vec)
+        unit_battle_outpost:SetForwardVector(Vector(-1, -1, 0))
         -- 设置动作
-        item_battle_outpost:StartGestureWithPlaybackRate(
+        unit_battle_outpost:StartGestureWithPlaybackRate(
             ACT_DOTA_CHANNEL_ABILITY_1, 1)
         -- 设置视野单位,获取战斗前哨视野
         local vision_good = Utils:create_unit_simple("npc_dummy_unit", vec,
@@ -150,8 +150,8 @@ function CEventGameMode:OnGameRulesStateChange(keys)
         vision_bad:AddNewModifier(vision_bad, nil, "modifier_outpost_vision",
                                   {duration = -1})
         -- 视野单位跟随战斗前哨
-        vision_good:FollowEntity(item_battle_outpost, true)
-        vision_bad:FollowEntity(item_battle_outpost, true)
+        vision_good:FollowEntity(unit_battle_outpost, true)
+        vision_bad:FollowEntity(unit_battle_outpost, true)
         print("Player game begin") -- 玩家开始游戏
 
     end

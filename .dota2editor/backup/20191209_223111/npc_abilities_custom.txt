@@ -1692,6 +1692,11 @@
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"modifier_invulnerable"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastAnimation"	""
+		"precache"
+		{
+			"particle"	"particles/world_outpost/world_outpost_channel.vpcf"
+		}
 		"Modifiers"
 		{
 			"modifier_ability_outpost"
@@ -1716,7 +1721,7 @@
 							"Radius"	"%radius"
 							"Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
 						}
-						"ScriptFile"	"scripts/vscripts/items/battle_outpost/battle_outpost.lua"
+						"ScriptFile"	"scripts/vscripts/units/battle_outpost/battle_outpost.lua"
 						"Function"	"get_team_point"
 					}
 				}
@@ -1732,11 +1737,13 @@
 							"Center"	"CASTER"
 							"Radius"	"%radius"
 						}
-						"ScriptFile"	"scripts/vscripts/items/battle_outpost/battle_outpost.lua"
+						"ScriptFile"	"scripts/vscripts/units/battle_outpost/battle_outpost.lua"
 						"Function"	"get_team_point"
 					}
 				}
 				"ThinkInterval"	"1.0"
+				"EffectName"	"particles/world_outpost/world_outpost_channel.vpcf"
+				"EffectAttachType"	"follow_overhead"
 			}
 		}
 		"AbilitySpecial"

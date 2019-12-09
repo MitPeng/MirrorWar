@@ -459,7 +459,7 @@
 		"AutoAttacksByDefault"	"1"
 	}
 
-	"item_battle_outpost"
+	"unit_battle_outpost"
 	{
 		"BaseClass"	"npc_dota_building"
 		"Ability1"	"ability_outpost"
