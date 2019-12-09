@@ -149,6 +149,9 @@ function CEventGameMode:OnGameRulesStateChange(keys)
                                    {duration = -1})
         vision_bad:AddNewModifier(vision_bad, nil, "modifier_outpost_vision",
                                   {duration = -1})
+        -- 视野单位跟随战斗前哨
+        vision_good:FollowEntity(item_battle_outpost, true)
+        vision_bad:FollowEntity(item_battle_outpost, true)
         print("Player game begin") -- 玩家开始游戏
 
     end
