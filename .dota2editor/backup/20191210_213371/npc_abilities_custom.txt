@@ -113,7 +113,7 @@
 			{
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%reduce_damage_percent"
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"-30"
 				}
 				"IsHidden"	"1"
 			}
@@ -146,11 +146,6 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"hit_damage_percent"	"0.7"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"reduce_damage_percent"	"-30"
 			}
 		}
 	}
@@ -323,6 +318,11 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
+				"speed"	"10 20 30 40"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
 				"agility"	"10 20 30 40"
 			}
 		}
@@ -444,7 +444,6 @@
 					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
 				"TextureName"	"vanquish_demon"
-				"IsHidden"	"1"
 			}
 			"modifier_vanquish_demon_debuff"
 			{
@@ -594,11 +593,6 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"reduce_damage_percent"	"-60 -50 -40"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"damage_percent"	"0.4 0.5 0.6"
 			}
 		}
 	}

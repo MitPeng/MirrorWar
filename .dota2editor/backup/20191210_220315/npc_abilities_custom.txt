@@ -113,7 +113,7 @@
 			{
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%reduce_damage_percent"
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"-30"
 				}
 				"IsHidden"	"1"
 			}
@@ -146,11 +146,6 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"hit_damage_percent"	"0.7"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"reduce_damage_percent"	"-30"
 			}
 		}
 	}
@@ -594,11 +589,6 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"reduce_damage_percent"	"-60 -50 -40"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"damage_percent"	"0.4 0.5 0.6"
 			}
 		}
 	}
