@@ -23,6 +23,10 @@ end
 function spend_energy(keys)
     local caster = keys.caster
     caster.energy = 0
+    local ability = keys.ability
+    local ability_level = ability:GetLevel() - 1
+    local cd = ability:GetCooldown(ability_level)
+    ability:StartCooldown(cd)
 end
 
 -- 自动获取经验、金钱,0.3秒一次
