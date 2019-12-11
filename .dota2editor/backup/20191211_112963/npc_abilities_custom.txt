@@ -113,7 +113,7 @@
 			{
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"-30"
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%reduce_damage_percent"
 				}
 				"IsHidden"	"1"
 			}
@@ -146,6 +146,11 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"hit_damage_percent"	"0.7"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"reduce_damage_percent"	"-30"
 			}
 		}
 	}
@@ -590,6 +595,11 @@
 				"var_type"	"FIELD_INTEGER"
 				"reduce_damage_percent"	"-60 -50 -40"
 			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"damage_percent"	"0.4 0.5 0.6"
+			}
 		}
 	}
 
@@ -873,6 +883,7 @@
 						"Function"	"moonlight_damage"
 					}
 				}
+				"IsHidden"	"1"
 			}
 			"modifier_moonlight_apply"
 			{
@@ -1065,6 +1076,7 @@
 					"MODIFIER_PROPERTY_BONUS_DAY_VISION"	"%radius"
 					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"%radius"
 				}
+				"IsHidden"	"1"
 			}
 		}
 		"AbilitySpecial"
@@ -1206,6 +1218,11 @@
 				"var_type"	"FIELD_INTEGER"
 				"slow_percent"	"-60 -70 -80 -90"
 			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"damage_times"	"0.9 1 1.1 1.2"
+			}
 		}
 	}
 
@@ -1334,6 +1351,7 @@
 				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
 				"Aura"	"modifier_shrapnel_slow"
+				"IsHidden"	"1"
 			}
 			"modifier_shrapnel_slow"
 			{
@@ -1355,27 +1373,27 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"50 75 100 125"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_INTEGER"
 				"slow_percent"	"-15 -20 -25 -30"
 			}
-			"04"
+			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"duration"	"5.0"
 			}
-			"05"
+			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"interval"	"1.0"
 			}
-			"06"
+			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
 				"delay"	"0.5"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"50 75 100 125"
 			}
 		}
 	}
@@ -1528,12 +1546,12 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"100 200 300"
+				"radius"	"500"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"500"
+				"damage"	"100 200 300"
 			}
 		}
 	}
