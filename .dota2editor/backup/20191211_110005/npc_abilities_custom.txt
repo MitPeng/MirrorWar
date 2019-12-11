@@ -113,7 +113,7 @@
 			{
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"-30"
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%reduce_damage_percent"
 				}
 				"IsHidden"	"1"
 			}
@@ -146,6 +146,11 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"hit_damage_percent"	"0.7"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"reduce_damage_percent"	"-30"
 			}
 		}
 	}
@@ -590,6 +595,11 @@
 				"var_type"	"FIELD_INTEGER"
 				"reduce_damage_percent"	"-60 -50 -40"
 			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"damage_percent"	"0.4 0.5 0.6"
+			}
 		}
 	}
 
@@ -873,6 +883,7 @@
 						"Function"	"moonlight_damage"
 					}
 				}
+				"IsHidden"	"1"
 			}
 			"modifier_moonlight_apply"
 			{
@@ -1065,6 +1076,7 @@
 					"MODIFIER_PROPERTY_BONUS_DAY_VISION"	"%radius"
 					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"%radius"
 				}
+				"IsHidden"	"1"
 			}
 		}
 		"AbilitySpecial"

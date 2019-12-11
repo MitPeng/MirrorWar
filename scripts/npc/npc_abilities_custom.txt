@@ -883,6 +883,7 @@
 						"Function"	"moonlight_damage"
 					}
 				}
+				"IsHidden"	"1"
 			}
 			"modifier_moonlight_apply"
 			{
@@ -1075,6 +1076,7 @@
 					"MODIFIER_PROPERTY_BONUS_DAY_VISION"	"%radius"
 					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"%radius"
 				}
+				"IsHidden"	"1"
 			}
 		}
 		"AbilitySpecial"
