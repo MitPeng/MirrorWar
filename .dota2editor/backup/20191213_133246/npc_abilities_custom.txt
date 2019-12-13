@@ -1795,23 +1795,15 @@
 		"AbilityCastRange"	"350"
 		"precache"
 		{
-			"particle"	"particles/holy_shield_shield_slam2.vpcf"
+			"particle"	"particles/holy_shield_shield_slam.vpcf"
 		}
 		"OnSpellStart"
 		{
-			"LinearProjectile"
+			"RunScript"
 			{
 				"Target"	"POINT"
-				"EffectName"	"particles/holy_shield_shield_slam2.vpcf"
-				"MoveSpeed"	"1500"
-				"StartRadius"	"150"
-				"EndRadius"	"300"
-				"FixedDistance"	"200"
-				"StartPosition"	"attach_attack"
-				"TargetTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"TargetTypes"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"TargetFlags"	"DOTA_UNIT_TARGET_FLAG_NONE"
-				"HasFrontalCone"	"1"
+				"ScriptFile"	"scripts/vscripts/heroes/holy_shield/shield_slam.lua"
+				"Function"	"shield_slam_projectile"
 			}
 		}
 		"OnProjectileHitUnit"

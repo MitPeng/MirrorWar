@@ -1795,6 +1795,7 @@
 		"AbilityCastRange"	"350"
 		"precache"
 		{
+			"particle"	"particles/holy_shield_shield_slam.vpcf"
 			"particle"	"particles/holy_shield_shield_slam2.vpcf"
 		}
 		"OnSpellStart"

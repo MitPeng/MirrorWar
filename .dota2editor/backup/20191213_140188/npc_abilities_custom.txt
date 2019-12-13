@@ -1795,14 +1795,15 @@
 		"AbilityCastRange"	"350"
 		"precache"
 		{
-			"particle"	"particles/holy_shield_shield_slam2.vpcf"
+			"particle"	"particles/holy_shield_shield_slam.vpcf"
+			"particle"	"particles/units/heroes/hero_mars/mars_shield_bash.vpcf"
 		}
 		"OnSpellStart"
 		{
 			"LinearProjectile"
 			{
 				"Target"	"POINT"
-				"EffectName"	"particles/holy_shield_shield_slam2.vpcf"
+				"EffectName"	"particles/units/heroes/hero_mars/mars_shield_bash.vpcf"
 				"MoveSpeed"	"1500"
 				"StartRadius"	"150"
 				"EndRadius"	"300"

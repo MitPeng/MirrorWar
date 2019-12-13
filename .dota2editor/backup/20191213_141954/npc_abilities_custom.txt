@@ -1795,14 +1795,15 @@
 		"AbilityCastRange"	"350"
 		"precache"
 		{
-			"particle"	"particles/holy_shield_shield_slam2.vpcf"
+			"particle"	"particles/holy_shield_shield_slam.vpcf"
+			"particle"	"particles/econ/items/sven/sven_ti7_sword/sven_ti7_sword_spell_great_cleave_gods_strength_crit.vpcf"
 		}
 		"OnSpellStart"
 		{
 			"LinearProjectile"
 			{
 				"Target"	"POINT"
-				"EffectName"	"particles/holy_shield_shield_slam2.vpcf"
+				"EffectName"	"particles/econ/items/sven/sven_ti7_sword/sven_ti7_sword_spell_great_cleave_gods_strength_crit.vpcf"
 				"MoveSpeed"	"1500"
 				"StartRadius"	"150"
 				"EndRadius"	"300"

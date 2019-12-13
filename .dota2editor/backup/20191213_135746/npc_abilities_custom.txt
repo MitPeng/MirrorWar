@@ -1795,14 +1795,21 @@
 		"AbilityCastRange"	"350"
 		"precache"
 		{
-			"particle"	"particles/holy_shield_shield_slam2.vpcf"
+			"particle"	"particles/holy_shield_shield_slam.vpcf"
+			"particle"	"particles/units/heroes/hero_mars/mars_shield_bash_crit.vpcf"
 		}
 		"OnSpellStart"
 		{
+			"RunScript"
+			{
+				"Target"	"POINT"
+				"ScriptFile"	"scripts/vscripts/heroes/holy_shield/shield_slam.lua"
+				"Function"	"shield_slam_projectile"
+			}
 			"LinearProjectile"
 			{
 				"Target"	"POINT"
-				"EffectName"	"particles/holy_shield_shield_slam2.vpcf"
+				"EffectName"	"particles/units/heroes/hero_mars/mars_shield_bash_crit.vpcf"
 				"MoveSpeed"	"1500"
 				"StartRadius"	"150"
 				"EndRadius"	"300"
