@@ -1795,15 +1795,16 @@
 		"AbilityCastRange"	"350"
 		"precache"
 		{
-			"particle"	"particles/units/heroes/hero_mars/mars_shield_bash.vpcf"
+			"particle"	"particles/holy_shield_shield_slam2.vpcf"
 		}
 		"OnSpellStart"
 		{
 			"LinearProjectile"
 			{
 				"Target"	"POINT"
+				"EffectName"	"particles/holy_shield_shield_slam2.vpcf"
 				"MoveSpeed"	"1500"
-				"StartRadius"	"50"
+				"StartRadius"	"150"
 				"EndRadius"	"300"
 				"FixedDistance"	"200"
 				"StartPosition"	"attach_attack"
@@ -1811,11 +1812,16 @@
 				"TargetTypes"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"TargetFlags"	"DOTA_UNIT_TARGET_FLAG_NONE"
 				"HasFrontalCone"	"1"
-				"EffectName"	"particles/units/heroes/hero_mars/mars_shield_bash.vpcf"
 			}
 		}
 		"OnProjectileHitUnit"
 		{
+			"RunScript"
+			{
+				"Target"	"TARGET"
+				"ScriptFile"	"scripts/vscripts/heroes/holy_shield/shield_slam.lua"
+				"Function"	"damage"
+			}
 			"Knockback"
 			{
 				"Target"	"TARGET"
@@ -1824,12 +1830,6 @@
 				"Duration"	"0.5"
 				"IsFixedDistance"	"0"
 				"Center"	"CASTER"
-			}
-			"RunScript"
-			{
-				"Target"	"TARGET"
-				"ScriptFile"	"scripts/vscripts/heroes/holy_shield/shield_slam.lua"
-				"Function"	"damage"
 			}
 			"DeleteOnHit"	"0"
 		}
