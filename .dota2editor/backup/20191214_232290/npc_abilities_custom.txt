@@ -1902,16 +1902,15 @@
 			"modifier_shield_counter_regain"
 			{
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Duration"	"5"
+				"Duration"	""
 				"TextureName"	"shield_counter"
 				"EffectName"	"particles/units/heroes/hero_mars/mars_arena_of_blood_heal.vpcf"
 				"IsBuff"	"1"
 				"EffectAttachType"	"follow_origin"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"%hp_regain"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%hp_regain"
 				}
-				"IsPurgable"	"1"
 			}
 		}
 		"AbilitySpecial"
@@ -1923,8 +1922,8 @@
 			}
 			"02"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"hp_regain"	"0.3 0.6 0.9 1.2"
+				"var_type"	"FIELD_INTEGER"
+				"hp_regain"	"10 20 30 40"
 			}
 		}
 	}

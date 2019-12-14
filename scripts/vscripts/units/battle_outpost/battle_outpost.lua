@@ -13,7 +13,7 @@ function get_team_point(keys)
         end
     end
     if good == bad then
-        print("good=bad")
+        -- print("good=bad")
     elseif good < bad then
         print("good<bad")
     elseif good > bad then
