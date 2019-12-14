@@ -22,3 +22,15 @@ function Utils:create_unit_simple(sUnitName, vPosition, bClearSpace, nTeamNumber
     return Utils:create_unit_and_set_ability(sUnitName, vPosition, bClearSpace,
                                              nil, nil, nTeamNumber)
 end
+
+-- 计算两点间角度0-180
+function Utils:getAngleByPos(p1, p2)
+    local x1 = p1.x
+    local x2 = p2.x
+    local y1 = p1.y
+    local y2 = p2.y
+    local cos = (x1 * x2 + y1 * y2) /
+                    ((x1 ^ 2 + y1 ^ 2) ^ 0.5 * (x2 ^ 2 + y2 ^ 2) ^ 0.5)
+    local r = math.deg(math.acos(cos))
+    return r
+end

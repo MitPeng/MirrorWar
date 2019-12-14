@@ -17,6 +17,12 @@ function Precache(context)
     PrecacheResource("soundfile",
                      "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts",
                      context)
+    PrecacheResource("soundfile",
+                     "soundevents/game_sounds_heroes/game_sounds_bristleback.vsndevts",
+                     context)
+    PrecacheResource("soundfile",
+                     "soundevents/game_sounds_heroes/game_sounds_mars.vsndevts",
+                     context)
 
 end
 LinkLuaModifier("modifier_energy", "modifiers/modifier_energy.lua",
@@ -81,6 +87,9 @@ function CEventGameMode:InitGameMode()
     -- 监听单位受到伤害事件
     ListenToGameEvent("entity_hurt",
                       Dynamic_Wrap(CEventGameMode, "OnEntityHurt"), self)
+    -- 设置伤害过滤器
+    GameRules:GetGameModeEntity():SetDamageFilter(
+        Dynamic_Wrap(CEventGameMode, "DamageFilter"), self)
     -- 设置选择英雄时间
     GameRules:SetHeroSelectionTime(30)
     -- 设置决策时间
@@ -199,6 +208,7 @@ function CEventGameMode:OnEntityHurt(keys)
     end
 end
 
+-- 英雄选择
 function CEventGameMode:OnPlayerPickHero(keys)
 
     local player = EntIndexToHScript(keys.player)
@@ -223,6 +233,7 @@ function CEventGameMode:OnPlayerPickHero(keys)
     end
 end
 
+-- 单位出生
 function CEventGameMode:OnNPCSpawned(keys)
 
     local hero = EntIndexToHScript(keys.entindex)
@@ -240,6 +251,46 @@ function CEventGameMode:OnNPCSpawned(keys)
         end
     end
 
+end
+
+-- 伤害过滤器
+function CEventGameMode:DamageFilter(damageTable)
+    if not damageTable.entindex_attacker_const and
+        damageTable.entindex_victim_const then return true end
+
+    local attacker = EntIndexToHScript(damageTable.entindex_attacker_const)
+    local victim = EntIndexToHScript(damageTable.entindex_victim_const)
+
+    -- 处理圣盾的防御姿态技能
+    if victim:HasAbility('defensive_attitude') and
+        victim:HasModifier('modifier_defensive_attitude_self_buff') then
+        if not damageTable.entindex_inflictor_const then
+            -- 获取单位位置
+            local victim_origin = victim:GetOrigin()
+            local attacker_origin = attacker:GetOrigin()
+            -- 获取被攻击者到攻击者的单位向量
+            local victim_to_attacker =
+                (attacker_origin - victim_origin):Normalized()
+            -- 获取被攻击者朝向的单位向量
+            local victim_forword = victim:GetForwardVector():Normalized()
+            -- 计算向量夹角
+            local angle =
+                Utils:getAngleByPos(victim_to_attacker, victim_forword)
+            -- 被攻击者是否面对攻击者
+            if angle <= 90 then
+                local ability = victim:FindAbilityByName('defensive_attitude')
+                local damage_block_percent =
+                    ability:GetLevelSpecialValueFor("reduce_percent",
+                                                    ability:GetLevel() - 1) /
+                        100
+                damageTable.damage = (1 - damage_block_percent) *
+                                         damageTable.damage
+                EmitSoundOn("Hero_Mars.Shield.Block", victim)
+            end
+        end
+    end
+
+    return true
 end
 
 -- Evaluate the state of the game

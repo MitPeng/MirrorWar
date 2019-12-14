@@ -1796,7 +1796,6 @@
 		"precache"
 		{
 			"particle"	"particles/holy_shield_shield_slam2.vpcf"
-			"soundfile"	""
 		}
 		"OnSpellStart"
 		{
@@ -1813,11 +1812,6 @@
 				"TargetTypes"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"TargetFlags"	"DOTA_UNIT_TARGET_FLAG_NONE"
 				"HasFrontalCone"	"1"
-			}
-			"FireSound"
-			{
-				"Target"	"CASTER"
-				"EffectName"	"Hero_Mars.Shield.Cast"
 			}
 		}
 		"OnProjectileHitUnit"
@@ -1938,6 +1932,17 @@
 					}
 				}
 				"ThinkInterval"	"0.1"
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"Damage"	"%attack_damage"
+						"sound"	"Hero_Bristleback.Bristleback"
+						"ScriptFile"	"scripts/vscripts/heroes/holy_shield/defensive_attitude.lua"
+						"Function"	"take_damage"
+					}
+				}
 			}
 		}
 		"AbilitySpecial"

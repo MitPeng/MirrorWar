@@ -142,7 +142,7 @@
 		"Ability3"	"shield_counter"
 		"Ability4"	"energy"
 		"Ability5"	"generic_hidden"
-		"Ability6"	"sacred_realm"
+		"Ability6"	"sc"
 		"Ability7"	""
 		"Ability8"	""
 		"Ability9"	""

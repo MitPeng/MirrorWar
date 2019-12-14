@@ -1938,6 +1938,17 @@
 					}
 				}
 				"ThinkInterval"	"0.1"
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"Damage"	"%attack_damage"
+						"sound"	"Hero_Bristleback.Bristleback"
+						"ScriptFile"	"scripts/vscripts/heroes/holy_shield/defensive_attitude.lua"
+						"Function"	"take_damage"
+					}
+				}
 			}
 		}
 		"AbilitySpecial"
