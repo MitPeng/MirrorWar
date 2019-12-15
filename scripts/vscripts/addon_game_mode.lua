@@ -23,6 +23,9 @@ function Precache(context)
     PrecacheResource("soundfile",
                      "soundevents/game_sounds_heroes/game_sounds_mars.vsndevts",
                      context)
+    PrecacheResource("soundfile",
+                     "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts",
+                     context)
 
 end
 LinkLuaModifier("modifier_energy", "modifiers/modifier_energy.lua",
@@ -261,6 +264,8 @@ function CEventGameMode:DamageFilter(damageTable)
     local attacker = EntIndexToHScript(damageTable.entindex_attacker_const)
     local victim = EntIndexToHScript(damageTable.entindex_victim_const)
 
+    -- 获取攻击者
+    victim.get_attacker = attacker
     -- 处理圣盾的防御姿态技能
     if victim:HasAbility('defensive_attitude') and
         victim:HasModifier('modifier_defensive_attitude_self_buff') then

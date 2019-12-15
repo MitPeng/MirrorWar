@@ -1867,15 +1867,15 @@
 		"AnimationPlaybackRate"	"1"
 		"AbilityCooldown"	"70 60 50"
 		"AbilityManaCost"	"100"
-		"AbilityCastRange"	"600"
+		"AbilityCastRange"	"500"
 		"AbilityChannelTime"	"1"
-		"AOERadius"	"%radius"
+		"AOERadius"	"500"
 		"precache"
 		{
-			"particle"	"particles/econ/items/dazzle/dazzle_dark_light_weapon/dazzle_dark_shallow_grave_ground_ring.vpcf"
-			"soundfile"	""
-			"soundfile"	""
 			"particle"	"particles/econ/items/dazzle/dazzle_ti6_gold/dazzle_ti6_shallow_grave_gold_ground_ring.vpcf"
+			"particle"	"particles/units/heroes/hero_dazzle/dazzle_weave.vpcf"
+			"soundfile"	""
+			"particle"	"particles/econ/items/dazzle/dazzle_dark_light_weapon/dazzle_dark_shallow_grave_ground_ring.vpcf"
 		}
 		"OnAbilityPhaseStart"
 		{
@@ -1894,19 +1894,19 @@
 				"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
 				"Function"	"spend_energy"
 			}
-			"FireSound"
-			{
-				"Target"	"CASTER"
-				"EffectName"	"Hero_MonkeyKing.FurArmy.Channel"
-			}
 		}
 		"OnChannelSucceeded"
 		{
-			"RunScript"
+			"FireEffect"
 			{
-				"Target"	"POINT"
-				"ScriptFile"	"scripts/vscripts/heroes/holy_shield/sacred_realm.lua"
-				"Function"	"get_effect"
+				"TargetPoint"	"POINT"
+				"EffectName"	"particles/units/heroes/hero_dazzle/dazzle_weave.vpcf"
+				"EffectAttachType"	"start_at_customorigin"
+				"ControlPoints"
+				{
+					"01"	"%radius 0 0"
+				}
+				"Target"	""
 			}
 			"FireSound"
 			{
@@ -1933,7 +1933,16 @@
 			{
 				"TextureName"	"sacred_realm"
 				"IsDebuff"	"1"
-				"EffectName"	"particles/econ/items/dazzle/dazzle_ti6_gold/dazzle_ti6_shallow_grave_gold_ground_ring.vpcf"
+				"EffectName"	"particles/econ/items/dazzle/dazzle_dark_light_weapon/dazzle_dark_shallow_grave_ground_ring.vpcf"
+				"OnCreated"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"	"DAMAGE_TYPE_PURE"
+						"Damage"	"%damage"
+					}
+				}
 				"OnIntervalThink"
 				{
 					"Damage"
@@ -1943,10 +1952,10 @@
 						"Damage"	"%damage"
 					}
 				}
-				"ThinkInterval"	"1.0"
+				"ThinkInterval"	"1"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%move_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE"	"%move_speed"
 				}
 			}
 		}
@@ -1960,12 +1969,12 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"duration"	"5"
+				"duration"	"3 4 5"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"50 75 100"
+				"damage"	"100"
 			}
 			"04"
 			{
