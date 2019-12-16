@@ -2154,8 +2154,9 @@
 		{
 			"particle"	"particles/immortal_soul_soul_draw_projectile.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
+			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_pulse_explosion_wispy.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
-			"particle"	"particles/items3_fx/octarine_core_lifesteal.vpcf"
+			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_scythe_flare.vpcf"
 		}
 		"OnSpellStart"
 		{
@@ -2163,9 +2164,9 @@
 			{
 				"Target"	"POINT"
 				"EffectName"	"particles/immortal_soul_soul_draw_projectile.vpcf"
-				"MoveSpeed"	"700"
-				"StartRadius"	"50"
-				"EndRadius"	"115"
+				"MoveSpeed"	"800"
+				"StartRadius"	"150"
+				"EndRadius"	"150"
 				"FixedDistance"	"%distance"
 				"StartPosition"	"attach_origin"
 				"TargetTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -2189,6 +2190,12 @@
 				"ScriptFile"	"scripts/vscripts/heroes/immortal_soul/soul_draw.lua"
 				"Function"	"projectile_hit"
 			}
+			"FireEffect"
+			{
+				"Target"	"TARGET"
+				"EffectName"	"particles/units/heroes/hero_necrolyte/necrolyte_pulse_explosion_wispy.vpcf"
+				"EffectAttachType"	"follow_hitloc"
+			}
 			"FireSound"
 			{
 				"Target"	"TARGET"
@@ -2197,8 +2204,8 @@
 			"FireEffect"
 			{
 				"Target"	"CASTER"
-				"EffectAttachType"	""
-				"EffectName"	"particles/items3_fx/octarine_core_lifesteal.vpcf"
+				"EffectAttachType"	"follow_hitloc"
+				"EffectName"	"particles/units/heroes/hero_necrolyte/necrolyte_scythe_flare.vpcf"
 			}
 		}
 		"AbilitySpecial"

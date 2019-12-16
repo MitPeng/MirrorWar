@@ -2163,9 +2163,9 @@
 			{
 				"Target"	"POINT"
 				"EffectName"	"particles/immortal_soul_soul_draw_projectile.vpcf"
-				"MoveSpeed"	"700"
-				"StartRadius"	"50"
-				"EndRadius"	"115"
+				"MoveSpeed"	"800"
+				"StartRadius"	"150"
+				"EndRadius"	"150"
 				"FixedDistance"	"%distance"
 				"StartPosition"	"attach_origin"
 				"TargetTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
