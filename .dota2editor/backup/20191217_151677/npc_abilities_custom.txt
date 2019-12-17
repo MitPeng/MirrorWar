@@ -2315,11 +2315,6 @@
 						"Target"	"TARGET"
 						"EffectName"	"Hero_Wisp.Tether.Stop"
 					}
-					"RemoveModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_soul_connection_caster"
-					}
 				}
 				"OnIntervalThink"
 				{
@@ -2330,7 +2325,7 @@
 						"Function"	"break_conn"
 					}
 				}
-				"ThinkInterval"	"0.1"
+				"ThinkInterval"	"0.3"
 			}
 			"modifier_soul_connection_caster"
 			{
@@ -2347,15 +2342,14 @@
 						"EffectName"	"Hero_Wisp.Tether"
 					}
 				}
-				"IsBuff"	"1"
 			}
 		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"break_distance"	"750 800 850 900"
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"3 4 5 6"
 			}
 			"02"
 			{
@@ -2369,8 +2363,8 @@
 			}
 			"04"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"duration"	"3 4 5 6"
+				"var_type"	"FIELD_INTEGER"
+				"break_distance"	"750 800 850 900"
 			}
 		}
 	}

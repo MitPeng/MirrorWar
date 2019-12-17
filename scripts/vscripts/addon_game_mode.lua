@@ -266,6 +266,7 @@ function CEventGameMode:DamageFilter(damageTable)
 
     -- 获取攻击者
     victim.get_attacker = attacker
+
     -- 处理圣盾的防御姿态技能
     if victim:HasAbility('defensive_attitude') and
         victim:HasModifier('modifier_defensive_attitude_self_buff') then
@@ -291,6 +292,36 @@ function CEventGameMode:DamageFilter(damageTable)
                 damageTable.damage = (1 - damage_block_percent) *
                                          damageTable.damage
                 EmitSoundOn("Hero_Mars.Shield.Block", victim)
+            end
+        end
+    end
+
+    -- 处理不灭灵魂的灵魂连接技能
+    if victim:HasModifier('modifier_soul_connection_target') then
+        if not damageTable.entindex_inflictor_const then
+            -- 获取灵魂连接施法者和技能实体
+            if victim.soul_conn_caster and victim.soul_conn_ability then
+                local ability = victim.soul_conn_ability
+                local transfer_damage_percent =
+                    ability:GetLevelSpecialValueFor("transfer_damage_percent",
+                                                    ability:GetLevel() - 1) /
+                        100
+                -- 减伤
+                damageTable.damage = (1 - transfer_damage_percent) *
+                                         damageTable.damage
+                -- 伤害转移
+                local damage_type = damageTable.damagetype_const
+                if damage_type then
+                    local damage_table =
+                        {
+                            victim = victim.soul_conn_caster,
+                            attacker = attacker,
+                            damage = transfer_damage_percent *
+                                damageTable.damage,
+                            damage_type = damage_type
+                        }
+                    ApplyDamage(damage_table)
+                end
             end
         end
     end

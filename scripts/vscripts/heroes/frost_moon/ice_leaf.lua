@@ -8,7 +8,7 @@ function ice_leaf_damage(keys)
         ability:GetLevelSpecialValueFor("base_damage", ability_level) +
             caster:GetAgility() * ability:GetSpecialValueFor("agility_times")
     caster:PerformAttack(target, true, true, true, true, true, true, true)
-    damage_table = {
+    local damage_table = {
         victim = target,
         attacker = caster,
         damage = damage,

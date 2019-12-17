@@ -16,7 +16,7 @@ function modifier_fire_trap:OnCreated(params)
         attacker = hero
     end
     self:StartIntervalThink(1)
-    damage_table = {
+    local damage_table = {
         victim = hero,
         attacker = attacker,
         damage = hero:GetMaxHealth() / 5,
@@ -33,7 +33,7 @@ function modifier_fire_trap:OnIntervalThink()
     else
         attacker = hero
     end
-    damage_table = {
+    local damage_table = {
         victim = hero,
         attacker = attacker,
         damage = hero:GetMaxHealth() / 5,

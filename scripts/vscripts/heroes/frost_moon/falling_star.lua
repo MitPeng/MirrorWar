@@ -30,7 +30,7 @@ function falling_star_damage(keys)
     local target_entities = keys.target_entities
     for i, target in ipairs(target_entities) do
         caster:PerformAttack(target, false, true, true, true, true, true, true)
-        damage_table = {
+        local damage_table = {
             victim = target,
             attacker = caster,
             damage = damage,

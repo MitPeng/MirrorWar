@@ -98,7 +98,6 @@ function frost_flower_is_stun(keys)
     local modifiers =
         target:FindAllModifiersByName("modifier_frost_flower_slow")
     if #modifiers == 3 then
-        target:RemoveModifierByName("modifier_frost_flower_slow")
         ability:ApplyDataDrivenModifier(caster, target,
                                         "modifier_frost_flower_stun", {})
     end

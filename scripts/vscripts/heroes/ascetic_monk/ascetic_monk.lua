@@ -38,7 +38,7 @@ function break_sky_damage(keys)
     local ability = keys.ability
     local ability_level = ability:GetLevel() - 1
     local damage = ability:GetLevelSpecialValueFor("damage", ability_level)
-    damage_table = {
+    local damage_table = {
         victim = target,
         attacker = caster,
         damage = damage,

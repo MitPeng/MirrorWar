@@ -11,7 +11,7 @@ function moonlight_damage(keys)
         target:RemoveModifierByName("modifier_moonlight_apply")
         ability:ApplyDataDrivenModifier(caster, target,
                                         "modifier_moonlight_apply", {})
-        damage_table = {
+        local damage_table = {
             victim = target,
             attacker = caster,
             damage = damage,

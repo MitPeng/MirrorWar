@@ -6,7 +6,7 @@ function projectile_hit(keys)
     local damage = ability:GetLevelSpecialValueFor("damage",
                                                    ability:GetLevel() - 1) +
                        caster:GetIntellect() * int_mul
-    damage_table = {
+    local damage_table = {
         victim = target,
         attacker = caster,
         damage = damage,
