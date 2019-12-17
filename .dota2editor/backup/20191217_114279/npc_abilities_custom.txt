@@ -639,7 +639,7 @@
 				"TargetTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"StartPosition"	"attach_origin"
 				"EffectName"	"particles/econ/items/mirana/mirana_crescent_arrow/mirana_spell_crescent_arrow.vpcf"
-				"StartRadius"	"100"
+				"StartRadius"	"50"
 				"EndRadius"	"100"
 				"FixedDistance"	"1100"
 				"ProvidesVision"	"1"
@@ -1140,7 +1140,7 @@
 				"Target"	"POINT"
 				"EffectName"	"particles/sharpshooter_head_shot.vpcf"
 				"MoveSpeed"	"1200"
-				"StartRadius"	"100"
+				"StartRadius"	"50"
 				"EndRadius"	"100"
 				"FixedDistance"	"1500"
 				"StartPosition"	"attach_origin"
@@ -2154,9 +2154,8 @@
 		{
 			"particle"	"particles/immortal_soul_soul_draw_projectile.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
-			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_pulse_explosion_wispy.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
-			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_scythe_flare.vpcf"
+			"particle"	"particles/items3_fx/octarine_core_lifesteal.vpcf"
 		}
 		"OnSpellStart"
 		{
@@ -2164,9 +2163,9 @@
 			{
 				"Target"	"POINT"
 				"EffectName"	"particles/immortal_soul_soul_draw_projectile.vpcf"
-				"MoveSpeed"	"800"
-				"StartRadius"	"150"
-				"EndRadius"	"150"
+				"MoveSpeed"	"700"
+				"StartRadius"	"50"
+				"EndRadius"	"115"
 				"FixedDistance"	"%distance"
 				"StartPosition"	"attach_origin"
 				"TargetTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -2190,12 +2189,6 @@
 				"ScriptFile"	"scripts/vscripts/heroes/immortal_soul/soul_draw.lua"
 				"Function"	"projectile_hit"
 			}
-			"FireEffect"
-			{
-				"Target"	"TARGET"
-				"EffectName"	"particles/units/heroes/hero_necrolyte/necrolyte_pulse_explosion_wispy.vpcf"
-				"EffectAttachType"	"attach_origin"
-			}
 			"FireSound"
 			{
 				"Target"	"TARGET"
@@ -2204,8 +2197,8 @@
 			"FireEffect"
 			{
 				"Target"	"CASTER"
-				"EffectAttachType"	"attach_origin"
-				"EffectName"	"particles/units/heroes/hero_necrolyte/necrolyte_scythe_flare.vpcf"
+				"EffectAttachType"	""
+				"EffectName"	"particles/items3_fx/octarine_core_lifesteal.vpcf"
 			}
 		}
 		"AbilitySpecial"

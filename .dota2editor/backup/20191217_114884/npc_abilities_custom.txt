@@ -639,7 +639,7 @@
 				"TargetTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"StartPosition"	"attach_origin"
 				"EffectName"	"particles/econ/items/mirana/mirana_crescent_arrow/mirana_spell_crescent_arrow.vpcf"
-				"StartRadius"	"100"
+				"StartRadius"	"50"
 				"EndRadius"	"100"
 				"FixedDistance"	"1100"
 				"ProvidesVision"	"1"
@@ -820,7 +820,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"100"
+				"end_radius"	"100"
 			}
 			"03"
 			{
@@ -851,6 +851,11 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"damage"	"40 80 120 160"
+			}
+			"09"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"start_radius"	"50"
 			}
 		}
 	}
@@ -1140,7 +1145,7 @@
 				"Target"	"POINT"
 				"EffectName"	"particles/sharpshooter_head_shot.vpcf"
 				"MoveSpeed"	"1200"
-				"StartRadius"	"100"
+				"StartRadius"	"50"
 				"EndRadius"	"100"
 				"FixedDistance"	"1500"
 				"StartPosition"	"attach_origin"
@@ -2143,6 +2148,8 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityCastPoint"	"0.4"
 		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_3"
 		"AnimationPlaybackRate"	"1"
@@ -2152,9 +2159,8 @@
 		{
 			"particle"	"particles/immortal_soul_soul_draw_projectile.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
-			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_pulse_explosion_wispy.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
-			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_scythe_flare.vpcf"
+			"particle"	"particles/items3_fx/octarine_core_lifesteal.vpcf"
 		}
 		"OnSpellStart"
 		{
@@ -2162,10 +2168,10 @@
 			{
 				"Target"	"POINT"
 				"EffectName"	"particles/immortal_soul_soul_draw_projectile.vpcf"
-				"MoveSpeed"	"800"
-				"StartRadius"	"150"
-				"EndRadius"	"150"
-				"FixedDistance"	"1000"
+				"MoveSpeed"	"700"
+				"StartRadius"	"50"
+				"EndRadius"	"115"
+				"FixedDistance"	"%distance"
 				"StartPosition"	"attach_origin"
 				"TargetTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"TargetTypes"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -2188,12 +2194,6 @@
 				"ScriptFile"	"scripts/vscripts/heroes/immortal_soul/soul_draw.lua"
 				"Function"	"projectile_hit"
 			}
-			"FireEffect"
-			{
-				"Target"	"TARGET"
-				"EffectName"	"particles/units/heroes/hero_necrolyte/necrolyte_pulse_explosion_wispy.vpcf"
-				"EffectAttachType"	"attach_origin"
-			}
 			"FireSound"
 			{
 				"Target"	"TARGET"
@@ -2202,8 +2202,8 @@
 			"FireEffect"
 			{
 				"Target"	"CASTER"
-				"EffectAttachType"	"attach_origin"
-				"EffectName"	"particles/units/heroes/hero_necrolyte/necrolyte_scythe_flare.vpcf"
+				"EffectAttachType"	""
+				"EffectName"	"particles/items3_fx/octarine_core_lifesteal.vpcf"
 			}
 		}
 		"AbilitySpecial"
@@ -2222,6 +2222,11 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"life_steal_percent"	"10"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"distance"	"1000"
 			}
 		}
 	}

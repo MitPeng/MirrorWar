@@ -4,7 +4,8 @@ function frost_flower_projectile(keys)
     local point = keys.target_points[1]
     local ability = keys.ability
     local move_speed = ability:GetSpecialValueFor("move_speed")
-    local radius = ability:GetSpecialValueFor("radius")
+    local start_radius = ability:GetSpecialValueFor("start_radius")
+    local end_radius = ability:GetSpecialValueFor("end_radius")
     local distance = ability:GetSpecialValueFor("distance")
     local vision = ability:GetSpecialValueFor("vision")
     local effect_name = "particles/frost_moon_frost_flower_arrow.vpcf"
@@ -24,8 +25,8 @@ function frost_flower_projectile(keys)
         EffectName = effect_name,
         vSpawnOrigin = caster:GetAbsOrigin(),
         fDistance = distance,
-        fStartRadius = radius,
-        fEndRadius = radius,
+        fStartRadius = start_radius,
+        fEndRadius = end_radius,
         Source = caster,
         bHasFrontalCone = false,
         bReplaceExisting = false,
@@ -46,8 +47,8 @@ function frost_flower_projectile(keys)
         EffectName = effect_name,
         vSpawnOrigin = caster:GetAbsOrigin(),
         fDistance = distance,
-        fStartRadius = radius,
-        fEndRadius = radius,
+        fStartRadius = start_radius,
+        fEndRadius = end_radius,
         Source = caster,
         bHasFrontalCone = false,
         bReplaceExisting = false,
@@ -68,8 +69,8 @@ function frost_flower_projectile(keys)
         EffectName = effect_name,
         vSpawnOrigin = caster:GetAbsOrigin(),
         fDistance = distance,
-        fStartRadius = radius,
-        fEndRadius = radius,
+        fStartRadius = start_radius,
+        fEndRadius = end_radius,
         Source = caster,
         bHasFrontalCone = false,
         bReplaceExisting = false,
@@ -97,6 +98,7 @@ function frost_flower_is_stun(keys)
     local modifiers =
         target:FindAllModifiersByName("modifier_frost_flower_slow")
     if #modifiers == 3 then
+        target:RemoveModifierByName("modifier_frost_flower_slow")
         ability:ApplyDataDrivenModifier(caster, target,
                                         "modifier_frost_flower_stun", {})
     end

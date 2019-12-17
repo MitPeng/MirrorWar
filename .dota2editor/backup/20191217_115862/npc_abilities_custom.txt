@@ -125,7 +125,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"start_radius"	"100"
+				"start_radius"	"150"
 			}
 			"02"
 			{
@@ -145,12 +145,12 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"hit_damage_percent"	"0.7 0.8 0.9 1.0"
+				"hit_damage_percent"	"0.7"
 			}
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"reduce_damage_percent"	"-30 -20 -10 0"
+				"reduce_damage_percent"	"-30"
 			}
 		}
 	}

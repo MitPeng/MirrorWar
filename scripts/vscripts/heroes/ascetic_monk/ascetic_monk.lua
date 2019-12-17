@@ -22,7 +22,9 @@ function break_sky_move(keys)
     -- 获取施法者位置
     local caster_abs = caster:GetAbsOrigin()
     -- 设置施法者面向角度
-    caster:SetForwardVector(((point - caster:GetOrigin()):Normalized()))
+    local forward_vector = (point - caster:GetOrigin()):Normalized()
+    forward_vector.z = 0
+    caster:SetForwardVector(forward_vector)
     -- 位移后的位置
     local target_point = caster_abs + range * caster:GetForwardVector()
     FindClearSpaceForUnit(caster, target_point, true)
