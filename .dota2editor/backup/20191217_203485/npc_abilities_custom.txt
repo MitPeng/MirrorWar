@@ -2399,7 +2399,7 @@
 			"modifier_immortal_apply"
 			{
 				"Duration"	"%duration"
-				"IsHidden"	"0"
+				"IsHidden"	"1"
 				"OnCreated"
 				{
 					"FireSound"
@@ -2420,7 +2420,6 @@
 				}
 				"EffectName"	"particles/econ/items/dazzle/dazzle_ti6/dazzle_ti6_shallow_grave.vpcf"
 				"EffectAttachType"	"follow_origin"
-				"IsBuff"	"1"
 			}
 		}
 		"AbilitySpecial"

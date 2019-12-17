@@ -2157,7 +2157,7 @@
 		"AbilityCastRange"	"1000"
 		"precache"
 		{
-			"particle"	"particles/immortal_soul_soul_draw_projectile2.vpcf"
+			"particle"	"particles/immortal_soul_soul_draw_projectile.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
 			"particle"	"particles/items3_fx/octarine_core_lifesteal.vpcf"
@@ -2167,7 +2167,7 @@
 			"LinearProjectile"
 			{
 				"Target"	"POINT"
-				"EffectName"	"particles/immortal_soul_soul_draw_projectile2.vpcf"
+				"EffectName"	"particles/immortal_soul_soul_draw_projectile.vpcf"
 				"MoveSpeed"	"700"
 				"StartRadius"	"50"
 				"EndRadius"	"115"
@@ -2384,8 +2384,7 @@
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"precache"
 		{
-			"particle"	"particles/econ/items/dazzle/dazzle_ti6/dazzle_ti6_shallow_grave.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+			"particle"	"particles/units/heroes/hero_dazzle/dazzle_shallow_grave.vpcf"
 		}
 		"Modifiers"
 		{
@@ -2394,18 +2393,17 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 				"TextureName"	"immortal"
 				"IsDebuff"	"1"
-				"Duration"	""
 			}
 			"modifier_immortal_apply"
 			{
 				"Duration"	"%duration"
-				"IsHidden"	"0"
+				"IsHidden"	"1"
 				"OnCreated"
 				{
-					"FireSound"
+					"AttachEffect"
 					{
 						"Target"	"CASTER"
-						"EffectName"	"Hero_Dazzle.Shallow_Grave"
+						"EffectName"	"particles/units/heroes/hero_dazzle/dazzle_shallow_grave.vpcf"
 					}
 				}
 				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
@@ -2418,9 +2416,6 @@
 						"Duration"	"%cooldown"
 					}
 				}
-				"EffectName"	"particles/econ/items/dazzle/dazzle_ti6/dazzle_ti6_shallow_grave.vpcf"
-				"EffectAttachType"	"follow_origin"
-				"IsBuff"	"1"
 			}
 		}
 		"AbilitySpecial"

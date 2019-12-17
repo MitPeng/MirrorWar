@@ -2394,17 +2394,21 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 				"TextureName"	"immortal"
 				"IsDebuff"	"1"
-				"Duration"	""
 			}
 			"modifier_immortal_apply"
 			{
 				"Duration"	"%duration"
-				"IsHidden"	"0"
+				"IsHidden"	"1"
 				"OnCreated"
 				{
-					"FireSound"
+					"AttachEffect"
 					{
 						"Target"	"CASTER"
+						"EffectName"	"particles/econ/items/dazzle/dazzle_ti6/dazzle_ti6_shallow_grave.vpcf"
+					}
+					"FireSound"
+					{
+						"Target"	""
 						"EffectName"	"Hero_Dazzle.Shallow_Grave"
 					}
 				}
@@ -2418,9 +2422,6 @@
 						"Duration"	"%cooldown"
 					}
 				}
-				"EffectName"	"particles/econ/items/dazzle/dazzle_ti6/dazzle_ti6_shallow_grave.vpcf"
-				"EffectAttachType"	"follow_origin"
-				"IsBuff"	"1"
 			}
 		}
 		"AbilitySpecial"
