@@ -329,36 +329,41 @@ function CEventGameMode:DamageFilter(damageTable)
     end
 
     -- 处理不灭灵魂的不灭技能
-    if victim:HasAbility('immortal') and
-        not victim:HasModifier('modifier_immortal_cd') then
-        if not damageTable.entindex_inflictor_const then
-            local ability = victim:FindAbilityByName("immortal")
-            local hp = victim:GetHealth() - damageTable.damage
-            if hp <= 0 then
-                -- 没生效则加生效buff
-                if not victim:HasModifier("modifier_immortal_apply") then
-                    -- 生效buff结束后自动加计时buff
-                    ability:ApplyDataDrivenModifier(victim, victim,
-                                                    "modifier_immortal_apply",
-                                                    {})
+    if victim:HasAbility('immortal') then
+        local ability = victim:FindAbilityByName("immortal")
+        if ability:GetLevel() >= 1 and
+            not victim:HasModifier('modifier_immortal_cd') then
+            if not damageTable.entindex_inflictor_const then
+                local hp = victim:GetHealth() - damageTable.damage
+                if hp <= 0 then
+                    -- 没生效则加生效buff
+                    if not victim:HasModifier("modifier_immortal_apply") then
+                        -- 生效buff结束后自动加计时buff
+                        ability:ApplyDataDrivenModifier(victim, victim,
+                                                        "modifier_immortal_apply",
+                                                        {})
+                    end
+                    -- 最低生命为1
+                    victim:SetHealth(1)
+                    damageTable.damage = 0
                 end
-                -- 最低生命为1
-                victim:SetHealth(1)
-                damageTable.damage = 0
             end
         end
     end
-    if attacker:HasModifier("modifier_immortal_apply") then
+    if attacker:HasAbility('immortal') then
         local ability = attacker:FindAbilityByName("immortal")
-        local life_steal_percent = ability:GetLevelSpecialValueFor(
-                                       "life_steal_percent",
-                                       ability:GetLevel() - 1) / 100
-        local heal = damageTable.damage * life_steal_percent
-        -- 回血加特效
-        attacker:Heal(heal, attacker)
-        ParticleManager:CreateParticle(
-            "particles/items3_fx/octarine_core_lifesteal.vpcf",
-            PATTACH_ABSORIGIN_FOLLOW, caster)
+        if ability:GetLevel() >= 1 and
+            attacker:HasModifier("modifier_immortal_apply") then
+            local life_steal_percent = ability:GetLevelSpecialValueFor(
+                                           "life_steal_percent",
+                                           ability:GetLevel() - 1) / 100
+            local heal = damageTable.damage * life_steal_percent
+            -- 回血加特效
+            attacker:Heal(heal, attacker)
+            ParticleManager:CreateParticle(
+                "particles/items3_fx/octarine_core_lifesteal.vpcf",
+                PATTACH_ABSORIGIN_FOLLOW, caster)
+        end
     end
 
     return true

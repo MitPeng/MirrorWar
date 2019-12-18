@@ -12,7 +12,6 @@ end
 function is_energy_enough(keys)
     local caster = keys.caster
     local ability = keys.ability
-    local modifier = "modifier_set_energy_count"
     if caster.energy < 100 then
         caster:Stop()
         ability:StartCooldown(1)
