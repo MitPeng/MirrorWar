@@ -253,7 +253,18 @@ function CEventGameMode:OnNPCSpawned(keys)
                     GameRules.player_count = GameRules.player_count + 1
                 end
             end
+            -- 移除天赋技能
+            for i = 0, 23 do
+                local ability = hero:GetAbilityByIndex(i)
+                if ability then
+                    local name = ability:GetAbilityName()
+                    if string.find(name, "special_bonus") then
+                        hero:RemoveAbility(name)
+                    end
+                end
+            end
         end
+
     end
 
 end
