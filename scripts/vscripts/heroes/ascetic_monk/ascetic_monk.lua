@@ -60,6 +60,29 @@ function kasaya_agility(keys)
     end
 end
 
+-- 设置袈裟buff数
+function kasaya_count(keys)
+    local caster = keys.caster
+    local ability = keys.ability
+    local count = 0
+    for i = 1, caster:GetModifierCount() do
+        local modifier = caster:GetModifierNameByIndex(i)
+        if modifier == "modifier_kasaya_apply" then count = count + 1 end
+    end
+    if count > 0 then
+        if caster:HasModifier("modifier_kasaya_count") then
+            caster:SetModifierStackCount("modifier_kasaya_count", caster, count)
+        else
+            ability:ApplyDataDrivenModifier(caster, caster,
+                                            "modifier_kasaya_count", {})
+            caster:SetModifierStackCount("modifier_kasaya_count", caster, count)
+        end
+    else
+        caster:RemoveModifierByName("modifier_kasaya_count")
+    end
+
+end
+
 -- 伏魔平A
 function vanquish_demon_damage(keys)
     local caster = keys.caster

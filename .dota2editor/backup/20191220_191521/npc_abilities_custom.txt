@@ -299,7 +299,7 @@
 			}
 			"modifier_kasaya_apply"
 			{
-				"TextureName"	"kasaya"
+				"TextureName"	""
 				"Duration"	"%duration"
 				"IsBuff"	"0"
 				"EffectAttachType"	""
@@ -337,7 +337,6 @@
 				"TextureName"	"kasaya"
 				"IsBuff"	"1"
 				"IsHidden"	"0"
-				"Duration"	"-1"
 			}
 		}
 		"AbilitySpecial"

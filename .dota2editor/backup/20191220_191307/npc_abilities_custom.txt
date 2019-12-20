@@ -299,7 +299,7 @@
 			}
 			"modifier_kasaya_apply"
 			{
-				"TextureName"	"kasaya"
+				"TextureName"	""
 				"Duration"	"%duration"
 				"IsBuff"	"0"
 				"EffectAttachType"	""
@@ -316,28 +316,15 @@
 				{
 					"RunScript"
 					{
-						"Target"	"CASTER"
-						"ScriptFile"	"scripts/vscripts/heroes/ascetic_monk/ascetic_monk.lua"
-						"Function"	"kasaya_count"
+						"Target"	""
 					}
 				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"Target"	"CASTER"
-						"ScriptFile"	"scripts/vscripts/heroes/ascetic_monk/ascetic_monk.lua"
-						"Function"	"kasaya_count"
-					}
-				}
+				"OnDestroy"	{}
 			}
 			"modifier_kasaya_count"
 			{
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"TextureName"	"kasaya"
-				"IsBuff"	"1"
-				"IsHidden"	"0"
-				"Duration"	"-1"
 			}
 		}
 		"AbilitySpecial"

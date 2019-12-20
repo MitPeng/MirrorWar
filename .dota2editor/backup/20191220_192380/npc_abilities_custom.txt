@@ -301,7 +301,7 @@
 			{
 				"TextureName"	"kasaya"
 				"Duration"	"%duration"
-				"IsBuff"	"0"
+				"IsBuff"	"1"
 				"EffectAttachType"	""
 				"Properties"
 				{
@@ -311,7 +311,7 @@
 				"EffectName"	""
 				"States"	{}
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"IsHidden"	"1"
+				"IsHidden"	"0"
 				"OnCreated"
 				{
 					"RunScript"
@@ -337,7 +337,7 @@
 				"TextureName"	"kasaya"
 				"IsBuff"	"1"
 				"IsHidden"	"0"
-				"Duration"	"-1"
+				"Duration"	""
 			}
 		}
 		"AbilitySpecial"
