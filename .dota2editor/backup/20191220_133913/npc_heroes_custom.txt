@@ -219,7 +219,7 @@
 		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
 	}
 
-	"moon_chain"
+	"blood_chain"
 	{
 		"Ability1"	""
 		"Ability2"	""

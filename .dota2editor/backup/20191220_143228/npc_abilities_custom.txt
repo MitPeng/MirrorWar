@@ -2447,7 +2447,7 @@
 	{
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"soul_pulse"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
@@ -2457,9 +2457,13 @@
 		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_4"
 		"AnimationPlaybackRate"	"1"
 		"AbilityCooldown"	"60 50 40"
+		"AbilityCastRange"	"300 350 400"
 		"precache"
 		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
 			"particle"	"particles/units/heroes/hero_leshrac/leshrac_pulse_nova_ambient.vpcf"
+			"particle"	"particles/units/heroes/hero_leshrac/leshrac_pulse_nova.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
 			"particle"	"particles/units/heroes/hero_leshrac/leshrac_pulse_nova.vpcf"
 		}
@@ -2494,15 +2498,63 @@
 				"TextureName"	"soul_pulse"
 				"OnCreated"
 				{
+					"FireSound"
+					{
+						"Target"	"CASTER"
+						"EffectName"	"Hero_Leshrac.Lightning_Storm"
+					}
 					"AttachEffect"
 					{
 						"Target"	"CASTER"
 						"EffectName"	"particles/units/heroes/hero_leshrac/leshrac_pulse_nova_ambient.vpcf"
 						"EffectAttachType"	"follow_origin"
 					}
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
+							"Center"	"CASTER"
+							"Radius"	"%radius"
+						}
+						"Action"
+						{
+							"FireEffect"
+							{
+								"Target"	"TARGET"
+								"ControlPoints"	{}
+								"ControlPointEntities"	{}
+								"EffectName"	"particles/units/heroes/hero_leshrac/leshrac_pulse_nova.vpcf"
+								"EffectAttachType"	"follow_origin"
+							}
+							"Damage"
+							{
+								"Target"	"TARGET"
+								"Type"	"DAMAGE_TYPE_MAGICAL"
+								"Damage"	"%damage"
+							}
+							"Knockback"
+							{
+								"Target"	"TARGET"
+								"Center"	"CASTER"
+								"Duration"	"0.3"
+								"Distance"	"%knockback_distance"
+								"Height"	"10"
+								"IsFixedDistance"	"0"
+								"ShouldStun"	"0"
+							}
+						}
+					}
+					"FireSound"
+					{
+						"Target"	"CASTER"
+						"EffectName"	"Hero_Leshrac.Pulse_Nova"
+					}
 				}
 				"Duration"	""
-				"IsBuff"	"1"
+				"IsBuff"	"0"
 				"OnIntervalThink"
 				{
 					"FireSound"
@@ -2550,6 +2602,16 @@
 					}
 				}
 				"ThinkInterval"	"1.0"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"ScriptFile"	"scripts/vscripts/heroes/immortal_soul/soul_pulse.lua"
+						"Function"	"stop_sounds"
+					}
+				}
+				"IsHidden"	"1"
 			}
 		}
 		"AbilitySpecial"
@@ -2557,12 +2619,12 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"250 300 350"
+				"radius"	"300 350 400"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"knockback_distance"	"150 200 250"
+				"knockback_distance"	"200 250 300"
 			}
 			"03"
 			{
@@ -2575,5 +2637,39 @@
 				"damage"	"100 150 200"
 			}
 		}
+	}
+
+	"chain_explosion"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"chain_explosion"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	}
+
+	"blood_mist"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"blood_mist"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	}
+
+	"bloodthirsty"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"bloodthirsty"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	"blood_chain_flog"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"blood_chain_flog"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	}
 }
