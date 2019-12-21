@@ -26,6 +26,9 @@ function Precache(context)
     PrecacheResource("soundfile",
                      "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts",
                      context)
+    PrecacheResource("soundfile",
+                     "soundevents/game_sounds_heroes/game_sounds_slark.vsndevts",
+                     context)
     PrecacheResource("particle",
                      "particles/items3_fx/octarine_core_lifesteal.vpcf", context)
 
@@ -131,7 +134,7 @@ function CEventGameMode:InitGameMode()
 end
 
 function CEventGameMode:OnGameRulesStateChange(keys)
-
+    DeepPrintTable(keys)
     -- 获取游戏进度
     local newState = GameRules:State_Get()
 
@@ -140,6 +143,7 @@ function CEventGameMode:OnGameRulesStateChange(keys)
 
     elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
         print("Player ready game begin") -- 玩家处于游戏准备状态
+        -- MakeRandomHeroSelection()
 
     elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 

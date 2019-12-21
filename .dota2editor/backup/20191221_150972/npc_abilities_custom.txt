@@ -2675,15 +2675,11 @@
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCastPoint"	"0.4"
+		"AbilityCastPoint"	"0.3"
 		"AbilityCastAnimation"	"ACT_DOTA_VICTORY"
 		"AnimationPlaybackRate"	"1"
-		"AbilityCooldown"	"14 12 10 8"
+		"AbilityCooldown"	"10 9 8 7"
 		"AOERadius"	"300"
-		"precache"
-		{
-			"soundfile"	""
-		}
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -2727,18 +2723,13 @@
 				"ScriptFile"	"scripts/vscripts/heroes/blood_chain/chain_explosion.lua"
 				"Function"	"damage_self"
 			}
-			"FireSound"
-			{
-				"Target"	"CASTER"
-				"EffectName"	"Hero_Slark.DarkPact.Cast.Layer"
-			}
 		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"self_damage_percent"	"20 24 28 32"
+				"self_damage_percent"	"10 15 20 25"
 			}
 			"02"
 			{
@@ -2753,12 +2744,12 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"base_damage"	"50 100 150 200"
+				"base_damage"	"100 150 200 250"
 			}
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"target_damage_percent"	"10 12 14 16"
+				"target_damage_percent"	"5 10 15 20"
 			}
 		}
 	}
@@ -2772,10 +2763,7 @@
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCastPoint"	"0"
-		"AbilityCastAnimation"	"ACT_DOTA_VICTORY"
-		"AnimationPlaybackRate"	"1"
-		"AbilityCooldown"	"16 14 12 10"
+		"AbilityCooldown"	"20 18 16 14"
 		"precache"
 		{
 			"particle"	"particles/econ/items/pudge/pudge_immortal_arm/pudge_immortal_arm_rot.vpcf"
@@ -2892,13 +2880,13 @@
 		{
 			"01"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"self_damage_percent"	"3.0 4.5 6.0 7.5"
+				"var_type"	"FIELD_INTEGER"
+				"self_damage_percent"	"3 4 5 6"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"slow_percent"	"-11 -14 -17 -20"
+				"slow_percent"	"-10 -15 -20 -25"
 			}
 			"03"
 			{
@@ -2908,17 +2896,17 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"base_damage"	"10 16 22 28"
+				"base_damage"	"10 20 30 40"
 			}
 			"05"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"target_damage_percent"	"1.0 1.5 2.0 2.5"
+				"var_type"	"FIELD_INTEGER"
+				"target_damage_percent"	"1 2 3 4"
 			}
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"duration"	"5"
+				"duration"	"5 6 7 8"
 			}
 		}
 	}
@@ -2932,6 +2920,7 @@
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"precache"
 		{
+			"particle"	"particles/econ/items/bloodseeker/bloodseeker_ti7/bloodseeker_ti7_thirst_owner.vpcf"
 			"particle"	"particles/econ/items/bloodseeker/bloodseeker_ti7/bloodseeker_ti7_thirst_owner_smoke_dark.vpcf"
 			"particle"	"particles/econ/items/bloodseeker/bloodseeker_ti7/bloodseeker_ti7_thirst_owner.vpcf"
 			"particle"	"particles/econ/items/bloodseeker/bloodseeker_ti7/bloodseeker_ti7_thirst_owner_smoke_dark.vpcf"
@@ -2972,6 +2961,11 @@
 					"AttachEffect"
 					{
 						"Target"	"CASTER"
+						"EffectName"	"particles/econ/items/bloodseeker/bloodseeker_ti7/bloodseeker_ti7_thirst_owner.vpcf"
+					}
+					"AttachEffect"
+					{
+						"Target"	"CASTER"
 						"EffectName"	"particles/econ/items/bloodseeker/bloodseeker_ti7/bloodseeker_ti7_thirst_owner_smoke_dark.vpcf"
 						"EffectAttachType"	"follow_origin"
 					}
@@ -2993,7 +2987,6 @@
 					{
 						"Target"	"CASTER"
 						"EffectName"	"particles/econ/items/bloodseeker/bloodseeker_ti7/bloodseeker_ti7_thirst_owner.vpcf"
-						"EffectAttachType"	"follow_origin"
 					}
 					"AttachEffect"
 					{
@@ -3009,32 +3002,32 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"max_movespeed"	"20 25 30 35"
+				"max_movespeed"	"20 30 40 50"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"max_hp_regain"	"5 10 15 20"
+				"max_hp_regain"	"20 30 40 50"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"trigger_hp"	"12 16 20 24"
+				"trigger_hp"	"10 15 20 25"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"max_movespeed_2"	"60 75 90 105"
+				"max_movespeed_2"	"40 60 80 100"
 			}
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"max_hp_regain_2"	"15 30 45 60"
+				"max_hp_regain_2"	"40 60 80 100"
 			}
 			"06"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"duration"	"4.5 5.0 5.5 6.0"
+				"var_type"	"FIELD_INTEGER"
+				"duration"	"5"
 			}
 		}
 	}
