@@ -2073,7 +2073,7 @@
 			}
 			"03"
 			{
-				"var_type"	"FIELD_INTEGER"
+				"var_type"	"FIELD_FLOAT"
 				"duration"	"3.0 3.5 4.0 4.5"
 			}
 		}
