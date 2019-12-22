@@ -32,8 +32,10 @@ end
 function get_exp_and_gold(keys)
     local caster = keys.caster
     local level = caster:GetLevel()
-    local xp = 3.0 + level / 1.5
+    local xp = GameRules.load_kv["base_xp"] + level *
+                   GameRules.load_kv["lvl_xp"]
     caster:AddExperience(xp, 0, false, false)
-    local gold = caster:GetGold() + 5
+    local gold = caster:GetGold() + GameRules.load_kv["base_gold"] + level *
+                     GameRules.load_kv["lvl_gold"]
     caster:SetGold(gold, false)
 end

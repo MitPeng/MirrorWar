@@ -1,0 +1,13 @@
+//载入kv
+"load_kv"
+{
+    //base基础和lvl等级倍数
+    //0.3秒涨一次金钱和经验
+    "base_gold" "3.0"
+    "lvl_gold" "0.2"
+    "base_xp" "3.0"
+    "lvl_xp" "0.7"
+    //一点能量所需伤害
+    "base_energy" "100"
+    "lvl_energy" "10"
+}

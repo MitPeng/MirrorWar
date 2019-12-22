@@ -43,6 +43,8 @@ LinkLuaModifier("modifier_outpost_vision",
 
 -- 英雄饰品
 GameRules.npc_wears_custom = LoadKeyValues("scripts/npc/npc_wears_custom.txt")
+-- 载入kv
+GameRules.load_kv = LoadKeyValues("scripts/vscripts/kv/load_kv.txt")
 ---玩家数据
 -- key是玩家id，value是一个table，包括各个玩家的数据
 GameRules.player_data = {}
@@ -204,15 +206,25 @@ end
 -- 英雄造成和收到伤害时加能量
 function CEventGameMode:OnEntityHurt(keys)
     local attacker = EntIndexToHScript(keys.entindex_attacker)
+    local killed = EntIndexToHScript(keys.entindex_killed)
     local damage = keys.damage
-    local add_energy = damage / 100
+    local attacker_level = attacker:GetLevel()
+    local attacker_add_energy = damage /
+                                    (GameRules.load_kv["base_energy"] +
+                                        attacker_level *
+                                        GameRules.load_kv["lvl_energy"])
+    local killed_level = killed:GetLevel()
+    local killed_add_energy = damage /
+                                  (GameRules.load_kv["base_energy"] +
+                                      killed_level *
+                                      GameRules.load_kv["lvl_energy"])
     if attacker:IsHero() then
-        attacker.energy = attacker.energy + add_energy
+        attacker.energy = attacker.energy + attacker_add_energy
         if attacker.energy >= 100 then attacker.energy = 100 end
     end
-    local killed = EntIndexToHScript(keys.entindex_killed)
+
     if killed:IsHero() then
-        killed.energy = killed.energy + add_energy
+        killed.energy = killed.energy + killed_add_energy
         if killed.energy >= 100 then killed.energy = 100 end
     end
 end
