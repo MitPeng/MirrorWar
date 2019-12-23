@@ -16,7 +16,8 @@ end
 function modifier_energy:OnIntervalThink()
     local hParent = self:GetParent()
     if hParent.energy < 100 then
-        hParent.energy = hParent.energy + GameRules.load_kv["energy_1s"]
+        -- 每秒生成0.5能量
+        hParent.energy = hParent.energy + 0.5
         if hParent.energy >= 100 then hParent.energy = 100 end
     elseif hParent.energy >= 100 then
         hParent.energy = 100

@@ -3115,11 +3115,6 @@
 						"Duration"	"%duration"
 						"ModifierName"	"modifier_blood_chain_flog_target_motion"
 					}
-					"ApplyModifier"
-					{
-						"Target"	"TARGET"
-						"ModifierName"	"modifier_phased"
-					}
 				}
 				"ThinkInterval"	"1.0"
 				"OnIntervalThink"
@@ -3148,11 +3143,6 @@
 						"Target"	"TARGET"
 						"ModifierName"	"modifier_blood_chain_flog_target_motion"
 					}
-					"RemoveModifier"
-					{
-						"Target"	"TARGET"
-						"ModifierName"	"modifier_phased"
-					}
 				}
 				"States"
 				{
@@ -3165,11 +3155,12 @@
 			{
 				"OnIntervalThink"
 				{
-					"RunScript"
+					"ApplyMotionController"
 					{
 						"Target"	"TARGET"
 						"ScriptFile"	"scripts/vscripts/heroes/blood_chain/blood_chain_flog.lua"
-						"Function"	"target_motion"
+						"HorizontalControlFunction"	"target_motion"
+						"Duration"	""
 					}
 				}
 				"ThinkInterval"	"0.033"
