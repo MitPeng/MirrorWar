@@ -3173,8 +3173,6 @@
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
 				"EffectName"	""
-				"TextureName"	"blood_chain_flog"
-				"IsDebuff"	"1"
 			}
 			"modifier_blood_chain_flog_target_motion"
 			{
@@ -3196,7 +3194,6 @@
 				"ThinkInterval"	"0.033"
 				"EffectName"	""
 				"EffectAttachType"	""
-				"IsHidden"	"1"
 			}
 			"modifier_blood_chain_flog_target_effect"
 			{
@@ -3249,7 +3246,6 @@
 					}
 				}
 				"ThinkInterval"	"1.1"
-				"IsHidden"	"1"
 			}
 		}
 		"AbilitySpecial"
@@ -3257,27 +3253,22 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_per_tick"	"3 6 9"
+				"duration"	"3.0"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"distance"	"600"
+				"damage"	"90 180 270"
 			}
 			"03"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"300"
+				"var_type"	"FIELD_FLOAT"
+				"damage_per_tick"	"3 6 9"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"90 180 270"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"duration"	"3.0"
+				"radius"	"300"
 			}
 		}
 	}

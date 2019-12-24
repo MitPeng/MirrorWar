@@ -3070,22 +3070,14 @@
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
 		}
-		"OnAbilityPhaseStart"
-		{
-			"RunScript"
-			{
-				"Target"	"CASTER"
-				"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
-				"Function"	"is_energy_enough"
-			}
-		}
+		"OnAbilityPhaseStart"	{}
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
-				"Target"	"CASTER"
-				"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
-				"Function"	"spend_energy"
+				"Target"	"TARGET"
+				"ScriptFile"	"scripts/vscripts/heroes/blood_chain/blood_chain_flog.lua"
+				"Function"	"init_value"
 			}
 			"ApplyModifier"
 			{
@@ -3135,12 +3127,6 @@
 				"OverrideAnimation"	"ACT_DOTA_DISABLED"
 				"OnCreated"
 				{
-					"RunScript"
-					{
-						"Target"	"TARGET"
-						"ScriptFile"	"scripts/vscripts/heroes/blood_chain/blood_chain_flog.lua"
-						"Function"	"init_value"
-					}
 					"ApplyModifier"
 					{
 						"Target"	"TARGET"
@@ -3173,8 +3159,6 @@
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
 				"EffectName"	""
-				"TextureName"	"blood_chain_flog"
-				"IsDebuff"	"1"
 			}
 			"modifier_blood_chain_flog_target_motion"
 			{
@@ -3196,7 +3180,6 @@
 				"ThinkInterval"	"0.033"
 				"EffectName"	""
 				"EffectAttachType"	""
-				"IsHidden"	"1"
 			}
 			"modifier_blood_chain_flog_target_effect"
 			{
@@ -3249,7 +3232,6 @@
 					}
 				}
 				"ThinkInterval"	"1.1"
-				"IsHidden"	"1"
 			}
 		}
 		"AbilitySpecial"
@@ -3257,27 +3239,22 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_per_tick"	"3 6 9"
+				"duration"	"3.0"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"distance"	"600"
+				"damage"	"90 180 270"
 			}
 			"03"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"300"
+				"var_type"	"FIELD_FLOAT"
+				"damage_per_tick"	"3 6 9"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"90 180 270"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"duration"	"3.0"
+				"radius"	"300"
 			}
 		}
 	}

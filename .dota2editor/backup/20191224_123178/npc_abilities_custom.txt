@@ -3070,39 +3070,18 @@
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
 		}
-		"OnAbilityPhaseStart"
-		{
-			"RunScript"
-			{
-				"Target"	"CASTER"
-				"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
-				"Function"	"is_energy_enough"
-			}
-		}
+		"OnAbilityPhaseStart"	{}
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
-				"Target"	"CASTER"
-				"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
-				"Function"	"spend_energy"
+				"Target"	"TARGET"
+				"ScriptFile"	"scripts/vscripts/heroes/blood_chain/blood_chain_flog.lua"
+				"Function"	"init_value"
 			}
 			"ApplyModifier"
 			{
 				"Target"	"TARGET"
-				"ModifierName"	"modifier_blood_chain_flog_target_effect"
-				"Duration"	"%duration"
-			}
-			"ApplyModifier"
-			{
-				"Target"
-				{
-					"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-					"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
-					"Center"	"TARGET"
-					"Radius"	"%radius"
-				}
 				"Duration"	"%duration"
 				"ModifierName"	"modifier_blood_chain_flog_target"
 			}
@@ -3112,18 +3091,6 @@
 			"RemoveModifier"
 			{
 				"Target"	"TARGET"
-				"ModifierName"	"modifier_blood_chain_flog_target_effect"
-			}
-			"RemoveModifier"
-			{
-				"Target"
-				{
-					"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-					"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
-					"Center"	"TARGET"
-					"Radius"	"%radius"
-				}
 				"ModifierName"	"modifier_blood_chain_flog_target"
 			}
 		}
@@ -3135,11 +3102,15 @@
 				"OverrideAnimation"	"ACT_DOTA_DISABLED"
 				"OnCreated"
 				{
-					"RunScript"
+					"FireSound"
+					{
+						"Target"	"CASTER"
+						"EffectName"	"Hero_Pudge.Dismember"
+					}
+					"FireSound"
 					{
 						"Target"	"TARGET"
-						"ScriptFile"	"scripts/vscripts/heroes/blood_chain/blood_chain_flog.lua"
-						"Function"	"init_value"
+						"EffectName"	"Hero_Pudge.DismemberSwings"
 					}
 					"ApplyModifier"
 					{
@@ -3152,8 +3123,42 @@
 						"Target"	"TARGET"
 						"ModifierName"	"modifier_phased"
 					}
+					"FireEffect"
+					{
+						"Target"	"TARGET"
+						"EffectName"	"particles/blood_chain_blood_chain_flog.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+					"DelayedAction"
+					{
+						"Action"
+						{
+							"FireEffect"
+							{
+								"Target"	"TARGET"
+								"ControlPoints"	{}
+								"ControlPointEntities"	{}
+								"EffectName"	"particles/blood_chain_blood_chain_flog.vpcf"
+								"EffectAttachType"	"follow_origin"
+							}
+						}
+						"Delay"	"1"
+					}
 				}
 				"ThinkInterval"	"1.1"
+				"OnIntervalThink"
+				{
+					"FireSound"
+					{
+						"Target"	"CASTER"
+						"EffectName"	"Hero_Pudge.Dismember"
+					}
+					"FireSound"
+					{
+						"Target"	"TARGET"
+						"EffectName"	"Hero_Pudge.DismemberSwings"
+					}
+				}
 				"OnDestroy"
 				{
 					"RemoveModifier"
@@ -3172,9 +3177,7 @@
 					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
-				"EffectName"	""
-				"TextureName"	"blood_chain_flog"
-				"IsDebuff"	"1"
+				"EffectName"	"particles/blood_chain_blood_chain_flog_fire.vpcf"
 			}
 			"modifier_blood_chain_flog_target_motion"
 			{
@@ -3192,64 +3195,69 @@
 						"Type"	"DAMAGE_TYPE_MAGICAL"
 						"Damage"	"%damage_per_tick"
 					}
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Center"	"TARGET"
+							"Radius"	"300"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
+						}
+						"Action"
+						{
+							"ApplyModifier"
+							{
+								"Target"	"TARGET"
+								"ModifierName"	"modifier_blood_chain_flog_aoe_motion"
+								"Duration"	"0.033"
+							}
+							"Damage"
+							{
+								"Target"	"TARGET"
+								"Type"	"DAMAGE_TYPE_MAGICAL"
+								"Damage"	"%damage_per_tick"
+							}
+						}
+					}
 				}
 				"ThinkInterval"	"0.033"
 				"EffectName"	""
 				"EffectAttachType"	""
-				"IsHidden"	"1"
 			}
-			"modifier_blood_chain_flog_target_effect"
+			"modifier_blood_chain_flog_aoe_motion"
 			{
-				"EffectName"	"particles/blood_chain_blood_chain_flog_fire.vpcf"
 				"OnCreated"
 				{
-					"FireSound"
-					{
-						"Target"	"CASTER"
-						"EffectName"	"Hero_Pudge.Dismember"
-					}
-					"FireSound"
+					"RunScript"
 					{
 						"Target"	"TARGET"
-						"EffectName"	"Hero_Pudge.DismemberSwings"
+						"ScriptFile"	"scripts/vscripts/heroes/blood_chain/blood_chain_flog.lua"
+						"Function"	"aoe_motion"
 					}
-					"FireEffect"
+					"ApplyModifier"
 					{
 						"Target"	"TARGET"
-						"EffectName"	"particles/blood_chain_blood_chain_flog.vpcf"
-						"EffectAttachType"	"attach_origin"
-					}
-					"DelayedAction"
-					{
-						"Action"
-						{
-							"FireEffect"
-							{
-								"Target"	"TARGET"
-								"ControlPoints"	{}
-								"ControlPointEntities"	{}
-								"EffectName"	"particles/blood_chain_blood_chain_flog.vpcf"
-								"EffectAttachType"	"attach_origin"
-							}
-						}
-						"Delay"	"0.9"
+						"ModifierName"	"modifier_phased"
 					}
 				}
-				"OnIntervalThink"
+				"OverrideAnimation"	"ACT_DOTA_DISABLED"
+				"States"
 				{
-					"FireSound"
-					{
-						"Target"	"CASTER"
-						"EffectName"	"Hero_Pudge.Dismember"
-					}
-					"FireSound"
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnDestroy"
+				{
+					"RemoveModifier"
 					{
 						"Target"	"TARGET"
-						"EffectName"	"Hero_Pudge.DismemberSwings"
+						"ModifierName"	"modifier_phased"
 					}
 				}
-				"ThinkInterval"	"1.1"
-				"IsHidden"	"1"
+				"EffectName"	""
+				"EffectAttachType"	""
 			}
 		}
 		"AbilitySpecial"
@@ -3257,27 +3265,17 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_per_tick"	"3 6 9"
+				"duration"	"3.0"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"distance"	"600"
+				"damage"	"90 180 270"
 			}
 			"03"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"300"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"damage"	"90 180 270"
-			}
-			"05"
-			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"3.0"
+				"damage_per_tick"	"3 6 9"
 			}
 		}
 	}
