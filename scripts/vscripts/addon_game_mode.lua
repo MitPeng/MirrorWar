@@ -135,19 +135,19 @@ function CEventGameMode:InitGameMode()
             return 300
         end, 120)
 
-    GameRules:GetGameModeEntity():SetThink("OnThink", self, "GlobalThink", 2)
+    GameRules:GetGameModeEntity():SetThink("OnThink", self, 1)
 end
 
 function CEventGameMode:OnGameRulesStateChange(keys)
-    DeepPrintTable(keys)
+    -- DeepPrintTable(keys)
     -- 获取游戏进度
     local newState = GameRules:State_Get()
 
     if newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
-        print("Player begin select hero") -- 玩家处于选择英雄界面
+        -- print("Player begin select hero") -- 玩家处于选择英雄界面
 
     elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
-        print("Player ready game begin") -- 玩家处于游戏准备状态
+        -- print("Player ready game begin") -- 玩家处于游戏准备状态
         -- MakeRandomHeroSelection()
 
     elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
@@ -175,7 +175,7 @@ function CEventGameMode:OnGameRulesStateChange(keys)
         -- 视野单位跟随战斗前哨
         -- vision_good:FollowEntity(unit_battle_outpost, true)
         -- vision_bad:FollowEntity(unit_battle_outpost, true)
-        print("Player game begin") -- 玩家开始游戏
+        -- print("Player game begin") -- 玩家开始游戏
 
     end
 end
@@ -401,6 +401,12 @@ end
 
 -- Evaluate the state of the game
 function CEventGameMode:OnThink()
+    -- 玩家数大于0
+    if GameRules.player_count > 0 then
+        local show_socre_event = {hero_name = "Mit", hero_energy = "9999"}
+        CustomGameEventManager:Send_ServerToAllClients("show_score",
+                                                       show_socre_event)
+    end
     if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
         -- print( "Template addon script is running." )
     elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then

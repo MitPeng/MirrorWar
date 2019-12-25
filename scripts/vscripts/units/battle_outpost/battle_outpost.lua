@@ -15,14 +15,14 @@ function get_team_point(keys)
     if good ~= 0 and bad ~= 0 then
         -- print("good=bad")
     elseif good == 0 and bad ~= 0 then
-        print("bad")
+        print("bad:" .. bad)
         local particle_name =
             "particles/world_outpost/world_outpost_dire_ambient_shockwave.vpcf"
         local particle = ParticleManager:CreateParticle(particle_name,
                                                         PATTACH_OVERHEAD_FOLLOW,
                                                         caster)
     elseif good ~= 0 and bad == 0 then
-        print("good")
+        print("good:" .. good)
         local particle_name =
             "particles/world_outpost/world_outpost_radiant_ambient_shockwave.vpcf"
         local particle = ParticleManager:CreateParticle(particle_name,
