@@ -12,11 +12,29 @@ function get_team_point(keys)
             end
         end
     end
-    if good == bad then
+    if good ~= 0 and bad ~= 0 then
         -- print("good=bad")
-    elseif good < bad then
-        print("good<bad")
-    elseif good > bad then
-        print("good>bad")
+    elseif good == 0 and bad ~= 0 then
+        print("bad")
+        local particle_name =
+            "particles/world_outpost/world_outpost_dire_ambient_shockwave.vpcf"
+        local particle = ParticleManager:CreateParticle(particle_name,
+                                                        PATTACH_OVERHEAD_FOLLOW,
+                                                        caster)
+    elseif good ~= 0 and bad == 0 then
+        print("good")
+        local particle_name =
+            "particles/world_outpost/world_outpost_radiant_ambient_shockwave.vpcf"
+        local particle = ParticleManager:CreateParticle(particle_name,
+                                                        PATTACH_OVERHEAD_FOLLOW,
+                                                        caster)
     end
 end
+
+function vision(keys)
+    local loc = keys.caster:GetAbsOrigin()
+    local radius = keys.ability:GetSpecialValueFor("radius")
+    AddFOWViewer(DOTA_TEAM_GOODGUYS, loc, radius, 0.5, false)
+    AddFOWViewer(DOTA_TEAM_BADGUYS, loc, radius, 0.5, false)
+end
+

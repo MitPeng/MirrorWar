@@ -1750,6 +1750,7 @@
 		"precache"
 		{
 			"particle"	"particles/world_outpost/world_outpost_channel.vpcf"
+			"particle"	"particles/outpost_effect.vpcf"
 		}
 		"Modifiers"
 		{
@@ -1781,6 +1782,12 @@
 				}
 				"OnIntervalThink"
 				{
+					"FireEffect"
+					{
+						"Target"	"CASTER"
+						"EffectName"	"particles/outpost_effect.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
 					"RunScript"
 					{
 						"Target"
@@ -2705,6 +2712,7 @@
 		"precache"
 		{
 			"soundfile"	""
+			"particle"	"particles/outpost_effect.vpcf"
 		}
 		"OnSpellStart"
 		{
@@ -2753,6 +2761,12 @@
 			{
 				"Target"	"CASTER"
 				"EffectName"	"Hero_Slark.DarkPact.Cast.Layer"
+			}
+			"FireEffect"
+			{
+				"Target"	"CASTER"
+				"EffectName"	"particles/outpost_effect.vpcf"
+				"EffectAttachType"	"follow_origin"
 			}
 		}
 		"AbilitySpecial"

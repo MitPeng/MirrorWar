@@ -1794,6 +1794,12 @@
 						"ScriptFile"	"scripts/vscripts/units/battle_outpost/battle_outpost.lua"
 						"Function"	"get_team_point"
 					}
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"ScriptFile"	"scripts/vscripts/units/battle_outpost/battle_outpost.lua"
+						"Function"	"get_effect"
+					}
 				}
 				"ThinkInterval"	"1.0"
 				"EffectName"	"particles/world_outpost/world_outpost_channel.vpcf"

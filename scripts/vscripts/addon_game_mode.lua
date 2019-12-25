@@ -164,17 +164,17 @@ function CEventGameMode:OnGameRulesStateChange(keys)
         unit_battle_outpost:StartGestureWithPlaybackRate(
             ACT_DOTA_CHANNEL_ABILITY_1, 1)
         -- 设置视野单位,获取战斗前哨视野
-        local vision_good = Utils:create_unit_simple("npc_dummy_unit", vec,
-                                                     false, DOTA_TEAM_GOODGUYS)
-        local vision_bad = Utils:create_unit_simple("npc_dummy_unit", vec,
-                                                    false, DOTA_TEAM_BADGUYS)
-        vision_good:AddNewModifier(vision_good, nil, "modifier_outpost_vision",
-                                   {duration = -1})
-        vision_bad:AddNewModifier(vision_bad, nil, "modifier_outpost_vision",
-                                  {duration = -1})
+        -- local vision_good = Utils:create_unit_simple("npc_dummy_unit", vec,
+        --                                              false, DOTA_TEAM_GOODGUYS)
+        -- local vision_bad = Utils:create_unit_simple("npc_dummy_unit", vec,
+        --                                             false, DOTA_TEAM_BADGUYS)
+        -- vision_good:AddNewModifier(vision_good, nil, "modifier_outpost_vision",
+        --                            {duration = -1})
+        -- vision_bad:AddNewModifier(vision_bad, nil, "modifier_outpost_vision",
+        --                           {duration = -1})
         -- 视野单位跟随战斗前哨
-        vision_good:FollowEntity(unit_battle_outpost, true)
-        vision_bad:FollowEntity(unit_battle_outpost, true)
+        -- vision_good:FollowEntity(unit_battle_outpost, true)
+        -- vision_bad:FollowEntity(unit_battle_outpost, true)
         print("Player game begin") -- 玩家开始游戏
 
     end
