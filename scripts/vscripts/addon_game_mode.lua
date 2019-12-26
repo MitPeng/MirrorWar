@@ -265,10 +265,11 @@ function CEventGameMode:OnNPCSpawned(keys)
         -- 初次重生,初始化玩家信息
         if hero.is_first_spawn == nil then
             hero.is_first_spawn = false
+            hero.score = 0
             local player_id = hero:GetPlayerID()
             if player_id then
                 if GameRules.player_data[player_id] == nil then
-                    GameRules.player_data[player_id] = {}
+                    GameRules.player_data[player_id] = {hero = hero}
                     GameRules.player_count = GameRules.player_count + 1
                 end
             end
@@ -403,7 +404,12 @@ end
 function CEventGameMode:OnThink()
     -- 玩家数大于0
     if GameRules.player_count > 0 then
-        local show_socre_event = {hero_name = "Mit", hero_energy = "9999"}
+        -- 获取第一个玩家的得分
+        local hero = GameRules.player_data[0].hero
+        local show_socre_event = {
+            hero_name = hero:GetUnitName(),
+            hero_score = hero.score
+        }
         CustomGameEventManager:Send_ServerToAllClients("show_score",
                                                        show_socre_event)
     end

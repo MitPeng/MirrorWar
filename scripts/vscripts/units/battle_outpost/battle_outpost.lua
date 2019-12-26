@@ -2,13 +2,17 @@ function get_team_point(keys)
     local target_entities = keys.target_entities
     local good = 0
     local bad = 0
-    for _, target in ipairs(target_entities) do
+    local good_hero = {}
+    local bdd_hero = {}
+    for i, target in ipairs(target_entities) do
         local team = target:GetTeam()
         if team then
             if team == DOTA_TEAM_GOODGUYS then
                 good = good + 1
+                good_hero[good] = target
             elseif team == DOTA_TEAM_BADGUYS then
                 bad = bad + 1
+                bad_hero[bad] = target
             end
         end
     end
@@ -21,6 +25,7 @@ function get_team_point(keys)
         local particle = ParticleManager:CreateParticle(particle_name,
                                                         PATTACH_OVERHEAD_FOLLOW,
                                                         caster)
+        for _, hero in ipairs(bad_hero) do hero.score = hero.score + 1 end
     elseif good ~= 0 and bad == 0 then
         print("good:" .. good)
         local particle_name =
@@ -28,6 +33,7 @@ function get_team_point(keys)
         local particle = ParticleManager:CreateParticle(particle_name,
                                                         PATTACH_OVERHEAD_FOLLOW,
                                                         caster)
+        for _, hero in ipairs(good_hero) do hero.score = hero.score + 1 end
     end
 end
 
