@@ -163,18 +163,6 @@ function CEventGameMode:OnGameRulesStateChange(keys)
         -- 设置动作
         unit_battle_outpost:StartGestureWithPlaybackRate(
             ACT_DOTA_CHANNEL_ABILITY_1, 1)
-        -- 设置视野单位,获取战斗前哨视野
-        -- local vision_good = Utils:create_unit_simple("npc_dummy_unit", vec,
-        --                                              false, DOTA_TEAM_GOODGUYS)
-        -- local vision_bad = Utils:create_unit_simple("npc_dummy_unit", vec,
-        --                                             false, DOTA_TEAM_BADGUYS)
-        -- vision_good:AddNewModifier(vision_good, nil, "modifier_outpost_vision",
-        --                            {duration = -1})
-        -- vision_bad:AddNewModifier(vision_bad, nil, "modifier_outpost_vision",
-        --                           {duration = -1})
-        -- 视野单位跟随战斗前哨
-        -- vision_good:FollowEntity(unit_battle_outpost, true)
-        -- vision_bad:FollowEntity(unit_battle_outpost, true)
         -- print("Player game begin") -- 玩家开始游戏
 
     end
@@ -406,9 +394,26 @@ function CEventGameMode:OnThink()
     if GameRules.player_count > 0 then
         -- 获取第一个玩家的得分
         local hero = GameRules.player_data[0].hero
+
+        local good_score = 0
+        local bad_score = 0
+
+        for i = 0, GameRules.player_count - 1 do
+            local hero_data = GameRules.player_data[i].hero
+            if hero_data:GetTeam() == DOTA_TEAM_GOODGUYS then
+                good_score = good_score + hero_data.score
+            elseif hero_data:GetTeam() == DOTA_TEAM_BADGUYS then
+                bad_score = bad_score + hero_data.score
+            end
+        end
+
         local show_socre_event = {
             hero_name = hero:GetUnitName(),
-            hero_score = hero.score
+            hero_score = hero.score,
+            good_team = "GOODGUYS",
+            good_score = good_score,
+            bad_team = "BADGUYS",
+            bad_score = bad_score
         }
         CustomGameEventManager:Send_ServerToAllClients("show_score",
                                                        show_socre_event)
