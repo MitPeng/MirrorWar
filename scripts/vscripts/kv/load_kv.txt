@@ -12,4 +12,7 @@
     //一点能量所需伤害
     "base_energy" "100"
     "lvl_energy" "10"
+
+    "base_kill_score" "20"
+    "lvl_kill_score" "10"
 }

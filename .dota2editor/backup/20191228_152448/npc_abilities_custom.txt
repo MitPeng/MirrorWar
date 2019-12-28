@@ -1750,7 +1750,6 @@
 		"precache"
 		{
 			"particle"	"particles/world_outpost/world_outpost_channel.vpcf"
-			"particle"	"particles/outpost_effect.vpcf"
 		}
 		"Modifiers"
 		{
@@ -1782,12 +1781,6 @@
 				}
 				"OnIntervalThink"
 				{
-					"FireEffect"
-					{
-						"Target"	"CASTER"
-						"EffectName"	"particles/outpost_effect.vpcf"
-						"EffectAttachType"	"follow_origin"
-					}
 					"RunScript"
 					{
 						"Target"
@@ -3081,6 +3074,7 @@
 		"AbilityCastPoint"	"0.3"
 		"AbilityCastAnimation"	"ACT_DOTA_CHANNEL_ABILITY_4"
 		"AnimationPlaybackRate"	"1"
+		"AbilityCooldown"	"60 55 50"
 		"AbilityCastRange"	"600"
 		"AbilityChannelTime"	"3.0"
 		"AOERadius"	"300"

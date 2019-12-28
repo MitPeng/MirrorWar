@@ -1,9 +1,10 @@
 function get_team_point(keys)
+    local caster = keys.caster
     local target_entities = keys.target_entities
     local good = 0
     local bad = 0
     local good_hero = {}
-    local bdd_hero = {}
+    local bad_hero = {}
     for i, target in ipairs(target_entities) do
         local team = target:GetTeam()
         if team then
@@ -25,7 +26,9 @@ function get_team_point(keys)
         local particle = ParticleManager:CreateParticle(particle_name,
                                                         PATTACH_OVERHEAD_FOLLOW,
                                                         caster)
-        for _, hero in ipairs(bad_hero) do hero.score = hero.score + 1 end
+        for _, hero in ipairs(bad_hero) do
+            hero.outpost_score = hero.outpost_score + 1
+        end
     elseif good ~= 0 and bad == 0 then
         print("good:" .. good)
         local particle_name =
@@ -33,7 +36,9 @@ function get_team_point(keys)
         local particle = ParticleManager:CreateParticle(particle_name,
                                                         PATTACH_OVERHEAD_FOLLOW,
                                                         caster)
-        for _, hero in ipairs(good_hero) do hero.score = hero.score + 1 end
+        for _, hero in ipairs(good_hero) do
+            hero.outpost_score = hero.outpost_score + 1
+        end
     end
 end
 

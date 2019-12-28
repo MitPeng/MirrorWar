@@ -69,11 +69,11 @@ function CEventGameMode:InitGameMode()
     ListenToGameEvent("game_rules_state_change",
                       Dynamic_Wrap(CEventGameMode, "OnGameRulesStateChange"),
                       self)
-    --[[
+
     -- 监听单位被击杀的事件
     ListenToGameEvent("entity_killed",
                       Dynamic_Wrap(CEventGameMode, "OnEntityKilled"), self)
-
+    --[[
     -- 同一事件名可以有不同的函数，但是基本没这个必要
     ListenToGameEvent("entity_killed",
                       Dynamic_Wrap(CEventGameMode, "OnEntityKilledHero"), self)
@@ -167,12 +167,19 @@ function CEventGameMode:OnGameRulesStateChange(keys)
 
     end
 end
---[[
-function CEventGameMode:OnEntityKilled(keys)
-    print("OnEntityKilled")
-    DeepPrintTable(keys) -- 详细打印传递进来的表
-end
 
+-- 单位击杀得分
+function CEventGameMode:OnEntityKilled(keys)
+    local hKilled = EntIndexToHScript(keys.entindex_killed)
+    local hAttacker = EntIndexToHScript(keys.entindex_attacker)
+    if hKilled:IsHero() and hAttacker:IsHero() then
+        hAttacker.kill_score = hAttacker.kill_score +
+                                   GameRules.load_kv["base_kill_score"] +
+                                   hKilled:GetLevel() *
+                                   GameRules.load_kv["lvl_kill_score"]
+    end
+end
+--[[
 function CEventGameMode:OnEntityKilledHero(keys)
     print("OnEntityKilledHero")
     DeepPrintTable(keys) -- 详细打印传递进来的表
@@ -228,21 +235,7 @@ function CEventGameMode:OnPlayerPickHero(keys)
     local hero = player:GetAssignedHero()
     -- print(hero:GetUnitName())
     local hero = EntIndexToHScript(keys.heroindex)
-    -- 初始化英雄的能量
-    hero.energy = 0
-    -- 添加自动获取能量buff,hero.energy
-    hero:AddNewModifier(hero, nil, "modifier_energy", {duration = -1})
-    -- 添加获取最近15秒被谁攻击,hero.get_attacker
-    hero:AddNewModifier(hero, nil, "modifier_get_attacker", {duration = -1})
-    -- 设置能量获取技能等级为1
-    local ability_count = hero:GetAbilityCount()
-    for i = 1, ability_count do
-        local ability = hero:GetAbilityByIndex(i)
-        if ability and ability:GetAbilityName() == "energy" then
-            ability:SetLevel(1)
-            break
-        end
-    end
+
 end
 
 -- 单位出生
@@ -253,7 +246,25 @@ function CEventGameMode:OnNPCSpawned(keys)
         -- 初次重生,初始化玩家信息
         if hero.is_first_spawn == nil then
             hero.is_first_spawn = false
-            hero.score = 0
+            -- 初始化英雄的能量和计分
+            hero.energy = 0
+            hero.outpost_score = 0
+            hero.kill_score = 0
+            -- 添加自动获取能量buff,hero.energy
+            hero:AddNewModifier(hero, nil, "modifier_energy", {duration = -1})
+            -- 添加获取最近15秒被谁攻击,hero.get_attacker
+            hero:AddNewModifier(hero, nil, "modifier_get_attacker",
+                                {duration = -1})
+            -- 设置能量获取技能等级为1
+            local ability_count = hero:GetAbilityCount()
+            for i = 1, ability_count do
+                local ability = hero:GetAbilityByIndex(i)
+                if ability and ability:GetAbilityName() == "energy" then
+                    ability:SetLevel(1)
+                    break
+                end
+            end
+
             local player_id = hero:GetPlayerID()
             if player_id then
                 if GameRules.player_data[player_id] == nil then
@@ -401,15 +412,17 @@ function CEventGameMode:OnThink()
         for i = 0, GameRules.player_count - 1 do
             local hero_data = GameRules.player_data[i].hero
             if hero_data:GetTeam() == DOTA_TEAM_GOODGUYS then
-                good_score = good_score + hero_data.score
+                good_score = good_score + hero_data.outpost_score +
+                                 hero_data.kill_score
             elseif hero_data:GetTeam() == DOTA_TEAM_BADGUYS then
-                bad_score = bad_score + hero_data.score
+                bad_score = bad_score + hero_data.outpost_score +
+                                hero_data.kill_score
             end
         end
 
         local show_socre_event = {
             hero_name = hero:GetUnitName(),
-            hero_score = hero.score,
+            hero_score = hero.outpost_score + hero.kill_score,
             good_team = "GOODGUYS",
             good_score = good_score,
             bad_team = "BADGUYS",
