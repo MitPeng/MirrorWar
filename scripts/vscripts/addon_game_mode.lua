@@ -172,13 +172,18 @@ end
 
 -- 单位击杀得分
 function CEventGameMode:OnEntityKilled(keys)
-    local hKilled = EntIndexToHScript(keys.entindex_killed)
-    local hAttacker = EntIndexToHScript(keys.entindex_attacker)
-    if hKilled:IsHero() and hAttacker:IsHero() then
-        hAttacker.kill_score = hAttacker.kill_score +
-                                   GameRules.load_kv["base_kill_score"] +
-                                   hKilled:GetLevel() *
-                                   GameRules.load_kv["lvl_kill_score"]
+    local killed = EntIndexToHScript(keys.entindex_killed)
+    local attacker = EntIndexToHScript(keys.entindex_attacker)
+    if killed:IsHero() and attacker:IsHero() and killed ~= attacker then
+        local particle_name = "particles/generic_gameplay/outpost_reward.vpcf"
+        local particle = ParticleManager:CreateParticle(particle_name,
+                                                        PATTACH_ABSORIGIN_FOLLOW,
+                                                        attacker)
+        attacker:EmitSound("Outpost.Reward")
+        attacker.kill_score = attacker.kill_score +
+                                  GameRules.load_kv["base_kill_score"] +
+                                  killed:GetLevel() *
+                                  GameRules.load_kv["lvl_kill_score"]
     end
 end
 --[[
