@@ -16,5 +16,5 @@
     "base_kill_score" "20"
     "lvl_kill_score" "10"
     //设置胜利得分
-    "winner_score" "1000"
+    "winner_score" "10000"
 }
