@@ -32,6 +32,8 @@ function Precache(context)
     PrecacheResource("soundfile",
                      "soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts",
                      context)
+    PrecacheResource("soundfile", "soundevents/game_sounds.vsndevts", context)
+
     PrecacheResource("particle",
                      "particles/items3_fx/octarine_core_lifesteal.vpcf", context)
 
@@ -418,6 +420,13 @@ function CEventGameMode:OnThink()
                 bad_score = bad_score + hero_data.outpost_score +
                                 hero_data.kill_score
             end
+        end
+        -- 设置胜利条件
+        local winner_score = GameRules.load_kv["winner_score"]
+        if good_score >= winner_score then
+            GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+        elseif bad_score >= winner_score then
+            GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
         end
 
         local show_socre_event = {

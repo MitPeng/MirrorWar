@@ -1750,7 +1750,8 @@
 		"precache"
 		{
 			"particle"	"particles/world_outpost/world_outpost_channel.vpcf"
-			"particle"	"particles/outpost_effect.vpcf"
+			"particle"	"particles/generic_gameplay/outpost_reward.vpcf"
+			"soundfile"	""
 		}
 		"Modifiers"
 		{
@@ -1782,12 +1783,6 @@
 				}
 				"OnIntervalThink"
 				{
-					"FireEffect"
-					{
-						"Target"	"CASTER"
-						"EffectName"	"particles/outpost_effect.vpcf"
-						"EffectAttachType"	"follow_origin"
-					}
 					"RunScript"
 					{
 						"Target"
@@ -1801,8 +1796,13 @@
 						"ScriptFile"	"scripts/vscripts/units/battle_outpost/battle_outpost.lua"
 						"Function"	"get_team_point"
 					}
+					"AttachEffect"
+					{
+						"Target"	""
+						"EffectName"	"particles/generic_gameplay/outpost_reward.vpcf"
+					}
 				}
-				"ThinkInterval"	"1.0"
+				"ThinkInterval"	"2.0"
 				"EffectName"	"particles/world_outpost/world_outpost_channel.vpcf"
 				"EffectAttachType"	"follow_overhead"
 			}
@@ -1822,6 +1822,20 @@
 				"IsHidden"	"1"
 				"EffectName"	""
 				"EffectAttachType"	""
+			}
+			"modifier_ability_outpost_sound"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"OnIntervalThink"
+				{
+					"FireSound"
+					{
+						"Target"	"CASTER"
+						"EffectName"	"Outpost.Channel"
+					}
+				}
+				"ThinkInterval"	"6.0"
 			}
 		}
 		"AbilitySpecial"
@@ -2712,7 +2726,6 @@
 		"precache"
 		{
 			"soundfile"	""
-			"particle"	"particles/outpost_effect.vpcf"
 		}
 		"OnSpellStart"
 		{
@@ -2761,12 +2774,6 @@
 			{
 				"Target"	"CASTER"
 				"EffectName"	"Hero_Slark.DarkPact.Cast.Layer"
-			}
-			"FireEffect"
-			{
-				"Target"	"CASTER"
-				"EffectName"	"particles/outpost_effect.vpcf"
-				"EffectAttachType"	"follow_origin"
 			}
 		}
 		"AbilitySpecial"
@@ -3088,6 +3095,7 @@
 		"AbilityCastPoint"	"0.3"
 		"AbilityCastAnimation"	"ACT_DOTA_CHANNEL_ABILITY_4"
 		"AnimationPlaybackRate"	"1"
+		"AbilityCooldown"	"60 55 50"
 		"AbilityCastRange"	"600"
 		"AbilityChannelTime"	"3.0"
 		"AOERadius"	"300"

@@ -12,7 +12,9 @@
     //一点能量所需伤害
     "base_energy" "100"
     "lvl_energy" "10"
-
+    //击杀得分
     "base_kill_score" "20"
     "lvl_kill_score" "10"
+    //设置胜利得分
+    "winner_score" "1000"
 }

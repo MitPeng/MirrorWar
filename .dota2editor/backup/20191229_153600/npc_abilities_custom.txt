@@ -1750,6 +1750,7 @@
 		"precache"
 		{
 			"particle"	"particles/world_outpost/world_outpost_channel.vpcf"
+			"soundfile"	""
 		}
 		"Modifiers"
 		{
@@ -1794,14 +1795,8 @@
 						"ScriptFile"	"scripts/vscripts/units/battle_outpost/battle_outpost.lua"
 						"Function"	"get_team_point"
 					}
-					"RunScript"
-					{
-						"Target"	"CASTER"
-						"ScriptFile"	"scripts/vscripts/units/battle_outpost/battle_outpost.lua"
-						"Function"	"get_effect"
-					}
 				}
-				"ThinkInterval"	"1.0"
+				"ThinkInterval"	"2.0"
 				"EffectName"	"particles/world_outpost/world_outpost_channel.vpcf"
 				"EffectAttachType"	"follow_overhead"
 			}
@@ -1821,6 +1816,20 @@
 				"IsHidden"	"1"
 				"EffectName"	""
 				"EffectAttachType"	""
+			}
+			"modifier_ability_outpost_sound"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"OnIntervalThink"
+				{
+					"FireSound"
+					{
+						"Target"	"CASTER"
+						"EffectName"	"Outpost.Channel"
+					}
+				}
+				"ThinkInterval"	"6.0"
 			}
 		}
 		"AbilitySpecial"
@@ -3080,6 +3089,7 @@
 		"AbilityCastPoint"	"0.3"
 		"AbilityCastAnimation"	"ACT_DOTA_CHANNEL_ABILITY_4"
 		"AnimationPlaybackRate"	"1"
+		"AbilityCooldown"	"60 55 50"
 		"AbilityCastRange"	"600"
 		"AbilityChannelTime"	"3.0"
 		"AOERadius"	"300"
