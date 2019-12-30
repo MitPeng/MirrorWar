@@ -1750,7 +1750,6 @@
 		"precache"
 		{
 			"particle"	"particles/world_outpost/world_outpost_channel.vpcf"
-			"particle"	"particles/generic_gameplay/outpost_reward.vpcf"
 			"soundfile"	""
 		}
 		"Modifiers"
@@ -1796,13 +1795,8 @@
 						"ScriptFile"	"scripts/vscripts/units/battle_outpost/battle_outpost.lua"
 						"Function"	"get_team_point"
 					}
-					"AttachEffect"
-					{
-						"Target"	""
-						"EffectName"	"particles/generic_gameplay/outpost_reward.vpcf"
-					}
 				}
-				"ThinkInterval"	"2.0"
+				"ThinkInterval"	"%judge_interval"
 				"EffectName"	"particles/world_outpost/world_outpost_channel.vpcf"
 				"EffectAttachType"	"follow_overhead"
 			}
@@ -1827,6 +1821,7 @@
 			{
 				"IsHidden"	"1"
 				"Passive"	"1"
+				"ThinkInterval"	"6.0"
 				"OnIntervalThink"
 				{
 					"FireSound"
@@ -1835,7 +1830,6 @@
 						"EffectName"	"Outpost.Channel"
 					}
 				}
-				"ThinkInterval"	"6.0"
 			}
 		}
 		"AbilitySpecial"
@@ -1844,6 +1838,11 @@
 			{
 				"var_type"	"FIELD_INTEGER"
 				"radius"	"800"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"judge_interval"	"2.0"
 			}
 		}
 	}
