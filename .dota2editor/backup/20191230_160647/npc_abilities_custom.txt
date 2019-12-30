@@ -3420,65 +3420,60 @@
 	{
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"strengthen"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitDamageType"	""
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"AbilityCastPoint"	"0.3"
 		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_2"
 		"AnimationPlaybackRate"	"1"
 		"AbilityCooldown"	"20 18 16 14"
-		"precache"
-		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
-			"particle"	"particles/units/heroes/hero_omniknight/omniknight_heavenly_grace_buff.vpcf"
-		}
 		"OnSpellStart"
 		{
 			"ApplyModifier"
 			{
-				"Target"	"TARGET"
-				"ModifierName"	"modifier_strengthen"
-			}
-			"FireSound"
-			{
-				"Target"	"TARGET"
-				"EffectName"	"Hero_Omniknight.Repel"
+				"Target"	""
 			}
 		}
 		"Modifiers"
 		{
-			"modifier_strengthen"
+			"modifier_charge_self"
 			{
 				"Duration"	"%duration"
 				"TextureName"	"charge"
 				"IsBuff"	"1"
-				"OverrideAnimation"	""
+				"OverrideAnimation"	"ACT_DOTA_RUN"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor"
-					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magical_resistance"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%move_speed"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%"
 				}
-				"EffectName"	"particles/units/heroes/hero_omniknight/omniknight_heavenly_grace_buff.vpcf"
+				"OnCreated"	{}
 			}
 		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"armor"	"6 9 12 15"
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"6.0"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"magical_resistance"	"12 18 24 30"
+				"armor"	"6 9 12 15"
 			}
 			"03"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"duration"	"8.0"
+				"var_type"	"FIELD_INTEGER"
+				"magical_resistance"	"12 18 24 30"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"move_speed"	"40 50 60 70"
 			}
 		}
 	}
@@ -3488,49 +3483,6 @@
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"compassion"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"Modifiers"
-		{
-			"modifier_compassion"
-			{
-				"Passive"	"1"
-				"TextureName"	"compassion"
-				"IsBuff"	"1"
-				"_IsAura"	"1"
-				"Aura"	"modifier_compassion_apply"
-				"Aura_Radius"	"%radius"
-				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_ApplyToCaster"	"1"
-				"Duration"	"-1"
-				"IsHidden"	"1"
-			}
-			"modifier_compassion_apply"
-			{
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"%mana_regen"
-				}
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"health_regen"	"3 4 5 6"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"mana_regen"	"0.5 1 1.5 2"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"1000"
-			}
-		}
 	}
 
 	"glory_strike"

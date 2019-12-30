@@ -3488,49 +3488,6 @@
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"compassion"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"Modifiers"
-		{
-			"modifier_compassion"
-			{
-				"Passive"	"1"
-				"TextureName"	"compassion"
-				"IsBuff"	"1"
-				"_IsAura"	"1"
-				"Aura"	"modifier_compassion_apply"
-				"Aura_Radius"	"%radius"
-				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_ApplyToCaster"	"1"
-				"Duration"	"-1"
-				"IsHidden"	"1"
-			}
-			"modifier_compassion_apply"
-			{
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"%mana_regen"
-				}
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"health_regen"	"3 4 5 6"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"mana_regen"	"0.5 1 1.5 2"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"1000"
-			}
-		}
 	}
 
 	"glory_strike"
