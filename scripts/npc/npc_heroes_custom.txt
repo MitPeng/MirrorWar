@@ -263,12 +263,12 @@
 
 	"glory_knight"
 	{
-		"Ability1"	""
-		"Ability2"	""
-		"Ability3"	""
-		"Ability4"	""
-		"Ability5"	""
-		"Ability6"	""
+		"Ability1"	"redemption"
+		"Ability2"	"charge"
+		"Ability3"	"compassion"
+		"Ability4"	"energy"
+		"Ability5"	"generic_hidden"
+		"Ability6"	"glory_strike"
 		"Ability7"	""
 		"Ability8"	""
 		"Ability9"	""
