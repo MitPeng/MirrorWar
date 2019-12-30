@@ -3323,6 +3323,7 @@
 	"redemption"
 	{
 		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"greevil_purification"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -3395,17 +3396,17 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"heal_amount"	"50 100 150 200"
+				"knockback_distance"	"100 150 200 250"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"100 200 300 400"
+				"heal_amount"	"50 100 150 200"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"knockback_distance"	"100 150 200 250"
+				"damage"	"100 200 300 400"
 			}
 			"04"
 			{
