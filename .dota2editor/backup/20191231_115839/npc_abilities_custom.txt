@@ -3548,7 +3548,7 @@
 		"AnimationPlaybackRate"	"1"
 		"AbilityCooldown"	"70 60 50"
 		"AbilityCastRange"	"500"
-		"AbilityChannelTime"	"1.5"
+		"AbilityChannelTime"	"2"
 		"AOERadius"	"500"
 		"precache"
 		{
@@ -3558,23 +3558,9 @@
 			"particle"	"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_omni.vpcf"
 			"particle"	"particles/econ/taunts/omniknight/omniknight_ti8_taunt/omniknight_ti8_taunt_godrays.vpcf"
 		}
-		"OnAbilityPhaseStart"
-		{
-			"RunScript"
-			{
-				"Target"	"CASTER"
-				"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
-				"Function"	"is_energy_enough"
-			}
-		}
+		"OnAbilityPhaseStart"	{}
 		"OnSpellStart"
 		{
-			"RunScript"
-			{
-				"Target"	"CASTER"
-				"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
-				"Function"	"spend_energy"
-			}
 			"FireSound"
 			{
 				"Target"	"CASTER"
@@ -3676,7 +3662,7 @@
 				"Duration"	""
 				"IsBuff"	"1"
 				"TextureName"	"glory_strike"
-				"EffectAttachType"	"follow_origin"
+				"EffectAttachType"	"follow_overhead"
 			}
 		}
 		"AbilitySpecial"
@@ -3689,12 +3675,12 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_promotion"	"50 100 150"
+				"attack_percent"	"200 300 400"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_percent"	"200 300 400"
+				"attack_promotion"	"50 100 150"
 			}
 		}
 	}
