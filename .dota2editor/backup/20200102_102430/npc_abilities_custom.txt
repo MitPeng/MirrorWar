@@ -1570,7 +1570,7 @@
 				"Distance"	"%radius"
 				"Height"	"150"
 				"IsFixedDistance"	"1"
-				"ShouldStun"	"1"
+				"ShouldStun"	"0"
 			}
 			"FireSound"
 			{
@@ -3558,9 +3558,23 @@
 			"particle"	"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_omni.vpcf"
 			"particle"	"particles/econ/taunts/omniknight/omniknight_ti8_taunt/omniknight_ti8_taunt_godrays.vpcf"
 		}
-		"OnAbilityPhaseStart"	{}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
+				"Function"	"is_energy_enough"
+			}
+		}
 		"OnSpellStart"
 		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
+				"Function"	"spend_energy"
+			}
 			"FireSound"
 			{
 				"Target"	"CASTER"
@@ -3675,13 +3689,71 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_percent"	"200 300 400"
+				"attack_promotion"	"50 100 150"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_promotion"	"50 100 150"
+				"attack_percent"	"200 300 400"
 			}
 		}
+	}
+
+	"soul strike"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"shadow_strike"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastPoint"	"0.3"
+		"AbilityCastAnimation"	"ACT_DOTA_RAZE_2"
+		"AnimationPlaybackRate"	"1"
+		"AbilityCooldown"	"10 9 8 7"
+		"AbilityCastRange"	"1000"
+	}
+
+	"soul_eater"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"soul_eater"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastPoint"	"0.3"
+		"AbilityCastAnimation"	"ACT_DOTA_RAZE_1"
+		"AnimationPlaybackRate"	"1"
+		"AbilityCooldown"	"18 17 16 15"
+		"AbilityCastRange"	"500"
+	}
+
+	"soul_harvest"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"soul_harvest"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+	}
+
+	"shadow_lord"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"shadow_lord"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityCastPoint"	"0.3"
+		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_6"
+		"AnimationPlaybackRate"	"1"
+		"AbilityCooldown"	"80 70 60"
+		"AbilityChannelTime"	"1.7"
 	}
 }
