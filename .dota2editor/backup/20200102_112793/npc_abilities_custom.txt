@@ -3787,66 +3787,6 @@
 		"AnimationPlaybackRate"	"1"
 		"AbilityCooldown"	"18 17 16 15"
 		"AbilityCastRange"	"500"
-		"precache"
-		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
-			"particle"	"particles/units/heroes/hero_shadow_demon/shadow_demon_soul_catcher.vpcf"
-		}
-		"OnSpellStart"
-		{
-			"FireSound"
-			{
-				"Target"	"CASTER"
-				"EffectName"	"Hero_ShadowDemon.Soul_Catcher.Cast"
-			}
-			"FireEffect"
-			{
-				"Target"	"CASTER"
-				"EffectName"	"particles/units/heroes/hero_shadow_demon/shadow_demon_soul_catcher.vpcf"
-				"EffectAttachType"	"follow_head"
-			}
-			"ApplyModifier"
-			{
-				"Target"
-				{
-					"Types"	"DOTA_UNIT_TARGET_HERO"
-					"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Center"	"CASTER"
-					"Radius"	"%radius"
-				}
-				"ModifierName"	"modifier_soul_eater_target"
-				"Duration"	"%duration"
-			}
-			"ApplyModifier"
-			{
-				"Target"	"CASTER"
-				"ModifierName"	"modifier_soul_eater_self"
-				"Duration"	"%duration"
-			}
-		}
-		"Modifiers"
-		{
-			"modifier_soul_eater_target"	{}
-			"modifier_soul_eater_self"	{}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"500"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"percent"	"-25 -30 -35 -40"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"duration"	"6.0"
-			}
-		}
 	}
 
 	"soul_harvest"

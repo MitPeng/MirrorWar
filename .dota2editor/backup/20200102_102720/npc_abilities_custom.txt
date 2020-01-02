@@ -3708,70 +3708,11 @@
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCastPoint"	"0.5"
+		"AbilityCastPoint"	"0.3"
 		"AbilityCastAnimation"	"ACT_DOTA_RAZE_2"
 		"AnimationPlaybackRate"	"1"
-		"AbilityCooldown"	"11 9 7 5"
+		"AbilityCooldown"	"10 9 8 7"
 		"AbilityCastRange"	"1000"
-		"precache"
-		{
-			"particle"	"particles/units/heroes/hero_shadow_demon/shadow_demon_shadow_poison_projectile.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
-		}
-		"OnSpellStart"
-		{
-			"LinearProjectile"
-			{
-				"Target"	"POINT"
-				"EffectName"	"particles/units/heroes/hero_shadow_demon/shadow_demon_shadow_poison_projectile.vpcf"
-				"MoveSpeed"	"800"
-				"StartRadius"	"100"
-				"EndRadius"	"160"
-				"FixedDistance"	"1000"
-				"StartPosition"	"attach_origin"
-				"TargetTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"TargetTypes"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"TargetFlags"	"DOTA_UNIT_TARGET_FLAG_NONE"
-				"HasFrontalCone"	"0"
-				"ProvidesVision"	"1"
-				"VisionRadius"	"350"
-			}
-			"FireSound"
-			{
-				"Target"	"CASTER"
-				"EffectName"	"Hero_ShadowDemon.ShadowPoison"
-			}
-		}
-		"OnProjectileHitUnit"
-		{
-			"ApplyModifier"
-			{
-				"Target"	"TARGET"
-				"ModifierName"	"modifier_soul_strike"
-				"Duration"	"%slow_time"
-			}
-			"DeleteOnHit"	"0"
-			"RunScript"
-			{
-				"Target"	"TARGET"
-				"ScriptFile"	"scripts/vscripts/heroes/shadow_lord/soul_strike.lua"
-				"Function"	"damage"
-			}
-			"FireSound"
-			{
-				"Target"	"TARGET"
-				"EffectName"	"Hero_ShadowDemon.ShadowPoison.Impact"
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"attack_percent"	"110 120 130 140"
-			}
-		}
 	}
 
 	"soul_eater"
@@ -3782,71 +3723,11 @@
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCastPoint"	"0.5"
+		"AbilityCastPoint"	"0.3"
 		"AbilityCastAnimation"	"ACT_DOTA_RAZE_1"
 		"AnimationPlaybackRate"	"1"
 		"AbilityCooldown"	"18 17 16 15"
 		"AbilityCastRange"	"500"
-		"precache"
-		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
-			"particle"	"particles/units/heroes/hero_shadow_demon/shadow_demon_soul_catcher.vpcf"
-		}
-		"OnSpellStart"
-		{
-			"FireSound"
-			{
-				"Target"	"CASTER"
-				"EffectName"	"Hero_ShadowDemon.Soul_Catcher.Cast"
-			}
-			"FireEffect"
-			{
-				"Target"	"CASTER"
-				"EffectName"	"particles/units/heroes/hero_shadow_demon/shadow_demon_soul_catcher.vpcf"
-				"EffectAttachType"	"follow_head"
-			}
-			"ApplyModifier"
-			{
-				"Target"
-				{
-					"Types"	"DOTA_UNIT_TARGET_HERO"
-					"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Center"	"CASTER"
-					"Radius"	"%radius"
-				}
-				"ModifierName"	"modifier_soul_eater_target"
-				"Duration"	"%duration"
-			}
-			"ApplyModifier"
-			{
-				"Target"	"CASTER"
-				"ModifierName"	"modifier_soul_eater_self"
-				"Duration"	"%duration"
-			}
-		}
-		"Modifiers"
-		{
-			"modifier_soul_eater_target"	{}
-			"modifier_soul_eater_self"	{}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"500"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"percent"	"-25 -30 -35 -40"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"duration"	"6.0"
-			}
-		}
 	}
 
 	"soul_harvest"
@@ -3869,7 +3750,7 @@
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityCastPoint"	"0.4"
+		"AbilityCastPoint"	"0.3"
 		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_6"
 		"AnimationPlaybackRate"	"1"
 		"AbilityCooldown"	"80 70 60"

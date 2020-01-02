@@ -3711,7 +3711,7 @@
 		"AbilityCastPoint"	"0.5"
 		"AbilityCastAnimation"	"ACT_DOTA_RAZE_2"
 		"AnimationPlaybackRate"	"1"
-		"AbilityCooldown"	"11 9 7 5"
+		"AbilityCooldown"	"10 9 8 7"
 		"AbilityCastRange"	"1000"
 		"precache"
 		{
@@ -3725,9 +3725,9 @@
 			{
 				"Target"	"POINT"
 				"EffectName"	"particles/units/heroes/hero_shadow_demon/shadow_demon_shadow_poison_projectile.vpcf"
-				"MoveSpeed"	"800"
-				"StartRadius"	"100"
-				"EndRadius"	"160"
+				"MoveSpeed"	"1000"
+				"StartRadius"	"50"
+				"EndRadius"	"120"
 				"FixedDistance"	"1000"
 				"StartPosition"	"attach_origin"
 				"TargetTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -3758,10 +3758,27 @@
 				"ScriptFile"	"scripts/vscripts/heroes/shadow_lord/soul_strike.lua"
 				"Function"	"damage"
 			}
-			"FireSound"
+		}
+		"Modifiers"
+		{
+			"modifier_soul_strike"
 			{
-				"Target"	"TARGET"
-				"EffectName"	"Hero_ShadowDemon.ShadowPoison.Impact"
+				"TextureName"	"shadow_strike"
+				"IsDebuff"	"1"
+				"IsPurgable"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow_percent"
+				}
+				"Duration"	"%slow_time"
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"Target"	"TARGET"
+						"EffectName"	"Hero_ShadowDemon.ShadowPoison.Impact"
+					}
+				}
 			}
 		}
 		"AbilitySpecial"
@@ -3769,7 +3786,17 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_percent"	"110 120 130 140"
+				"attack_percent"	"100 120 140 160"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"slow_percent"	"-14 -16 -18 -20"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_time"	"3.0"
 			}
 		}
 	}
@@ -3787,66 +3814,6 @@
 		"AnimationPlaybackRate"	"1"
 		"AbilityCooldown"	"18 17 16 15"
 		"AbilityCastRange"	"500"
-		"precache"
-		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
-			"particle"	"particles/units/heroes/hero_shadow_demon/shadow_demon_soul_catcher.vpcf"
-		}
-		"OnSpellStart"
-		{
-			"FireSound"
-			{
-				"Target"	"CASTER"
-				"EffectName"	"Hero_ShadowDemon.Soul_Catcher.Cast"
-			}
-			"FireEffect"
-			{
-				"Target"	"CASTER"
-				"EffectName"	"particles/units/heroes/hero_shadow_demon/shadow_demon_soul_catcher.vpcf"
-				"EffectAttachType"	"follow_head"
-			}
-			"ApplyModifier"
-			{
-				"Target"
-				{
-					"Types"	"DOTA_UNIT_TARGET_HERO"
-					"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Center"	"CASTER"
-					"Radius"	"%radius"
-				}
-				"ModifierName"	"modifier_soul_eater_target"
-				"Duration"	"%duration"
-			}
-			"ApplyModifier"
-			{
-				"Target"	"CASTER"
-				"ModifierName"	"modifier_soul_eater_self"
-				"Duration"	"%duration"
-			}
-		}
-		"Modifiers"
-		{
-			"modifier_soul_eater_target"	{}
-			"modifier_soul_eater_self"	{}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"500"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"percent"	"-25 -30 -35 -40"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
-				"duration"	"6.0"
-			}
-		}
 	}
 
 	"soul_harvest"
