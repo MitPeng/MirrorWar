@@ -3945,7 +3945,6 @@
 						"Function"	"set_damage"
 					}
 				}
-				"IsHidden"	"1"
 			}
 		}
 		"AbilitySpecial"

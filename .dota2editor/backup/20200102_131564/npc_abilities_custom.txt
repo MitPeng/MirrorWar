@@ -3907,60 +3907,6 @@
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
-		"Modifiers"
-		{
-			"modifier_soul_harvest"
-			{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-				"Passive"	"1"
-				"Duration"	"-1"
-				"TextureName"	""
-				"IsHidden"	"1"
-				"_IsAura"	"1"
-				"Aura_Radius"	"%radius"
-				"Aura"	"modifier_soul_harvest_debuff"
-				"Aura_ApplyToCaster"	"0"
-				"Aura_Types"	"DOTA_UNIT_TARGET_HERO"
-				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			}
-			"modifier_soul_harvest_count"
-			{
-				"TextureName"	"soul_harvest"
-				"Duration"	"-1"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-				"IsBuff"	"1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"1"
-				}
-			}
-			"modifier_soul_harvest_debuff"
-			{
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"Target"	"TARGET"
-						"ScriptFile"	"scripts/vscripts/heroes/shadow_lord/soul_harvest.lua"
-						"Function"	"set_damage"
-					}
-				}
-				"IsHidden"	"1"
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"1000"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
-				"increase_damage"	"5 10 15 20"
-			}
-		}
 	}
 
 	"shadow_lord"

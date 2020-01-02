@@ -3918,10 +3918,6 @@
 				"IsHidden"	"1"
 				"_IsAura"	"1"
 				"Aura_Radius"	"%radius"
-				"Aura"	"modifier_soul_harvest_debuff"
-				"Aura_ApplyToCaster"	"0"
-				"Aura_Types"	"DOTA_UNIT_TARGET_HERO"
-				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 			}
 			"modifier_soul_harvest_count"
 			{
@@ -3934,19 +3930,6 @@
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"1"
 				}
 			}
-			"modifier_soul_harvest_debuff"
-			{
-				"OnDeath"
-				{
-					"RunScript"
-					{
-						"Target"	"TARGET"
-						"ScriptFile"	"scripts/vscripts/heroes/shadow_lord/soul_harvest.lua"
-						"Function"	"set_damage"
-					}
-				}
-				"IsHidden"	"1"
-			}
 		}
 		"AbilitySpecial"
 		{
@@ -3958,7 +3941,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"increase_damage"	"5 10 15 20"
+				"increace_attack"	"5 10 15 20"
 			}
 		}
 	}
