@@ -3689,12 +3689,12 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_promotion"	"100 125 150"
+				"attack_promotion"	"50 100 150"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_percent"	"300 350 400"
+				"attack_percent"	"200 300 400"
 			}
 		}
 	}
@@ -3976,8 +3976,8 @@
 		"AbilityCastPoint"	"0.1"
 		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_6"
 		"AnimationPlaybackRate"	"1"
-		"AbilityCooldown"	"60"
-		"AbilityChannelTime"	"2.0"
+		"AbilityCooldown"	"80 70 60"
+		"AbilityChannelTime"	"1.8"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
@@ -4053,7 +4053,7 @@
 		{
 			"modifier_shadow_lord"
 			{
-				"TextureName"	""
+				"TextureName"	"shadow_lord"
 				"Duration"	"%duration"
 				"IsBuff"	"1"
 				"OnCreated"
@@ -4080,7 +4080,6 @@
 						"EffectName"	"Hero_Nevermore.Shadowraze"
 					}
 				}
-				"IsHidden"	"1"
 			}
 		}
 		"AbilitySpecial"

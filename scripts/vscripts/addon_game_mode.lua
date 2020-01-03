@@ -75,6 +75,11 @@ function CEventGameMode:InitGameMode()
     -- 监听单位被击杀的事件
     ListenToGameEvent("entity_killed",
                       Dynamic_Wrap(CEventGameMode, "OnEntityKilled"), self)
+
+    -- 监听玩家聊天事件
+    ListenToGameEvent("player_chat", Dynamic_Wrap(CEventGameMode, "PlayerChat"),
+                      self)
+
     --[[
     -- 同一事件名可以有不同的函数，但是基本没这个必要
     ListenToGameEvent("entity_killed",
@@ -88,9 +93,6 @@ function CEventGameMode:InitGameMode()
     ListenToGameEvent("dota_item_purchased",
                       Dynamic_Wrap(CEventGameMode, "OnDotaItemPurchased"), self)
 
-    -- 监听玩家聊天事件
-    ListenToGameEvent("player_chat", Dynamic_Wrap(CEventGameMode, "PlayerChat"),
-                      self)
     --]]
 
     -- 监听玩家选择英雄
@@ -186,6 +188,13 @@ function CEventGameMode:OnEntityKilled(keys)
                                   GameRules.load_kv["lvl_kill_score"]
     end
 end
+
+function CEventGameMode:PlayerChat(keys)
+    if keys.text == "energy" then
+        GameRules.player_data[keys.userid - 1].hero.energy = 100
+    end
+end
+
 --[[
 function CEventGameMode:OnEntityKilledHero(keys)
     print("OnEntityKilledHero")
@@ -202,10 +211,6 @@ function CEventGameMode:OnDotaItemPurchased(keys)
     DeepPrintTable(keys) -- 详细打印传递进来的表
 end
 
-function CEventGameMode:PlayerChat(keys)
-    print("PlayerSay")
-    DeepPrintTable(keys) -- 详细打印传递进来的表
-end
 --]]
 
 -- 英雄造成和收到伤害时加能量

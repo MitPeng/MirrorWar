@@ -3689,7 +3689,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_promotion"	"100 125 150"
+				"attack_promotion"	"50 100 150"
 			}
 			"03"
 			{
