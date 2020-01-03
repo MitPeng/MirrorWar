@@ -47,7 +47,7 @@ function shadow_lord(keys)
         attackPoint = Vector(casterLocation.x - dx, casterLocation.y - dy,
                              casterLocation.z)
     end
-
+    ability.count = ability.count + 1
     local units = FindUnitsInRadius(caster:GetTeamNumber(), attackPoint, caster,
                                     ability.damage_radius, targetTeam,
                                     targetType, targetFlag, 0, false)
