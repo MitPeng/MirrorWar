@@ -384,6 +384,5 @@
 		"VisionDaytimeRange"	"1000"
 		"VisionNighttimeRange"	"800"
 		"MovementSpeed"	"270"
-		"AttributePrimary"	"DOTA_ATTRIBUTE_INTELLECT"
 	}
 }
