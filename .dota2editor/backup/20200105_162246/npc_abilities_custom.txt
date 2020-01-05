@@ -3689,12 +3689,12 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_promotion"	"50 100 150"
+				"attack_promotion"	"100 125 150"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_percent"	"200 300 400"
+				"attack_percent"	"300 350 400"
 			}
 		}
 	}
@@ -3976,8 +3976,8 @@
 		"AbilityCastPoint"	"0.1"
 		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_6"
 		"AnimationPlaybackRate"	"1"
-		"AbilityCooldown"	"80 70 60"
-		"AbilityChannelTime"	"1.8"
+		"AbilityCooldown"	"60"
+		"AbilityChannelTime"	"2.0"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
@@ -4053,7 +4053,7 @@
 		{
 			"modifier_shadow_lord"
 			{
-				"TextureName"	"shadow_lord"
+				"TextureName"	""
 				"Duration"	"%duration"
 				"IsBuff"	"1"
 				"OnCreated"
@@ -4080,6 +4080,7 @@
 						"EffectName"	"Hero_Nevermore.Shadowraze"
 					}
 				}
+				"IsHidden"	"1"
 			}
 		}
 		"AbilitySpecial"
@@ -4115,5 +4116,39 @@
 				"duration"	"4.0"
 			}
 		}
+	}
+
+	"naughty_nature"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"naughty_nature"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	}
+
+	"germination"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"germination"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	}
+
+	"natural_affinity"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"natural_affinity"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	"elven_wrath"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"elven_wrath"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	}
 }

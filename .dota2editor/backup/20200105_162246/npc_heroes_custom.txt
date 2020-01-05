@@ -347,12 +347,12 @@
 
 	"elf"
 	{
-		"Ability1"	"naughty_nature"
-		"Ability2"	"germination"
-		"Ability3"	"natural_affinity"
-		"Ability4"	"energy"
-		"Ability5"	"generic_hidden"
-		"Ability6"	"elven_wrath"
+		"Ability1"	""
+		"Ability2"	""
+		"Ability3"	""
+		"Ability4"	""
+		"Ability5"	""
+		"Ability6"	""
 		"Ability7"	""
 		"Ability8"	""
 		"Ability9"	""
