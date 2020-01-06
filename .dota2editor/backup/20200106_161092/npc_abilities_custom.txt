@@ -4143,7 +4143,6 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
-		"AbilityCastRange"	"700 800 900 1000"
 		"Modifiers"
 		{
 			"modifier_natural_affinity"
@@ -4172,7 +4171,7 @@
 				"ThinkInterval"	"0.2"
 				"IsHidden"	"1"
 			}
-			"modifier_natural_affinity_jianshang"
+			"modifier_natural_affinity_hp"
 			{
 				"TextureName"	"natural_affinity"
 				"Passive"	"0"
@@ -4180,7 +4179,7 @@
 				"IsBuff"	"1"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK"	"1"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%tree_health"
 				}
 				"IsHidden"	"0"
 			}
@@ -4195,7 +4194,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"block_damage"	"1 2 3 4"
+				"tree_health"	"50"
 			}
 		}
 	}
