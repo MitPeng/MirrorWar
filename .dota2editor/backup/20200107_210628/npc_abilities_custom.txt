@@ -4341,7 +4341,7 @@
 		"precache"
 		{
 			"particle"	"particles/econ/items/huskar/huskar_ti8/huskar_ti8_shoulder_heal.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_enchantress.vsndevts"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
 		}
 		"OnSpellStart"
 		{
@@ -4369,14 +4369,8 @@
 				{
 					"FireSound"
 					{
-						"Target"	"CASTER"
-						"EffectName"	"Hero_Enchantress.EnchantHero"
-					}
-					"RunScript"
-					{
-						"Target"	"CASTER"
-						"ScriptFile"	"scripts/vscripts/heroes/elf/rejuvenation.lua"
-						"Function"	"stop_sound"
+						"Target"	"TARGET"
+						"EffectName"	"Hero_Huskar.Inner_Vitality"
 					}
 				}
 			}

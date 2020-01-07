@@ -4370,13 +4370,7 @@
 					"FireSound"
 					{
 						"Target"	"CASTER"
-						"EffectName"	"Hero_Enchantress.EnchantHero"
-					}
-					"RunScript"
-					{
-						"Target"	"CASTER"
-						"ScriptFile"	"scripts/vscripts/heroes/elf/rejuvenation.lua"
-						"Function"	"stop_sound"
+						"EffectName"	"Hero_Enchantress.NaturesAttendantsCast"
 					}
 				}
 			}
