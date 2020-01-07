@@ -92,7 +92,9 @@ function CEventGameMode:InitGameMode()
     -- 监听物品被购买的事件
     ListenToGameEvent("dota_item_purchased",
                       Dynamic_Wrap(CEventGameMode, "OnDotaItemPurchased"), self)
-
+    -- 监听单位受到伤害事件
+    ListenToGameEvent("entity_hurt",
+                      Dynamic_Wrap(CEventGameMode, "OnEntityHurt"), self)
     --]]
 
     -- 监听玩家选择英雄
@@ -101,9 +103,6 @@ function CEventGameMode:InitGameMode()
     -- 监听单位重生或者创建事件
     ListenToGameEvent("npc_spawned",
                       Dynamic_Wrap(CEventGameMode, "OnNPCSpawned"), self)
-    -- 监听单位受到伤害事件
-    ListenToGameEvent("entity_hurt",
-                      Dynamic_Wrap(CEventGameMode, "OnEntityHurt"), self)
     -- 设置伤害过滤器
     GameRules:GetGameModeEntity():SetDamageFilter(
         Dynamic_Wrap(CEventGameMode, "DamageFilter"), self)
@@ -214,6 +213,7 @@ end
 --]]
 
 -- 英雄造成和收到伤害时加能量
+--[[
 function CEventGameMode:OnEntityHurt(keys)
     local attacker = EntIndexToHScript(keys.entindex_attacker)
     local killed = EntIndexToHScript(keys.entindex_killed)
@@ -238,7 +238,7 @@ function CEventGameMode:OnEntityHurt(keys)
         if killed.energy >= 100 then killed.energy = 100 end
     end
 end
-
+--]]
 -- 英雄选择
 function CEventGameMode:OnPlayerPickHero(keys)
 
@@ -307,6 +307,27 @@ function CEventGameMode:DamageFilter(damageTable)
 
     local attacker = EntIndexToHScript(damageTable.entindex_attacker_const)
     local victim = EntIndexToHScript(damageTable.entindex_victim_const)
+
+    -- 英雄造成和收到伤害时加能量
+    local damage = damageTable.damage
+    local attacker_level = attacker:GetLevel()
+    local attacker_add_energy = damage /
+                                    (GameRules.load_kv["base_energy"] +
+                                        attacker_level *
+                                        GameRules.load_kv["lvl_energy"])
+    local victim_level = victim:GetLevel()
+    local victim_add_energy = damage /
+                                  (GameRules.load_kv["base_energy"] +
+                                      victim_level *
+                                      GameRules.load_kv["lvl_energy"])
+    if attacker:IsHero() then
+        attacker.energy = attacker.energy + attacker_add_energy
+        if attacker.energy >= 100 then attacker.energy = 100 end
+    end
+    if victim:IsHero() then
+        victim.energy = victim.energy + victim_add_energy
+        if victim.energy >= 100 then victim.energy = 100 end
+    end
 
     -- 获取攻击者
     victim.get_attacker = attacker
