@@ -4131,19 +4131,17 @@
 	{
 		"BaseClass"	"ability_datadriven"
 		"AbilityTextureName"	"germination"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityCooldown"	"12 10 8 6"
-		"AbilityCastRange"	""
-		"AOERadius"	"500"
+		"AbilityCastRange"	"700"
+		"AOERadius"	"600"
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
-				"Target"	"CASTER"
+				"Target"	"POINT"
 				"ScriptFile"	"scripts/vscripts/heroes/elf/germination.lua"
 				"Function"	"germination"
 			}
@@ -4153,12 +4151,12 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"500"
+				"radius"	"600"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"number"	"9 10 11 12"
+				"number"	"12 13 14 15"
 			}
 			"03"
 			{
@@ -4227,7 +4225,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"900 1000 1100 1200"
+				"radius"	"700 800 900 1000"
 			}
 			"02"
 			{
