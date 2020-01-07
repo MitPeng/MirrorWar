@@ -4137,7 +4137,7 @@
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityCooldown"	"12 10 8 6"
-		"AbilityCastRange"	"500"
+		"AbilityCastRange"	"700"
 		"AOERadius"	""
 		"OnSpellStart"
 		{
@@ -4153,7 +4153,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"500"
+				"radius"	"700"
 			}
 			"02"
 			{
@@ -4162,13 +4162,13 @@
 			}
 			"03"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"damage"	"60 120 180 240"
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"1.5 2.0 2.5 3.0"
 			}
 			"04"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"duration"	"1.5 2.0 2.5 3.0"
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"60 120 180 240"
 			}
 		}
 	}
@@ -4249,7 +4249,7 @@
 		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCastPoint"	"0.4"
 		"AbilityCooldown"	"50 45 40"
-		"AbilityCastRange"	"700"
+		"AbilityCastRange"	"500"
 		"AOERadius"	"700"
 		"precache"
 		{
@@ -4277,11 +4277,12 @@
 			{
 				"Target"	"CASTER"
 				"EffectName"	"particles/units/heroes/hero_huskar/huskar_inner_fire.vpcf"
+				"EffectAttachType"	"attach_origin"
 			}
 			"FireSound"
 			{
 				"Target"	"CASTER"
-				"EffectName"	"Hero_Huskar.Inner_Fire"
+				"EffectName"	"Hero_Huskar.Inner_Fire.Cast"
 			}
 			"RunScript"
 			{
@@ -4289,23 +4290,39 @@
 				"ScriptFile"	"scripts/vscripts/heroes/elf/elven_wrath.lua"
 				"Function"	"elven_wrath"
 			}
+			"Knockback"
+			{
+				"Target"
+				{
+					"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Radius"	"%radius"
+					"Center"	"CASTER"
+				}
+				"Center"	"CASTER"
+				"Duration"	"0.3"
+				"Distance"	"%radius"
+				"Height"	"15"
+				"IsFixedDistance"	"0"
+				"ShouldStun"	"0"
+			}
 		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"700"
+				"radius"	"500"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"base_damage"	"300 400 500"
+				"base_damage"	"400 500 600"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"tree_damage"	"20 30 40"
+				"tree_damage"	"30 40 50"
 			}
 		}
 	}
@@ -4324,7 +4341,7 @@
 		"precache"
 		{
 			"particle"	"particles/econ/items/huskar/huskar_ti8/huskar_ti8_shoulder_heal.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_enchantress.vsndevts"
 		}
 		"OnSpellStart"
 		{
@@ -4352,8 +4369,14 @@
 				{
 					"FireSound"
 					{
-						"Target"	"TARGET"
-						"EffectName"	"Hero_Huskar.Inner_Vitality"
+						"Target"	"CASTER"
+						"EffectName"	"Hero_Enchantress.EnchantHero"
+					}
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"ScriptFile"	"scripts/vscripts/heroes/elf/rejuvenation.lua"
+						"Function"	"stop_sound"
 					}
 				}
 			}

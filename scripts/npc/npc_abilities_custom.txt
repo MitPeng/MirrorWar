@@ -4137,7 +4137,7 @@
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityCooldown"	"12 10 8 6"
-		"AbilityCastRange"	"500"
+		"AbilityCastRange"	"700"
 		"AOERadius"	""
 		"OnSpellStart"
 		{
@@ -4153,7 +4153,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"500"
+				"radius"	"700"
 			}
 			"02"
 			{
