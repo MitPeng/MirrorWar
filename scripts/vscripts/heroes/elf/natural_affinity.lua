@@ -5,7 +5,7 @@ function natural_affinity(keys)
     local radius = ability:GetLevelSpecialValueFor("radius", level)
     local block_damage = ability:GetLevelSpecialValueFor("block_damage", level)
     local trees = GridNav:GetAllTreesAroundPoint(caster:GetAbsOrigin(), radius,
-                                                 true)
+                                                 false)
     local count = #trees * block_damage
     caster:RemoveModifierByName("modifier_natural_affinity_jianshang")
     if count ~= 0 then

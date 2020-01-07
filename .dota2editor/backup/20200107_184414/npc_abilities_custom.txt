@@ -4134,6 +4134,36 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityCooldown"	"12 10 8 6"
+		"AbilityCastRange"	"700"
+		"AOERadius"	"600"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"POINT"
+				"ScriptFile"	"scripts/vscripts/heroes/elf/germination.lua"
+				"Function"	"germination"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"600"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"number"	"12 13 14 15"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"1.5 2.0 2.5 3.0"
+			}
+		}
 	}
 
 	"natural_affinity"
@@ -4143,6 +4173,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
+		"AbilityCastRange"	"700 800 900 1000"
 		"Modifiers"
 		{
 			"modifier_natural_affinity"
@@ -4171,7 +4202,7 @@
 				"ThinkInterval"	"0.2"
 				"IsHidden"	"1"
 			}
-			"modifier_natural_affinity_hp"
+			"modifier_natural_affinity_jianshang"
 			{
 				"TextureName"	"natural_affinity"
 				"Passive"	"0"
@@ -4179,7 +4210,7 @@
 				"IsBuff"	"1"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%tree_health"
+					"MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK"	"1"
 				}
 				"IsHidden"	"0"
 			}
@@ -4194,7 +4225,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"tree_health"	"50"
+				"block_damage"	"1 2 3 4"
 			}
 		}
 	}
