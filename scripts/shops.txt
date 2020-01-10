@@ -1,280 +1,161 @@
 "dota_shops"
 {
-	// "consumables"
-	// {
-	// 	"item"		"item_tpscroll"
-	// 	"item"		"item_clarity"	
-	// 	"item"		"item_faerie_fire"				
-	// 	"item"		"item_smoke_of_deceit"
-	// 	"item"		"item_ward_observer"
-	// 	"item"		"item_ward_sentry"
-	// 	"item"		"item_enchanted_mango"
-	// 	"item"		"item_flask"
-	// 	"item"		"item_tango"
-	// 	"item"		"item_tome_of_knowledge"
-	// 	"item"		"item_dust"	
-	// 	"item"		"item_bottle"
-	// }
+    "consumables"
+    {
+        "item"      "item_ward_sentry_custom"//岗哨守卫
+        "item"      "item_clarity_custom"//净化药水
+        "item"      "item_tome_of_experience"//经验之书
+        "item"      "item_tpscroll_custom"//回城卷轴
+        "item"      "item_tome_of_energy"//能量之书
+        "item"      "item_travel_boots_custom"//远行鞋
+    }
 
-	"attributes"
-	{
-		"item"		"item_branches"
+    "attributes"
+    {
 
-		"item"		"item_gauntlets"
-		"item"		"item_slippers"
-		"item"		"item_mantle"	
+    }
 
-		"item"		"item_circlet"
+    "weapons_armor"
+    {
+        "item"      "item_gauntlets_custom"//力量手套
+        "item"      "item_slippers_custom"//敏捷便鞋
+        "item"      "item_mantle_custom"//智力斗篷
 
-		"item"		"item_belt_of_strength"
-		"item"		"item_boots_of_elves"
-		"item"		"item_robe"
+        "item"      "item_circlet_custom"//贵族圆环
 
-		"item"		"item_crown"
+        "item"      "item_belt_of_strength_custom"//力量腰带
+        "item"      "item_boots_of_elves_custom"//精灵皮靴
+        "item"      "item_robe_custom"//法师长袍
 
-		"item"		"item_ogre_axe"
-		"item"		"item_blade_of_alacrity"
-		"item"		"item_staff_of_wizardry"
-		// "item"		"item_river_painter7"	
-		// "item"		"item_river_painter6"	
-		// "item"		"item_river_painter5"	
-		// "item"		"item_river_painter4"	
-		// "item"		"item_river_painter3"	
-		// "item"		"item_river_painter2"	
-		// "item"		"item_river_painter"	
-	}
+        "item"      "item_ogre_axe_custom"//食人魔之斧
+        "item"      "item_blade_of_alacrity_custom"//欢欣之刃
+        "item"      "item_staff_of_wizardry_custom"//魔力法杖
 
-	"weapons_armor"
-	{
-		"item"		"item_ring_of_protection"
-		"item"		"item_stout_shield"
-		"item"		"item_quelling_blade"
-		"item"		"item_infused_raindrop"	
-		"item"		"item_orb_of_venom"
-		"item"		"item_blight_stone"
-		"item"		"item_blades_of_attack"
-		"item"		"item_chainmail"
-		"item"		"item_quarterstaff"
-		"item"		"item_helm_of_iron_will"
-		"item"		"item_javelin"
-		"item"		"item_broadsword"
-		"item"		"item_claymore"				
-		"item"		"item_mithril_hammer"	
-	}
-			
-	"misc"
-	{
-		// "item"		"item_magic_stick"
-		"item"		"item_wind_lace"
-		"item"		"item_ring_of_regen"
-		"item"		"item_sobi_mask"
-		"item"		"item_boots"
-		"item"		"item_gloves"
-		"item"		"item_cloak"
-		"item"		"item_ring_of_tarrasque"
-		"item"		"item_gem"
-		"item"		"item_lifesteal"
-		"item"		"item_shadow_amulet"	
-		"item"		"item_ghost"
-		"item"		"item_blink"		
-	}	
-	
-	// Level 1 - Green Recipes
-	"basics"
-	{		
-		// "item"		"item_magic_wand"
-		"item"		"item_null_talisman"
-		"item"		"item_wraith_band"
-		"item"		"item_bracer"
-		"item"		"item_soul_ring"
-		"item"		"item_power_treads"
-		"item"		"item_phase_boots"
-		"item"		"item_oblivion_staff"
-		"item"		"item_pers"
- 		// "item"		"item_mask_of_madness"
- 		// "item"		"item_helm_of_the_dominator"	
-		// "item"		"item_hand_of_midas"
-		"item"		"item_travel_boots"		
-		// "item"		"item_moon_shard"				
-	}
+    }
 
-	// Level 2 - Blue Recipes
-	"support"
-	{
-		// "item"		"item_ring_of_basilius"
-		// "item"		"item_headdress"
-		// "item"		"item_buckler"
-		// "item"		"item_urn_of_shadows"
-		"item"		"item_tranquil_boots"
-		"item"		"item_medallion_of_courage"
-		"item"		"item_arcane_boots"
-		"item"		"item_ancient_janggo"
-		// "item"		"item_vladmir"	
-		"item"		"item_mekansm"					
-		// "item"		"item_holy_locket"	
-		// "item"		"item_spirit_vessel"			
-		"item"		"item_pipe"			
-		"item"		"item_guardian_greaves"
-	}
-				
-	"magics"			
-	{
-		"item"		"item_glimmer_cape"
-		"item"		"item_veil_of_discord"		
-		"item"		"item_force_staff"
-		"item"		"item_aether_lens"
-		"item"		"item_necronomicon"
-		"item"		"item_dagon"
-		"item"		"item_cyclone"
-		"item"		"item_rod_of_atos"
-		"item"		"item_solar_crest"
-		"item"		"item_orchid"	
-		// "item"		"item_ultimate_scepter"
-		"item"		"item_nullifier"	
-		// "item"		"item_refresher"
-		"item"		"item_sheepstick"
-		"item"		"item_octarine_core"
-	}
-		
-	// Level 3 - Purple Recipes	
-	"defense"
-	{
-		"item"		"item_hood_of_defiance"
-		"item"		"item_vanguard"
-		"item"		"item_blade_mail"
-		// "item"		"item_soul_booster"
-		"item"		"item_aeon_disk"	
-		"item"		"item_crimson_guard"		
-		"item"		"item_lotus_orb"		
-		// "item"		"item_black_king_bar"
-		// "item"		"item_hurricane_pike"	
-		// "item"		"item_shivas_guard"
-		// "item"		"item_manta"
-		// "item"		"item_bloodstone"
-		"item"		"item_sphere"
-		// "item"		"item_heart"	
-		// "item"		"item_assault"
-	}
-			
-	// "weapons"
-	// {	
-	// 	"item"		"item_lesser_crit"	
-	// 	"item"		"item_armlet"
-	// 	"item"		"item_meteor_hammer"	
-	// 	"item"		"item_invis_sword"
-	// 	"item"		"item_basher"	
-	// 	"item"		"item_monkey_king_bar" 	
-	// 	"item"		"item_bfury"
-	// 	"item"		"item_ethereal_blade"
-	// 	"item"		"item_radiance"
-	// 	"item"		"item_greater_crit"
-	// 	"item"		"item_butterfly"
-	// 	"item"		"item_silver_edge"
-	// 	"item"		"item_rapier"
-	// 	"item"		"item_abyssal_blade"	
-	// 	"item"		"item_bloodthorn"
-	// }
-		
-	// Level 4 - Orange / Orb / Artifacts				
-	// "artifacts"
-	// {	
- 	// 	"item"		"item_dragon_lance"
-	// 	"item"		"item_sange"
- 	// 	"item"		"item_yasha"
- 	// 	"item"		"item_kaya"
-	// 	"item"		"item_echo_sabre"	
- 	// 	"item"		"item_maelstrom"
- 	// 	"item"		"item_diffusal_blade"			
- 	// 	"item"		"item_heavens_halberd"
- 	// 	"item"		"item_desolator"
- 	// 	"item"		"item_kaya_and_sange"
- 	// 	"item"		"item_sange_and_yasha"
- 	// 	"item"		"item_yasha_and_kaya"
- 	// 	"item"		"item_satanic"		
- 	// 	"item"		"item_skadi" 
- 	// 	"item"		"item_mjollnir"
-	// }
+    "misc"
+    {
+        "item"      "item_blades_of_attack"//攻击之爪
+        "item"      "item_sobi_mask_custom"//贤者面罩
+        "item"      "item_broadsword"//阔剑
+        "item"      "item_gloves"//加速手套
+        "item"      "item_quelling_blade_custom" //压制之刃
+        "item"      "item_little_blight_stone"//枯萎之石
+        "item"      "item_quarterstaff"//短棍
+        "item"      "item_void_stone_custom"//虚无宝石
+        "item"      "item_claymore"//大剑
+        "item"      "item_mithril_hammer"//秘银锤
+        "item"      "item_javelin_custom"//标枪
 
-	// "sideshop1"
-	// {
-	// 	"item"		"item_tpscroll"
-	// 	"item"		"item_magic_stick"
-	// 	"item"		"item_quelling_blade"
-	// 	"item"		"item_boots"
-	// 	"item"		"item_boots_of_elves"
-	// 	"item"		"item_belt_of_strength"
-	// 	"item"		"item_robe"
-	// 	"item"		"item_crown"
-	// }
+        "item"      "item_ring_of_tarrasque_custom"//恐鳌之戒
+    }
 
-	// "sideshop2"
-	// {
-	// 	"item"		"item_gloves"
-	// 	"item"		"item_chainmail"
-	// 	"item"		"item_cloak"
-	// 	"item"		"item_void_stone"
-	// 	"item"		"item_helm_of_iron_will"
-	// 	"item"		"item_energy_booster"
-	// 	"item"		"item_vitality_booster"
-	// 	"item"		"item_lifesteal"
-	// 	"item"		"item_broadsword"
-	// 	"item"		"item_blink"
-	// }
-	
-	"secretshop"
-	{				
-		"item"		"item_ring_of_health"
-		"item"		"item_void_stone"
-		"item"		"item_energy_booster"
-		"item"		"item_vitality_booster"
-		"item"		"item_point_booster"
-		"item"		"item_platemail"
-		"item"		"item_talisman_of_evasion"
-		"item"		"item_hyperstone"
-		"item"		"item_ultimate_orb"
-		"item"		"item_demon_edge"
-		"item"		"item_mystic_staff"
-		"item"		"item_reaver"
-		"item"		"item_eagle"
-		"item"		"item_relic"
-	}
+    "secretshop"
+    {
+        "item"      "item_energy_booster_custom"//能量之球
+        "item"      "item_vitality_booster_custom"//活力之球
+        "item"      "item_point_booster_custom"//精气之球
+        "item"      "item_hyperstone"//振奋宝石
+        "item"      "item_ultimate_orb_custom"//极限法球
+        "item"      "item_demon_edge"//恶魔刀锋
+        "item"      "item_reaver_custom"//掠夺者之斧
+        "item"      "item_mystic_staff_custom"//神秘法杖
+        "item"      "item_eagle_custom"//鹰歌弓
+        "item"      "item_relic"//圣者遗物
+    }
 
-	// "pregame"
-	// {
-	// 	"item"		"item_clarity"
-	// 	"item"		"item_faerie_fire"
-	// 	"item"		"item_enchanted_mango"
-	// 	"item"		"item_tango"
-	// 	"item"		"item_flask"
-	// 	"item"		"item_smoke_of_deceit"
-	// 	"item"		"item_dust"
-	// 	"item"		"item_courier"
-	// 	"item"		"item_ward_observer"
-	// 	"item"		"item_ward_sentry"
-	// 	"item"		"item_branches"
-	// 	"item"		"item_gauntlets"
-	// 	"item"		"item_slippers"
-	// 	"item"		"item_mantle"
-	// 	"item"		"item_circlet"
-	// 	"item"		"item_recipe_magic_wand"
-	// 	"item"		"item_ring_of_protection"
-	// 	"item"		"item_stout_shield"
-	// 	"item"		"item_quelling_blade"
-	// 	"item"		"item_blight_stone"
-	// 	"item"		"item_orb_of_venom"
-	// 	"item"		"item_wind_lace"
-	// 	"item"		"item_magic_stick"
-	// 	"item"		"item_sobi_mask"
-	// 	"item"		"item_ring_of_regen"
-	// 	"item"		"item_boots"
-	// 	"item"		"item_gloves"
-	// 	"item"		"item_crown"
-	// 	"item"		"item_wraith_band"
-	// 	"item"		"item_null_talisman"
-	// 	"item"		"item_bracer"
-	// 	"item"		"item_blades_of_attack"
-	// 	"item"		"item_ring_of_basilius"
-	// 	"item"		"item_buckler"
-	// 	"item"		"item_headdress"
-	// }
+    // Level 1 - Green Recipes
+    "basics"
+    {
+        "item"      "item_null_talisman_custom"//空灵挂件
+        "item"      "item_wraith_band_custom"//怨灵系带
+        "item"      "item_bracer_custom"//护腕
+        "item"      "item_ring_of_basilius_custom"//王者之戒
+        "item"      "item_soul_ring_custom"//灵魂之戒
+        "item"      "item_sange_custom"//散华
+        "item"      "item_yasha_custom"//夜叉
+        "item"      "item_kaya_custom"//慧光1750
+        "item"      "item_oblivion_staff_custom"//空明杖1950
+        "item"      "item_aether_lens_custom"//以太透镜 2350
+        "item"      "item_necronomicon_custom"//死灵书3000
+        "item"      "item_hand_of_midas_custom"//迈达斯之手 3000
+        "item"      "item_rod_of_atos_custom"//阿托斯之棍 3500     
+        "item"      "item_tome_of_knowledge_custom"//知识之书 6300
+
+    }
+
+    // Level 2 - Blue Recipes
+    "support"
+    {
+        "item"      "item_ring_of_aquila_custom"//天鹰戒指
+        "item"      "item_vladmir_custom"//弗拉迪米尔的祭品
+        "item"      "item_veil_of_discord_custom"//纷争面纱
+        "item"      "item_lesser_crit_custom"//水晶剑
+        "item"      "item_blight_stone_custom"//暗灭
+        "item"      "item_cyclone_custom"//Eul的神圣法杖
+        "item"      "item_dagon_custom"//达贡之神力
+        "item"      "item_ancient_janggo_custom"//韧鼓
+        "item"      "item_soul_booster_custom"//振魂石
+        "item"      "item_diffusal_blade_custom"//净魂之刃
+        "item"      "item_dragon_lance_custom"//魔龙枪
+        "item"      "item_meteor_hammer_custom"//陨星锤
+        "item"      "item_maelstrom_custom"//漩涡
+        "item"      "item_bfury_custom"//狂战斧
+    }
+
+    "magics"
+    {
+        "item"      "item_echo_sabre_custom"//回音战刃
+        "item"      "item_kaya_and_sange_custom"//散慧对剑
+        "item"      "item_sange_and_yasha_custom"//散夜对剑
+        "item"      "item_yasha_and_kaya_custom"//慧夜对剑
+        "item"      "item_orchid_custom"//紫苑
+        "item"      "item_moon_shard_custom"//银月之晶
+        "item"      "item_radiance_custom"//辉耀
+    }
+
+    // Level 3 - Purple Recipes
+    "defense"
+    {
+        "item"      "item_assault_custom"//强袭胸甲
+        "item"      "item_yasha_and_kaya_and_sange"//三恒曌世
+        "item"      "item_monkey_king_bar_custom"//金箍棒
+        "item"      "item_bloodstone_custom"//血精石
+        "item"      "item_heart_custom"//恐鳌之心
+        "item"      "item_butterfly_custom"//蝴蝶
+        "item"      "item_mjollnir_custom"//雷神之锤
+        "item"      "item_greater_crit_custom"//代达罗斯之殇
+        "item"      "item_bloodthorn_custom"//血棘
+        "item"      "item_sheepstick_custom"//邪恶镰刀
+    }
+
+    "weapons"
+    {
+        "item"      "item_skadi_custom"//斯嘉蒂之眼
+        "item"      "item_shivas_guard_custom"//希瓦的守护
+        "item"      "item_satanic_custom"//撒旦之邪力
+        "item"      "item_manta_custom"//分身
+    }
+
+    // Level 4 - Orange / Orb / Artifacts
+    "artifacts"
+    {
+        "item"      "item_octarine_core_custom"//玲珑心
+        "item"      "item_rapier_custom"//圣剑
+    }
+
+    "sideshop1"
+    {
+        
+    }
+
+    "sideshop2"
+    {
+       
+    }
+
+    "pregame"
+    {
+    
+    }
 }
