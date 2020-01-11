@@ -19,7 +19,7 @@
 		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
 		// Item Info
 		// -------------------------------------------------------------------------------------------------------------
-		"ItemCost"	"300"
+		"ItemCost"	"400"
 		"ItemShopTags"	"str"
 		"ItemAliases"	"gauntlets of strength"
 		"ItemRequirements"	{}
@@ -62,7 +62,7 @@
 		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
 		// Item Info
 		// -------------------------------------------------------------------------------------------------------------
-		"ItemCost"	"300"
+		"ItemCost"	"400"
 		"SideShop"	"1"
 		"ItemShopTags"	"agi"
 		"ItemAliases"	"slippers of agility"
@@ -106,7 +106,7 @@
 		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
 		// Item Info
 		// -------------------------------------------------------------------------------------------------------------
-		"ItemCost"	"300"
+		"ItemCost"	"400"
 		"ItemShopTags"	"int"
 		"ItemAliases"	"mantle of intelligence"
 		"ItemRequirements"	{}
@@ -149,7 +149,7 @@
 		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
 		// Item Info
 		// -------------------------------------------------------------------------------------------------------------
-		"ItemCost"	"1000"
+		"ItemCost"	"1200"
 		"SideShop"	"1"
 		"ItemShopTags"	"str"
 		"ItemAliases"	"belt of strength"
@@ -193,7 +193,7 @@
 		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
 		// Item Info
 		// -------------------------------------------------------------------------------------------------------------
-		"ItemCost"	"1000"
+		"ItemCost"	"1200"
 		"SideShop"	"1"
 		"ItemShopTags"	"agi"
 		"ItemAliases"	"band of elvenskin"
@@ -237,7 +237,7 @@
 		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
 		// Item Info
 		// -------------------------------------------------------------------------------------------------------------
-		"ItemCost"	"1000"
+		"ItemCost"	"1200"
 		"SideShop"	"1"
 		"ItemShopTags"	"int"
 		"ItemAliases"	"robe of the magi"
@@ -318,7 +318,7 @@
 		"ID"	"1510"
 		"Model"	"models/props_gameplay/recipe.mdl"
 		"Effect"	"item_recipe"
-		"ItemCost"	"1000"
+		"ItemCost"	"800"
 		"ItemRecipe"	"1"
 		"ItemResult"	"item_ogre_axe_datadriven"
 		"ItemRequirements"
@@ -378,7 +378,7 @@
 		"ID"	"1512"
 		"Model"	"models/props_gameplay/recipe.mdl"
 		"Effect"	"item_recipe"
-		"ItemCost"	"1000"
+		"ItemCost"	"800"
 		"ItemRecipe"	"1"
 		"ItemResult"	"item_blade_of_alacrity_datadriven"
 		"ItemRequirements"
@@ -438,7 +438,7 @@
 		"ID"	"1514"
 		"Model"	"models/props_gameplay/recipe.mdl"
 		"Effect"	"item_recipe"
-		"ItemCost"	"1000"
+		"ItemCost"	"800"
 		"ItemRecipe"	"1"
 		"ItemResult"	"item_staff_of_wizardry_datadriven"
 		"ItemRequirements"
@@ -462,7 +462,7 @@
 		// Item Info
 		// -------------------------------------------------------------------------------------------------------------
 		"ItemCost"	"4000"
-		"SecretShop"	""
+		"SecretShop"	"1"
 		"ItemShopTags"	"str"
 		"ItemAliases"	"reaver"
 		"ItemRequirements"	{}
@@ -506,7 +506,7 @@
 		// Item Info
 		// -------------------------------------------------------------------------------------------------------------
 		"ItemCost"	"4000"
-		"SecretShop"	""
+		"SecretShop"	"1"
 		"ItemShopTags"	"agi"
 		"ItemAliases"	"eaglesong"
 		"ItemRequirements"	{}
@@ -550,7 +550,7 @@
 		// Item Info
 		// -------------------------------------------------------------------------------------------------------------
 		"ItemCost"	"4000"
-		"SecretShop"	""
+		"SecretShop"	"1"
 		"ItemShopTags"	"int"
 		"ItemAliases"	"mystic staff"
 		"ItemRequirements"	{}
@@ -593,7 +593,7 @@
 		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
 		// Item Info
 		// -------------------------------------------------------------------------------------------------------------
-		"ItemCost"	"800"
+		"ItemCost"	"1000"
 		"ItemShopTags"	"agi;int;str"
 		"ItemAliases"	"circlet"
 		"ItemRequirements"	{}
@@ -638,11 +638,10 @@
 		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
 		// Item Info
 		// -------------------------------------------------------------------------------------------------------------
-		"ItemCost"	"2000"
+		"ItemCost"	"2500"
 		"SideShop"	"1"
 		"ItemShopTags"	"agi;int;str"
 		"ItemAliases"	"ultimate orb"
-		"ItemRequirements"	{}
 		"Modifiers"
 		{
 			"modifier_item_ultimate_orb_datadriven"
@@ -678,7 +677,7 @@
 		"ID"	"1520"
 		"Model"	"models/props_gameplay/recipe.mdl"
 		"Effect"	"item_recipe"
-		"ItemCost"	"1200"
+		"ItemCost"	"1500"
 		"ItemRecipe"	"1"
 		"ItemResult"	"item_ultimate_orb_datadriven"
 		"ItemRequirements"
