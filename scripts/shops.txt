@@ -17,9 +17,9 @@
 
     "weapons_armor"
     {
-        "item"      "item_gauntlets_custom"//力量手套
-        "item"      "item_slippers_custom"//敏捷便鞋
-        "item"      "item_mantle_custom"//智力斗篷
+        "item"      "item_gauntlets_datadriven"//力量手套
+        "item"      "item_slippers_datariven"//敏捷便鞋
+        "item"      "item_mantle_datariven"//智力斗篷
 
         "item"      "item_circlet_custom"//贵族圆环
 
