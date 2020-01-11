@@ -15,7 +15,10 @@
         "item"      "item_gauntlets_datadriven"//力量手套
         "item"      "item_slippers_datadriven"//敏捷便鞋
         "item"      "item_mantle_datadriven"//智力斗篷
-
+        "item"      "item_belt_of_strength_datadriven"//力量腰带
+        "item"      "item_boots_of_elves_datadriven"//精灵皮靴
+        "item"      "item_robe_datadriven"//法师长袍
+        
         "item"      "item_circlet_custom"//贵族圆环
 
         
@@ -40,27 +43,26 @@
 
     "misc"
     {
+        "item"      "item_reaver_datadriven"//掠夺者之斧
+        "item"      "item_eagle_datadriven"//鹰歌弓
+        "item"      "item_mystic_staff_datadriven"//神秘法杖
+
         "item"      "item_energy_booster_custom"//能量之球
         "item"      "item_vitality_booster_custom"//活力之球
         "item"      "item_point_booster_custom"//精气之球
         "item"      "item_hyperstone"//振奋宝石
         "item"      "item_ultimate_orb_custom"//极限法球
         "item"      "item_demon_edge"//恶魔刀锋
-        "item"      "item_reaver_custom"//掠夺者之斧
-        "item"      "item_mystic_staff_custom"//神秘法杖
-        "item"      "item_eagle_custom"//鹰歌弓
         "item"      "item_relic"//圣者遗物
     }
 
     // Level 1 - Green Recipes
     "basics"
     {
-        "item"      "item_belt_of_strength_datadriven"//力量腰带
-        "item"      "item_boots_of_elves_datadriven"//精灵皮靴
-        "item"      "item_robe_datadriven"//法师长袍
         "item"      "item_ogre_axe_datadriven"//食人魔之斧
         "item"      "item_blade_of_alacrity_datadriven"//欢欣之刃
         "item"      "item_staff_of_wizardry_datadriven"//魔力法杖
+             
 
         "item"      "item_null_talisman_custom"//空灵挂件
         "item"      "item_wraith_band_custom"//怨灵系带
