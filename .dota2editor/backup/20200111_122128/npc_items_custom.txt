@@ -13,7 +13,7 @@
 		"AbilityTextureName"	"item_gauntlets"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		// Valve's version of this item uses the ID "13".
-		"ID"	"1500"
+		"ID"	"1013"
 		"ItemQuality"	"component"
 		"Model"	"models/props_gameplay/red_box.vmdl"
 		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
@@ -56,7 +56,7 @@
 		"AbilityTextureName"	"item_slippers"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		// Valve's version of this item uses the ID "14".
-		"ID"	"1501"
+		"ID"	"1014"
 		"ItemQuality"	"component"
 		"Model"	"models/props_gameplay/red_box.vmdl"
 		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
@@ -100,7 +100,7 @@
 		"AbilityTextureName"	"item_mantle"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		// Valve's version of this item uses the ID "15".
-		"ID"	"1502"
+		"ID"	"1015"
 		"ItemQuality"	"component"
 		"Model"	"models/props_gameplay/red_box.vmdl"
 		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
@@ -143,13 +143,13 @@
 		"AbilityTextureName"	"item_belt_of_strength"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		// Valve's version of this item uses the ID "17".
-		"ID"	"1503"
+		"ID"	"1017"
 		"ItemQuality"	"component"
 		"Model"	"models/props_gameplay/red_box.vmdl"
 		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
 		// Item Info
 		// -------------------------------------------------------------------------------------------------------------
-		"ItemCost"	"1000"
+		"ItemCost"	"450"
 		"SideShop"	"1"
 		"ItemShopTags"	"str"
 		"ItemAliases"	"belt of strength"
@@ -187,17 +187,16 @@
 		"AbilityTextureName"	"item_boots_of_elves"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		// Valve's version of this item uses the ID "18".
-		"ID"	"1504"
+		"ID"	"1018"
 		"ItemQuality"	"component"
 		"Model"	"models/props_gameplay/red_box.vmdl"
 		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
 		// Item Info
 		// -------------------------------------------------------------------------------------------------------------
-		"ItemCost"	"1000"
+		"ItemCost"	"450"
 		"SideShop"	"1"
 		"ItemShopTags"	"agi"
 		"ItemAliases"	"band of elvenskin"
-		"ItemRequirements"	{}
 		"Modifiers"
 		{
 			"modifier_item_boots_of_elves_datadriven"
@@ -231,17 +230,16 @@
 		"AbilityTextureName"	"item_robe"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		// Valve's version of this item uses the ID "19".
-		"ID"	"1505"
+		"ID"	"1019"
 		"ItemQuality"	"component"
 		"Model"	"models/props_gameplay/red_box.vmdl"
 		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
 		// Item Info
 		// -------------------------------------------------------------------------------------------------------------
-		"ItemCost"	"1000"
+		"ItemCost"	"450"
 		"SideShop"	"1"
 		"ItemShopTags"	"int"
 		"ItemAliases"	"robe of the magi"
-		"ItemRequirements"	{}
 		"Modifiers"
 		{
 			"modifier_item_robe_datadriven"
@@ -264,57 +262,6 @@
 				"var_type"	"FIELD_INTEGER"
 				"bonus_intelligence"	"3"
 			}
-		}
-	}
-
-	"item_recipe_belt_of_strength_datadriven"
-	{
-		"BaseClass"	"item_datadriven"
-		"AbilityTextureName"	"item_recipe"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ID"	"1506"
-		"Model"	"models/props_gameplay/recipe.mdl"
-		"Effect"	"item_recipe"
-		"ItemCost"	"500"
-		"ItemRecipe"	"1"
-		"ItemResult"	"item_belt_of_strength_datadriven"
-		"ItemRequirements"
-		{
-			"01"	"item_gauntlets_datadriven"
-		}
-	}
-
-	"item_recipe_boots_of_elves_datadriven"
-	{
-		"BaseClass"	"item_datadriven"
-		"AbilityTextureName"	"item_recipe"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ID"	"1507"
-		"Model"	"models/props_gameplay/recipe.mdl"
-		"Effect"	"item_recipe"
-		"ItemCost"	"500"
-		"ItemRecipe"	"1"
-		"ItemResult"	"item_belt_of_strength_datadriven"
-		"ItemRequirements"
-		{
-			"01"	"item_slippers_datadriven"
-		}
-	}
-
-	"item_recipe_robe_datadriven"
-	{
-		"BaseClass"	"item_datadriven"
-		"AbilityTextureName"	"item_recipe"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ID"	"1508"
-		"Model"	"models/props_gameplay/recipe.mdl"
-		"Effect"	"item_recipe"
-		"ItemCost"	"500"
-		"ItemRecipe"	"1"
-		"ItemResult"	"item_belt_of_strength_datadriven"
-		"ItemRequirements"
-		{
-			"01"	"item_mantle_datadriven"
 		}
 	}
 }

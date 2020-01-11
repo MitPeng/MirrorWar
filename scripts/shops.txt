@@ -18,14 +18,14 @@
     "weapons_armor"
     {
         "item"      "item_gauntlets_datadriven"//力量手套
-        "item"      "item_slippers_datariven"//敏捷便鞋
-        "item"      "item_mantle_datariven"//智力斗篷
+        "item"      "item_slippers_datadriven"//敏捷便鞋
+        "item"      "item_mantle_datadriven"//智力斗篷
 
         "item"      "item_circlet_custom"//贵族圆环
 
-        "item"      "item_belt_of_strength_custom"//力量腰带
-        "item"      "item_boots_of_elves_custom"//精灵皮靴
-        "item"      "item_robe_custom"//法师长袍
+        "item"      "item_belt_of_strength_datadriven"//力量腰带
+        "item"      "item_boots_of_elves_datadriven"//精灵皮靴
+        "item"      "item_robe_datadriven"//法师长袍
 
         "item"      "item_ogre_axe_custom"//食人魔之斧
         "item"      "item_blade_of_alacrity_custom"//欢欣之刃

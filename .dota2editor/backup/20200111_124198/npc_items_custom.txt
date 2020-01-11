@@ -270,7 +270,6 @@
 	"item_recipe_belt_of_strength_datadriven"
 	{
 		"BaseClass"	"item_datadriven"
-		"AbilityTextureName"	"item_recipe"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ID"	"1506"
 		"Model"	"models/props_gameplay/recipe.mdl"
@@ -281,40 +280,6 @@
 		"ItemRequirements"
 		{
 			"01"	"item_gauntlets_datadriven"
-		}
-	}
-
-	"item_recipe_boots_of_elves_datadriven"
-	{
-		"BaseClass"	"item_datadriven"
-		"AbilityTextureName"	"item_recipe"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ID"	"1507"
-		"Model"	"models/props_gameplay/recipe.mdl"
-		"Effect"	"item_recipe"
-		"ItemCost"	"500"
-		"ItemRecipe"	"1"
-		"ItemResult"	"item_belt_of_strength_datadriven"
-		"ItemRequirements"
-		{
-			"01"	"item_slippers_datadriven"
-		}
-	}
-
-	"item_recipe_robe_datadriven"
-	{
-		"BaseClass"	"item_datadriven"
-		"AbilityTextureName"	"item_recipe"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ID"	"1508"
-		"Model"	"models/props_gameplay/recipe.mdl"
-		"Effect"	"item_recipe"
-		"ItemCost"	"500"
-		"ItemRecipe"	"1"
-		"ItemResult"	"item_belt_of_strength_datadriven"
-		"ItemRequirements"
-		{
-			"01"	"item_mantle_datadriven"
 		}
 	}
 }
