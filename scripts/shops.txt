@@ -58,10 +58,10 @@
         "item"      "item_belt_of_strength_datadriven"//力量腰带
         "item"      "item_boots_of_elves_datadriven"//精灵皮靴
         "item"      "item_robe_datadriven"//法师长袍
-        "item"      "item_ogre_axe_custom"//食人魔之斧
-        "item"      "item_blade_of_alacrity_custom"//欢欣之刃
-        "item"      "item_staff_of_wizardry_custom"//魔力法杖
-        
+        "item"      "item_ogre_axe_datadriven"//食人魔之斧
+        "item"      "item_blade_of_alacrity_datadriven"//欢欣之刃
+        "item"      "item_staff_of_wizardry_datadriven"//魔力法杖
+
         "item"      "item_null_talisman_custom"//空灵挂件
         "item"      "item_wraith_band_custom"//怨灵系带
         "item"      "item_bracer_custom"//护腕
