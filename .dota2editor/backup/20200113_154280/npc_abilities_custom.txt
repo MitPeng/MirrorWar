@@ -1763,7 +1763,7 @@
 						"Function"	"init_energy"
 					}
 				}
-				"OnIntervalThink"
+				"1.0"
 				{
 					"RunScript"
 					{
@@ -1772,7 +1772,6 @@
 						"Function"	"get_energy"
 					}
 				}
-				"ThinkInterval"	"1.0"
 			}
 		}
 	}
