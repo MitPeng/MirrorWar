@@ -6724,7 +6724,7 @@
 		
 		"AbilityCastRange"				"600"
 		"AbilityCooldown"				"18.0"
-		"AbilityManaCost"				"250"
+		"AbilityManaCost"				"300"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"2700"
@@ -6743,7 +6743,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"12"
+				"bonus_all_stats"		"10"
 			}
 			"02"
 			{
@@ -6758,7 +6758,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"block_cooldown"		"18.0"
+				"block_cooldown"		"8.0"
 			}
 		}
 	}
@@ -6844,7 +6844,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"active_duration"		"4"
+				"active_duration"		"3"
 			}
 		}
 	}
@@ -6891,7 +6891,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityChannelTime"			"2.5"
+		"AbilityChannelTime"			"1.0"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -6936,7 +6936,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"burn_dps_buildings"		"20"
+				"burn_dps_buildings"		"25"
 			}
 			"06"
 			{
@@ -10204,7 +10204,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_movement_slow"	"-40"
+				"blast_movement_slow"	"-30"
 			}
 			"05"
 			{
@@ -10224,12 +10224,12 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_ally"				"3.0"
+				"duration_ally"				"2.0"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ethereal_damage_bonus"	"-30"
+				"ethereal_damage_bonus"	"-20"
 			}
 			"10"
 			{
@@ -11651,7 +11651,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"300"
+		"ItemCost"						"900"
 		"ItemShopTags"					""
 		"ItemQuality"					"rare"
 		"ItemAliases"					"roa;ring of aquila"
@@ -11659,7 +11659,7 @@
 		"ActiveDescriptionLine"			"2"
 		"ItemPurchasable"				"0"
 		"ShouldBeSuggested"				"0"
-		"ItemSellable"					"0"
+		"ItemSellable"					"1"
 		"ItemIsNeutralDrop"				"0"
 
 		// Sound
@@ -12658,7 +12658,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_pct"			"75"
+				"health_pct"			"50"
 			}
 		}
 	}
@@ -13390,12 +13390,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_cooldown"			"18"
+				"bonus_cooldown"			"15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"			"12"
+				"bonus_all_stats"			"10"
 			}
 			"03"
 			{
@@ -13478,7 +13478,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_health"			"800"
+				"max_health"			"600"
 			}
 			"02"
 			{
@@ -13866,14 +13866,14 @@
 		"ItemCost"						"3600"
 		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
-		"ItemInitialCharges"			"2"
+		"ItemInitialCharges"			"1"
 		"ItemPermanent"					"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60.0"
+		"AbilityCooldown"				"90.0"
 				
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -13886,7 +13886,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"		"30"
+				"duration"		"45"
 			}
 		}
 	}
@@ -14802,7 +14802,7 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1600"
+		"AbilityCastRange"				"1200"
 		"AbilityCooldown"				"18.0"
 		"AbilityManaCost"				"350"			
 		// Item Info
@@ -14842,22 +14842,22 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"burn_dps_buildings"		"50"
+				"burn_dps_buildings"		"25"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"burn_dps_units"		"70"
+				"burn_dps_units"		"125"
 			}
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"burn_duration"		"5"
+				"burn_duration"		"4"
 			}
 			"08"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"1.5"
+				"stun_duration"		"2.0"
 			}
 			"09"
 			{
@@ -14867,7 +14867,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"land_time"				"0.5"
+				"land_time"				"1.0"
 			}
 			"11"
 			{
@@ -14877,12 +14877,12 @@
 			"12"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"max_duration"		"1.5"
+				"max_duration"		"1.0"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"impact_damage_buildings"		"75"
+				"impact_damage_buildings"		"50"
 			}
 			"14"
 			{
