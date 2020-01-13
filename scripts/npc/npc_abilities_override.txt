@@ -2607,7 +2607,7 @@
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"900"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -2616,7 +2616,7 @@
 		"ItemResult"					"item_phase_boots"
 		"ItemRequirements"
 		{
-			"01"						"item_boots;item_chainmail;item_blades_of_attack"
+			"01"						""
 		}
 	}
 	
@@ -2636,13 +2636,14 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1480"
+		"ItemCost"						"900"
 		"ItemShopTags"					"damage;move_speed;hard_to_tag"
 		"ItemQuality"					"common"
 		"ItemAliases"					"phase boots"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		
+		"ItemPurchasable"				"0"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -2655,12 +2656,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_melee"			"18"
+				"bonus_damage_melee"			"15"
 			}			
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_range"			"12"
+				"bonus_damage_range"			"15"
 			}			
 			"04"
 			{
@@ -2680,7 +2681,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"phase_movement_speed"  "22"
+				"phase_movement_speed"  "15"
 			}		
 			"08"
 			{
@@ -2690,7 +2691,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"phase_duration"		"3.0"
+				"phase_duration"		"2.0"
 			}
 			"10"
 			{
@@ -2700,7 +2701,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"4"
+				"bonus_armor"			"3"
 			}		
 		}
 	}
@@ -3063,7 +3064,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"900"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -3072,9 +3073,9 @@
 		"ItemResult"					"item_power_treads"
 		"ItemRequirements"
 		{
-			"01"						"item_boots;item_gloves;item_belt_of_strength"
-			"04"						"item_boots;item_gloves;item_robe"
-			"06"						"item_boots;item_gloves;item_boots_of_elves"
+			"01"						""
+			"04"						""
+			"06"						""
 		}
 	}
 	
@@ -3090,13 +3091,14 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1350"
+		"ItemCost"						"900"
 		"ItemShopTags"					"attack_speed;move_speed;int;agi;str"
 		"ItemQuality"					"common"
 		"ItemAliases"					"power treads"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		
+		"ItemPurchasable"				"0"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -3114,12 +3116,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"			"25"
+				"bonus_attack_speed"			"0"
 			}		
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"0"
+				"bonus_damage"			"10"
 			}		
 		}
 	}
@@ -4857,7 +4859,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"600"	
+		"ItemCost"						"900"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -4866,7 +4868,7 @@
 		"ItemResult"					"item_aether_lens"
 		"ItemRequirements"
 		{
-			"01"						"item_energy_booster;item_void_stone"
+			"01"						""
 		}
 	}
 	
@@ -4883,13 +4885,14 @@
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2350"
+		"ItemCost"						"900"
 		"ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"aether lens"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		
+		"ItemPurchasable"				"0"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -4897,17 +4900,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"450"
+				"bonus_mana"			"250"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"3.0"
+				"bonus_mana_regen"		"2.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_bonus"			"250"
+				"cast_range_bonus"			"200"
 			}
 		}
 	}
@@ -10571,7 +10574,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"800"	
+		"ItemCost"						"900"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -10580,8 +10583,8 @@
 		"ItemResult"					"item_ancient_janggo"
 		"ItemRequirements"
 		{
-			"01"						"item_gloves;item_crown;item_wind_lace"
-			"02"						"item_ancient_janggo"
+			"01"						""
+			"02"						""
 		}
 	}
 
@@ -10599,13 +10602,13 @@
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30.0"
+		"AbilityCooldown"				"20.0"
 		"AbilityCastRange"				"1200"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1900"
+		"ItemCost"						"900"
 		"ItemShopTags"					"str;agi;int;damage;move_speed;attack_speed;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"drum of endurance"
@@ -10614,7 +10617,8 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemRequiresCharges"			"1"
 		"ShouldBeSuggested"				"1"
-
+		"ItemPurchasable"				"0"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -10622,17 +10626,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_int"			"4"
+				"bonus_int"			"3"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_str"			"4"
+				"bonus_str"			"3"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"			"4"
+				"bonus_agi"			"3"
 			}
 			"04"
 			{
@@ -10642,32 +10646,32 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"20"
+				"bonus_movement_speed"	"10"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed_aura"	"20"
+				"attack_speed_aura"	"0"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed_pct"	"35"
+				"bonus_attack_speed_pct"	"0"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed_pct"	"13"
+				"bonus_movement_speed_pct"	"10"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"6"
+				"duration"				"3"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"1200"
+				"radius"				"1000"
 			}
 		}
 	}
@@ -11315,7 +11319,7 @@
 		"ItemQuality"					"common"
 		"ItemAliases"					"quelling blade"
 		"ItemPurchasable"				"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -11597,7 +11601,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"900"	
 		"ItemShopTags"					""
 		"ItemPurchasable"				"0"
 		"IsObsolete"					"1"
@@ -11627,7 +11631,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"300"
 		"ItemShopTags"					""
 		"ItemQuality"					"rare"
 		"ItemAliases"					"roa;ring of aquila"
@@ -11636,7 +11640,7 @@
 		"ItemPurchasable"				"0"
 		"ShouldBeSuggested"				"0"
 		"ItemSellable"					"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 
 		// Sound
 		//-------------------------------------------------------------------------------------------------------------			
@@ -11676,12 +11680,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1200"
+				"aura_radius"			"1000"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_mana_regen"		"1.25"
+				"aura_mana_regen"		"0.75"
 			}
 			"08"
 			{
@@ -12409,7 +12413,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 		
 		// Special	
@@ -12454,7 +12458,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -12536,7 +12540,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -12578,7 +12582,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -12620,7 +12624,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"1"
 		"ItemPermanent"					"0"
@@ -12654,7 +12658,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -12697,7 +12701,7 @@
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
 		"IsTempestDoubleClonable"		"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -12728,7 +12732,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"3"
 		"ItemPermanent"					"0"
@@ -12773,7 +12777,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -12815,7 +12819,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -12854,7 +12858,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"3"
 		"ItemPermanent"					"0"
@@ -12897,7 +12901,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -12934,7 +12938,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -12975,7 +12979,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"300"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -13088,7 +13092,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"2"
 		"ItemPermanent"					"0"
@@ -13131,8 +13135,8 @@
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemCost"						"900"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -13144,7 +13148,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"secondary_stats"			"13"
+				"secondary_stats"			"10"
 			}
 		}
 	}
@@ -13166,7 +13170,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"1"
 		"ItemPermanent"					"0"
@@ -13207,7 +13211,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"3"
 		"ItemPermanent"					"0"
@@ -13266,7 +13270,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 		"AbilityCooldown"				"20.0"
 
@@ -13309,7 +13313,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"3"
 		"ItemPermanent"					"0"
@@ -13354,7 +13358,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -13396,7 +13400,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -13442,7 +13446,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -13482,8 +13486,8 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemCost"						"900"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -13500,7 +13504,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"24"
+				"bonus_damage"		"36"
 			}
 		}
 	}
@@ -13525,7 +13529,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -13568,7 +13572,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -13620,7 +13624,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -13668,7 +13672,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -13708,7 +13712,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"	
 		"ItemShopTags"					""
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -13741,7 +13745,7 @@
 		"ItemShopTags"					"damage;int;agi;str"
 		"ItemQuality"					"common"
 		"ItemAliases"					"bracer"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -13800,7 +13804,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -13840,7 +13844,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"3"
 		"ItemPermanent"					"0"
@@ -14001,8 +14005,8 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemCost"						"900"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14014,12 +14018,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_magic_resistance"			"20"
+				"bonus_magic_resistance"			"15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_spell_amp"		"8"
+				"bonus_spell_amp"		"10"
 			}
 			"03"
 			{
@@ -14042,8 +14046,8 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemCost"						"900"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14065,12 +14069,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_sec"		"12"
+				"damage_per_sec"		"10"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"		"3"
+				"duration"		"2"
 			}
 		}
 	}
@@ -14094,7 +14098,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14148,7 +14152,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14193,7 +14197,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14233,7 +14237,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14288,7 +14292,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14359,7 +14363,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14439,7 +14443,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14480,7 +14484,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14511,7 +14515,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14556,7 +14560,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14602,7 +14606,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"	
 		"ItemShopTags"					""
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14635,7 +14639,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14710,7 +14714,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14751,7 +14755,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1"	
 		"ItemShopTags"					""
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14784,7 +14788,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"4751"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14881,7 +14885,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -14916,7 +14920,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"3"
 		"ItemPermanent"					"0"
@@ -14942,7 +14946,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -15008,8 +15012,8 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemCost"						"900"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -15021,17 +15025,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"17"
+				"bonus_damage"			"25"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_lifesteal"			"17"
+				"bonus_lifesteal"			"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_amp"			"17"
+				"bonus_amp"			"10"
 			}
 		}
 	}
@@ -15054,7 +15058,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -15090,7 +15094,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -15136,7 +15140,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -15221,8 +15225,8 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemCost"						"900"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -15234,17 +15238,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_attack_damage"			"16"
+				"base_attack_damage"			"20"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magic_resistance"			"16"
+				"magic_resistance"			"15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"status_resistance"			"16"
+				"status_resistance"			"20"
 			}			
 		}
 	}
