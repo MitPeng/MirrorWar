@@ -1,0 +1,721 @@
+// Dota2 Editor
+// Get latest version: https://github.com/zombieJ/nw-dota2editor
+
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	"item_gauntlets_datadriven"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_gauntlets"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Valve's version of this item uses the ID "13".
+		"ID"	"1500"
+		"ItemQuality"	"component"
+		"Model"	"models/props_gameplay/red_box.vmdl"
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"300"
+		"ItemShopTags"	"str"
+		"ItemAliases"	"gauntlets of strength"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_gauntlets_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_strength"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_strength"	"1"
+			}
+		}
+	}
+
+	"item_slippers_datadriven"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_slippers"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Valve's version of this item uses the ID "14".
+		"ID"	"1501"
+		"ItemQuality"	"component"
+		"Model"	"models/props_gameplay/red_box.vmdl"
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"300"
+		"SideShop"	"1"
+		"ItemShopTags"	"agi"
+		"ItemAliases"	"slippers of agility"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_slippers_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%bonus_agility"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_agility"	"1"
+			}
+		}
+	}
+
+	"item_mantle_datadriven"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_mantle"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Valve's version of this item uses the ID "15".
+		"ID"	"1502"
+		"ItemQuality"	"component"
+		"Model"	"models/props_gameplay/red_box.vmdl"
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"300"
+		"ItemShopTags"	"int"
+		"ItemAliases"	"mantle of intelligence"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_mantle_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_intelligence"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_intelligence"	"1"
+			}
+		}
+	}
+
+	"item_belt_of_strength_datadriven"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_belt_of_strength"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Valve's version of this item uses the ID "17".
+		"ID"	"1503"
+		"ItemQuality"	"component"
+		"Model"	"models/props_gameplay/red_box.vmdl"
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"1000"
+		"SideShop"	"1"
+		"ItemShopTags"	"str"
+		"ItemAliases"	"belt of strength"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_belt_of_strength_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_strength"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_strength"	"3"
+			}
+		}
+	}
+
+	"item_boots_of_elves_datadriven"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_boots_of_elves"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Valve's version of this item uses the ID "18".
+		"ID"	"1504"
+		"ItemQuality"	"component"
+		"Model"	"models/props_gameplay/red_box.vmdl"
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"1000"
+		"SideShop"	"1"
+		"ItemShopTags"	"agi"
+		"ItemAliases"	"band of elvenskin"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_boots_of_elves_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%bonus_agility"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_agility"	"3"
+			}
+		}
+	}
+
+	"item_robe_datadriven"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_robe"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Valve's version of this item uses the ID "19".
+		"ID"	"1505"
+		"ItemQuality"	"component"
+		"Model"	"models/props_gameplay/red_box.vmdl"
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"1000"
+		"SideShop"	"1"
+		"ItemShopTags"	"int"
+		"ItemAliases"	"robe of the magi"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_robe_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_intelligence"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_intelligence"	"3"
+			}
+		}
+	}
+
+	"item_ogre_axe_datadriven"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ogre_axe"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Valve's version of this item uses the ID "21".
+		"ID"	"1509"
+		"ItemQuality"	"component"
+		"Model"	"models/props_gameplay/red_box.vmdl"
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"2000"
+		"ItemShopTags"	"str"
+		"ItemAliases"	"ogre club"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_ogre_axe_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_strength"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_strength"	"5"
+			}
+		}
+	}
+
+	"item_recipe_ogre_axe_datadriven"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_recipe"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1510"
+		"Model"	"models/props_gameplay/recipe.mdl"
+		"Effect"	"item_recipe"
+		"ItemCost"	"1000"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_ogre_axe_datadriven"
+		"ItemRequirements"
+		{
+			"01"	"item_belt_of_strength_datadriven"
+		}
+	}
+
+	"item_blade_of_alacrity_datadriven"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_blade_of_alacrity"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Valve's version of this item uses the ID "22".
+		"ID"	"1511"
+		"ItemQuality"	"component"
+		"Model"	"models/props_gameplay/red_box.vmdl"
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"2000"
+		"ItemShopTags"	"agi"
+		"ItemAliases"	"blade of alacrity"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_blade_of_alacrity_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%bonus_agility"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_agility"	"5"
+			}
+		}
+	}
+
+	"item_recipe_blade_of_alacrity_datadriven"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_recipe"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1512"
+		"Model"	"models/props_gameplay/recipe.mdl"
+		"Effect"	"item_recipe"
+		"ItemCost"	"1000"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_blade_of_alacrity_datadriven"
+		"ItemRequirements"
+		{
+			"01"	"item_boots_of_elves_datadriven"
+		}
+	}
+
+	"item_staff_of_wizardry_datadriven"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_staff_of_wizardry"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Valve's version of this item uses the ID "23".
+		"ID"	"1513"
+		"ItemQuality"	"component"
+		"Model"	"models/props_gameplay/red_box.vmdl"
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"2000"
+		"ItemShopTags"	"int"
+		"ItemAliases"	"staff of wizardry"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_staff_of_wizardry_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_intelligence"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_intelligence"	"5"
+			}
+		}
+	}
+
+	"item_recipe_staff_of_wizardry_datadriven"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_recipe"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1514"
+		"Model"	"models/props_gameplay/recipe.mdl"
+		"Effect"	"item_recipe"
+		"ItemCost"	"1000"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_staff_of_wizardry_datadriven"
+		"ItemRequirements"
+		{
+			"01"	"item_robe_datadriven"
+		}
+	}
+
+	"item_reaver_datadriven"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_reaver"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Valve's version of this item uses the ID "53".
+		"ID"	"1515"
+		"ItemQuality"	"component"
+		"Model"	"models/props_gameplay/red_box.vmdl"
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"4000"
+		"SecretShop"	""
+		"ItemShopTags"	"str"
+		"ItemAliases"	"reaver"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_reaver_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_strength"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_strength"	"10"
+			}
+		}
+	}
+
+	"item_eagle_datadriven"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_eagle"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Valve's version of this item uses the ID "52".
+		"ID"	"1516"
+		"ItemQuality"	"component"
+		"Model"	"models/props_gameplay/red_box.vmdl"
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"4000"
+		"SecretShop"	""
+		"ItemShopTags"	"agi"
+		"ItemAliases"	"eaglesong"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_eagle_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%bonus_agility"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_agility"	"10"
+			}
+		}
+	}
+
+	"item_mystic_staff_datadriven"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_mystic_staff"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Valve's version of this item uses the ID "58".
+		"ID"	"1517"
+		"ItemQuality"	"component"
+		"Model"	"models/props_gameplay/red_box.vmdl"
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"4000"
+		"SecretShop"	""
+		"ItemShopTags"	"int"
+		"ItemAliases"	"mystic staff"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_mystic_staff_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_intelligence"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_intelligence"	"10"
+			}
+		}
+	}
+
+	"item_circlet_datadriven"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_circlet"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Valve's version of this item uses the ID "20".
+		"ID"	"1518"
+		"ItemQuality"	"component"
+		"Model"	"models/props_gameplay/red_box.vmdl"
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"800"
+		"ItemShopTags"	"agi;int;str"
+		"ItemAliases"	"circlet"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_circlet_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_all_stats"	"2"
+			}
+		}
+	}
+
+	"item_ultimate_orb_datadriven"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_ultimate_orb"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Valve's version of this item uses the ID "24".
+		"ID"	"1519"
+		"ItemQuality"	"component"
+		"Model"	"models/props_gameplay/branch.mdl"
+		"Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+		// Item Info
+		// -------------------------------------------------------------------------------------------------------------
+		"ItemCost"	"2000"
+		"SideShop"	"1"
+		"ItemShopTags"	"agi;int;str"
+		"ItemAliases"	"ultimate orb"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_ultimate_orb_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"bonus_all_stats"	"4"
+			}
+		}
+	}
+
+	"item_recipe_ultimate_orb_datadriven"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_recipe"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1520"
+		"Model"	"models/props_gameplay/recipe.mdl"
+		"Effect"	"item_recipe"
+		"ItemCost"	"1200"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_ultimate_orb_datadriven"
+		"ItemRequirements"
+		{
+			"01"	"item_circlet_datadriven"
+		}
+	}
+
+	"item_box_1"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_box_1"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	""
+		"AbilityCastPoint"	""
+		"ID"	"1506"
+		"ItemQuality"	"consumable"
+		"ItemCost"	"600"
+		"ItemDroppable"	"0"
+		"ItemSellable"	"1"
+		"ItemAlertable"	"1"
+		"ItemRequiresCharges"	"1"
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemShopTags"	"consumable"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/items/item_box.lua"
+				"Function"	"open_box"
+				"box_number"	"1"
+			}
+			"SpendCharge"	{}
+		}
+	}
+}

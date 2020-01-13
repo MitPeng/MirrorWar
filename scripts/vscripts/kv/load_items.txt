@@ -1,116 +1,121 @@
-"neutral_items"
+"load_items"
 {
-	"1"
+	"1"//600
 	{
+		"count"	"13"
 		"1"	    "item_keen_optic"			//基恩镜片	
 		"2"	    "item_poor_mans_shield"		//穷鬼盾
         // ""      "item_iron_talon"		    //寒铁钢爪		
-		""	    "item_ironwood_tree"	//铁树之木
-		"3"	    "item_royal_jelly"			//蜂王浆	
+		"3"	    "item_ironwood_tree"	//铁树之木
+		// "3"	    "item_royal_jelly"			//蜂王浆	
 		"4"	    "item_mango_tree"			//芒果树	
 		"5"	    "item_ocean_heart"			//海洋之心	
 		"6"	    "item_broom_handle"			//扫帚柄	
 		"7"	    "item_trusty_shovel"		//可靠铁铲	
 		"8"	    "item_faded_broach"			//暗淡胸针	
 		"9"	    "item_arcane_ring"			//奥术指环	
-		"4"	    "item_philosophers_stone"	//贤者石
+		"10"	"item_philosophers_stone"	//贤者石
 
-		"10"      "item_null_talisman"		//空灵挂件
-        "11"      "item_wraith_band"		//怨灵系带
-        "12"      "item_bracer"				//护腕
+		"11"    "item_null_talisman"		//空灵挂件
+        "12"    "item_wraith_band"			//怨灵系带
+        "13"    "item_bracer"				//护腕
 	}
-	"2"
-	{			
+	"2"//1800
+	{		
+		"count"	"11"
         // ""      "item_grove_bow"			//林野长弓	 
 		// ""      "item_vampire_fangs"        //吸血鬼獠牙
 		"1"	    "item_ring_of_aquila"		//天鹰之戒	
 		"2"	    "item_pupils_gift"			//学徒之礼	
 		"3"	    "item_imp_claw"				//魔童之爪				
-		"5"	    "item_nether_shawl"			//幽冥披巾	
-		"6"	    "item_dragon_scale"			//炎龙之鳞			
+		"4"	    "item_nether_shawl"			//幽冥披巾	
+		"5"	    "item_dragon_scale"			//炎龙之鳞			
 		// ""      "item_recipe_vambrace"      //臂甲        
-		"7"	    "item_paladin_sword"		//骑士剑	
-		"9"	    "item_titan_sliver"			//巨神残铁		
+		"6"	    "item_paladin_sword"		//骑士剑	
+		"7"	    "item_titan_sliver"			//巨神残铁		
 
-		""		"item_phase_boots"			//相位鞋
-		""		"item_power_treads"			//动力鞋
-		""      "item_ancient_janggo"		//韧鼓
+		"8"		"item_phase_boots"			//相位鞋
+		"9"		"item_power_treads"			//动力鞋
+		"10"      "item_ancient_janggo"		//韧鼓
+		"11"      "item_aether_lens"			//以太透镜 
 	}
-	"3"
+	"3"//3600
 	{
+		"count"	"11"
 		// "1"	    "item_repair_kit"			//维修器具	
 		// "2"	    "item_craggy_coat"			//崎岖外衣	
-		"3"	    "item_greater_faerie_fire"	//高级仙灵火	
-		"4"	    "item_quickening_charm"		//加速护符	
-		"5"	    "item_spider_legs"			//网虫腿	
+		"1"	    "item_greater_faerie_fire"	//高级仙灵火	
+		"2"	    "item_quickening_charm"		//加速护符	
+		"3"	    "item_spider_legs"			//网虫腿	
 		// "6"	    "item_enchanted_quiver"		//魔力箭袋	
-		"8" 	"item_clumsy_net"			//笨拙渔网
+		"4" 	"item_clumsy_net"			//笨拙渔网
 		// "8"	    "item_orb_of_destruction"	//毁灭灵球			
 		// "10"	"item_spy_gadget"			//望远镜	
 		// "11"	"item_mind_breaker"			//智灭	
-		"6"	    "item_ninja_gear"			//忍者用具
-		"7"	    "item_essence_ring"			//精华指环	
+		"5"	    "item_ninja_gear"			//忍者用具
+		"6"	    "item_essence_ring"			//精华指环	
 
-		""      "item_rod_of_atos"			//阿托斯之棍
-		""      "item_aether_lens"			//以太透镜 
-		""      "item_veil_of_discord"		//纷争面纱
-		""		"item_blink"				//闪烁匕首
-		""      "item_meteor_hammer"		//陨星锤
-		""      "item_cyclone"				//Eul的神圣法杖
+		"7"		"item_travel_boots_2"		//远行鞋2		
+		"8"      "item_veil_of_discord"		//纷争面纱
+		"9"		"item_blink"				//闪烁匕首
+		"10"      "item_meteor_hammer"		//陨星锤
+		"11"      "item_cyclone"				//Eul的神圣法杖
 	}
-	"4"
+	"4"//5400
 	{	
+		"count"	"13"
 		"1"	    "item_witless_shako"		//无知小帽	
 		"2"	    "item_timeless_relic"		//永恒遗物	
 		"3"	    "item_spell_prism"			//法术棱镜	
 		// "4"	    "item_princes_knife"		//亲王短刀	
-		"5"	    "item_flicker"				//闪灵	
-		
+		"4"	    "item_flicker"				//闪灵		
 		// "7"	    "item_illusionsts_cape"		//幻术师披风	
-		"8"	    "item_havoc_hammer"			//浩劫巨锤	
-		"9"	    "item_panic_button"			//神妙明灯	
-		// "10"	"item_the_leveller"			//平世剑	
-		"11"	"item_minotaur_horn"		//恶牛角
+		"5"	    "item_havoc_hammer"			//浩劫巨锤	
+		"6"	    "item_panic_button"			//神妙明灯	
+		// "10"	"item_the_leveller"			//平世剑			
 
-		""		"item_travel_boots_2"		//远行鞋2
-		""		"item_guardian_greaves"		//卫士胫甲
-		""      "item_radiance"				//辉耀
-		""      "item_assault"				//强袭胸甲
-		""		"item_lotus_orb"			//清莲宝珠
-		""		"item_aeon_disk"			//永恒之盘
-		""      "item_shivas_guard"			//希瓦的守护
-		""		"item_necronomicon_3"		//三级死灵书
-		""		"item_hurricane_pike"		//飓风长戟
-		""		"item_sphere"				//林肯法球
-		""		"item_bloodstone"			//血精石
-		""		"item_ethereal_blade"		//虚灵之刃
+		"7"      "item_rod_of_atos"			//阿托斯之棍
+		"8"		"item_guardian_greaves"		//卫士胫甲
+		"9"      "item_radiance"				//辉耀
+		// "11"      "item_assault"				//强袭胸甲
+		"10"		"item_lotus_orb"			//清莲宝珠				
+		"11"		"item_hurricane_pike"		//飓风长戟
+		"12"		"item_sphere"				//林肯法球
+		// "18"		"item_bloodstone"			//血精石
+		"13"		"item_ethereal_blade"		//虚灵之刃
 	}
-	"5"
+	"5"//7200
 	{
+		"count"	"11"
 		"1"	    "item_force_boots"			//原力鞋	
-		"6"	    "item_fusion_rune"			//聚合神符	
-		"9"	    "item_woodland_striders"	//林地神行靴	
-		"7"	    "item_apex"					//极	
-		"12"	"item_fallen_sky"			//天崩
+		"2"	    "item_fusion_rune"			//聚合神符	
+		"3"	    "item_woodland_striders"	//林地神行靴			
 		"4"	    "item_seer_stone"			//先哲之石	
+		"5"		"item_minotaur_horn"		//恶牛角
 
-		""      "item_octarine_core"		//玲珑心
-		""      "item_bloodthorn"			//血棘
-		""		"item_dagon_5"				//五级大根
+		"6"      "item_octarine_core"		//玲珑心
+		"7"      "item_bloodthorn"			//血棘
+		"8"		"item_dagon_5"				//五级大根
+		"9"		"item_necronomicon_3"		//三级死灵书
+		"10"      "item_shivas_guard"			//希瓦的守护
+		"11"		"item_aeon_disk"			//永恒之盘
 	}
-	"6"
+	"6"//9000
 	{	
+		"count"	"9"
 		// "2"	    "item_desolator_2"			//寂灭	
-		"3"	    "item_phoenix_ash"			//凤凰余烬			
-		"5"	    "item_mirror_shield"		//神盾镜					
+		"1"	    "item_phoenix_ash"			//凤凰余烬			
+		"2"	    "item_mirror_shield"		//神盾镜					
 		// "8"	    "item_ballista"				//弩炮			
 		// "10"	"item_recipe_trident"		//三元重戟	
-		"11"	"item_demonicon"			//冥灵书			
+		"3"		"item_demonicon"			//冥灵书			
 		// "13"	"item_pirate_hat"			//海盗帽	
-		"14"	"item_ex_machina"			//机械之心
+		"4"		"item_ex_machina"			//机械之心
+		"5"	    "item_apex"					//极	
+		"6"		"item_fallen_sky"			//天崩
 
-        ""      "item_rapier"				//圣剑	
-		""		"item_black_king_bar"		//黑皇杖
-		""		"item_sheepstick"			//邪恶镰刀
+        "7"      "item_rapier"				//圣剑	
+		"8"		"item_black_king_bar"		//黑皇杖
+		"9"		"item_sheepstick"			//邪恶镰刀
 	}
 }

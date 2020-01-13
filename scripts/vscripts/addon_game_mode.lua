@@ -49,7 +49,9 @@ LinkLuaModifier("modifier_outpost_vision",
 -- 英雄饰品
 GameRules.npc_wears_custom = LoadKeyValues("scripts/npc/npc_wears_custom.txt")
 -- 载入kv
-GameRules.load_kv = LoadKeyValues("scripts/vscripts/kv/load_kv.txt")
+_G.load_kv = LoadKeyValues("scripts/vscripts/kv/load_kv.txt")
+_G.load_items = LoadKeyValues("scripts/vscripts/kv/load_items.txt")
+
 ---玩家数据
 -- key是玩家id，value是一个table，包括各个玩家的数据
 GameRules.player_data = {}
@@ -182,9 +184,9 @@ function CEventGameMode:OnEntityKilled(keys)
                                                         attacker)
         attacker:EmitSound("Outpost.Reward")
         attacker.kill_score = attacker.kill_score +
-                                  GameRules.load_kv["base_kill_score"] +
+                                  _G.load_kv["base_kill_score"] +
                                   killed:GetLevel() *
-                                  GameRules.load_kv["lvl_kill_score"]
+                                  _G.load_kv["lvl_kill_score"]
     end
 end
 
@@ -312,14 +314,12 @@ function CEventGameMode:DamageFilter(damageTable)
     local damage = damageTable.damage
     local attacker_level = attacker:GetLevel()
     local attacker_add_energy = damage /
-                                    (GameRules.load_kv["base_energy"] +
-                                        attacker_level *
-                                        GameRules.load_kv["lvl_energy"])
+                                    (_G.load_kv["base_energy"] + attacker_level *
+                                        _G.load_kv["lvl_energy"])
     local victim_level = victim:GetLevel()
     local victim_add_energy = damage /
-                                  (GameRules.load_kv["base_energy"] +
-                                      victim_level *
-                                      GameRules.load_kv["lvl_energy"])
+                                  (_G.load_kv["base_energy"] + victim_level *
+                                      _G.load_kv["lvl_energy"])
     if attacker:IsHero() then
         attacker.energy = attacker.energy + attacker_add_energy
         if attacker.energy >= 100 then attacker.energy = 100 end
@@ -453,7 +453,7 @@ function CEventGameMode:OnThink()
             end
         end
         -- 设置胜利条件
-        local winner_score = GameRules.load_kv["winner_score"]
+        local winner_score = _G.load_kv["winner_score"]
         if good_score >= winner_score then
             GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
         elseif bad_score >= winner_score then
