@@ -4365,7 +4365,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"4500"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -4374,7 +4374,7 @@
 		"ItemResult"					"item_sheepstick"
 		"ItemRequirements"
 		{
-			"01"						"item_mystic_staff;item_ultimate_orb;item_void_stone"
+			"01"						""
 		}
 	}
 	
@@ -4394,23 +4394,24 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"800"
+		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.0"
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22.0"
+		"AbilityCooldown"				"20.0"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"250"
-		"ItemCost"						"5700"
+		"AbilityManaCost"				"350"
+		"ItemCost"						"4500"
 		"ItemShopTags"					"int;regen_mana;agi;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"hex;sheepstick;scythe of vyse"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		
+		"ItemPurchasable"				"0"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -4428,22 +4429,22 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"35"
+				"bonus_intellect"		"30"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"9.0"
+				"bonus_mana_regen"		"6.0"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"sheep_duration"		"3.5"
+				"sheep_duration"		"2.0"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"sheep_movement_speed"	"140"
+				"sheep_movement_speed"	"180"
 			}
 		}
 	}
@@ -6326,7 +6327,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1450"	
+		"ItemCost"						"4500"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -6335,7 +6336,7 @@
 		"ItemResult"					"item_black_king_bar"
 		"ItemRequirements"
 		{
-			"01"						"item_ogre_axe;item_mithril_hammer"
+			"01"						""
 		}
 	}
 	
@@ -6352,18 +6353,19 @@
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70"
-
+		"AbilityCooldown"				"60"
+		"AbilityManaCost"				"200"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4050"
+		"ItemCost"						"4500"
 		"ItemShopTags"					"str;damage;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bkb;black king bar"
 		"ItemSellable"					"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		
+		"ItemPurchasable"				"0"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -6376,22 +6378,22 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"24"
+				"bonus_damage"			"40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"10.0 9.0 8.0 7.0 6.0 5.0"
+				"duration"				"4.0"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_level"				"6"
+				"max_level"				"1"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"model_scale"			"30"     // Percentage over model scale
+				"model_scale"			"50"     // Percentage over model scale
 			}
 		}
 	}
@@ -7838,7 +7840,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"4500"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -7847,7 +7849,7 @@
 		"ItemResult"					"item_rapier"
 		"ItemRequirements"
 		{
-			"01"						"item_relic;item_demon_edge"
+			"01"						""
 		}
 	}
 	
@@ -7864,12 +7866,12 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"6000"
+		"ItemCost"						"4500"
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"divine rapier"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemSellable"					"0"
+		"ItemSellable"					"1"
 		"ItemKillable"					"0"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
 		"ItemContributesToNetWorthWhenDropped"	"0"
@@ -7877,7 +7879,7 @@
 		"IsTempestDoubleClonable"		"0"
 		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ShouldBeSuggested"				"1"
-		
+		"ItemPurchasable"				"0"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -7885,7 +7887,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"330"
+				"bonus_damage"			"300"
 			}
 		}
 	}
@@ -12641,7 +12643,7 @@
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"4500"
 		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"1"
@@ -12656,7 +12658,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_pct"			"50"
+				"health_pct"			"75"
 			}
 		}
 	}
@@ -12955,7 +12957,7 @@
 			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"4500"
 		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
@@ -12968,7 +12970,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"reflect_chance"			"75"
+				"reflect_chance"			"100"
 			}
 			"02"
 			{
@@ -12978,7 +12980,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"block_cooldown"		"4.0"
+				"block_cooldown"		"10.0"
 			}
 		}
 	}
@@ -14501,7 +14503,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"4500"
 		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
@@ -14514,7 +14516,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"primary_stat_percent"			"80"
+				"primary_stat_percent"			"100"
 			}
 		}
 	}
@@ -14727,11 +14729,11 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90.0"
+		"AbilityCooldown"				"60.0"
 					
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"4500"
 		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
@@ -14744,17 +14746,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"			"35"
+				"bonus_strength"			"20"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"35"
+				"bonus_intellect"		"30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"summon_duration"				"75"
+				"summon_duration"				"15"
 			}
 		}
 	}
@@ -14801,13 +14803,15 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1600"
-		"AbilityCooldown"				"15.0"
-					
+		"AbilityCooldown"				"18.0"
+		"AbilityManaCost"				"350"			
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"4500"
 		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"0"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		
@@ -14818,22 +14822,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"20"
+				"bonus_strength"		"15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"20"
+				"bonus_intellect"		"15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"		"15.0"
+				"bonus_health_regen"		"8.0"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"10.0"
+				"bonus_mana_regen"		"5.0"
 			}
 			"05"
 			{
@@ -14843,17 +14847,17 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"burn_dps_units"		"90"
+				"burn_dps_units"		"70"
 			}
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"burn_duration"		"6"
+				"burn_duration"		"5"
 			}
 			"08"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"2.0"
+				"stun_duration"		"1.5"
 			}
 			"09"
 			{
@@ -14863,17 +14867,17 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"land_time"				".5"
+				"land_time"				"0.5"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"impact_radius"		"315"
+				"impact_radius"		"350"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"max_duration"		"2.5"
+				"max_duration"		"1.5"
 			}
 			"13"
 			{
@@ -14883,7 +14887,7 @@
 			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"impact_damage_units"		"150"
+				"impact_damage_units"		"250"
 			}
 		}
 	}
@@ -14963,7 +14967,7 @@
 					
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"4500"
 		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 
@@ -14976,7 +14980,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"25"
+				"bonus_armor"			"15"
 			}
 		}
 	}
