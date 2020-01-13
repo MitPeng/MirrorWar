@@ -1709,6 +1709,12 @@
 						"ModifierName"	"modifier_set_energy_count"
 						"Duration"	"-1"
 					}
+					"ApplyModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_get_energy"
+						"Duration"	"-1"
+					}
 				}
 				"OnIntervalThink"
 				{
@@ -1729,6 +1735,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 				"Duration"	"-1"
 				"IsHidden"	"1"
+				"IsPurgable"	"0"
 			}
 			"modifier_set_energy_count"
 			{
@@ -1737,6 +1744,35 @@
 				"IsBuff"	"1"
 				"Duration"	"-1"
 				"Passive"	"0"
+				"IsPurgable"	"0"
+			}
+			"modifier_get_energy"
+			{
+				"Passive"	"0"
+				"Duration"	"-1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"IsBuff"	"1"
+				"IsHidden"	"1"
+				"IsPurgable"	"0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
+						"Function"	"init_energy"
+					}
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
+						"Function"	"get_energy"
+					}
+				}
+				"ThinkInterval"	"1.0"
 			}
 		}
 	}

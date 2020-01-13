@@ -7,7 +7,6 @@ end
 -- 自动获取能量
 function get_energy(keys)
     local caster = keys.caster
-    print(caster.energy)
     if caster.energy < 100 then
         -- 每秒生成基础能量+等级加成能量
         caster.energy = caster.energy + _G.load_kv["base_energy_per_second"] +
