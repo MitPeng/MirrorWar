@@ -41,7 +41,7 @@
 	}
 	"3"//3600
 	{
-		"count"	"11"
+		"count"	"12"
 		// "1"	    "item_repair_kit"			//维修器具	
 		// "2"	    "item_craggy_coat"			//崎岖外衣	
 		"1"	    "item_greater_faerie_fire"	//高级仙灵火	
