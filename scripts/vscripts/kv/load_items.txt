@@ -56,10 +56,11 @@
 		"6"	    "item_essence_ring"			//精华指环	
 
 		"7"		"item_travel_boots_2"		//远行鞋2		
-		"8"      "item_veil_of_discord"		//纷争面纱
+		"8"     "item_veil_of_discord"		//纷争面纱
 		"9"		"item_blink"				//闪烁匕首
-		"10"      "item_meteor_hammer"		//陨星锤
-		"11"      "item_cyclone"				//Eul的神圣法杖
+		"10"    "item_meteor_hammer"		//陨星锤
+		"11"    "item_cyclone"				//Eul的神圣法杖
+		"12"	"item_force_staff"			//原力法杖
 	}
 	"4"//5400
 	{	
