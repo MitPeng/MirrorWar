@@ -1,3 +1,23 @@
+-- 初始化能量
+function init_energy(keys)
+    local caster = keys.caster
+    if not caster.energy then caster.energy = 0 end
+end
+
+-- 自动获取能量
+function get_energy(keys)
+    local caster = keys.caster
+    if caster.energy < 100 then
+        -- 每秒生成基础能量+等级加成能量
+        caster.energy = caster.energy + _G.load_kv["base_energy_per_second"] +
+                            caster:GetLevel() *
+                            _G.load_kv["lvl_energy_per_second"]
+        if caster.energy >= 100 then caster.energy = 100 end
+    elseif caster.energy >= 100 then
+        caster.energy = 100
+    end
+end
+
 -- 设置能量点数
 function set_energy_count(keys)
     local caster = keys.caster

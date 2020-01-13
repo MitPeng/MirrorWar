@@ -1,0 +1,217 @@
+// Dota2 Editor
+// Get latest version: https://github.com/zombieJ/nw-dota2editor
+
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	"item_box_1"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_box_1"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	""
+		"AbilityCastPoint"	""
+		"ID"	"1501"
+		"ItemQuality"	"consumable"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"600"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemAlertable"	"1"
+		"ItemPermanent"	"0"
+		"ItemRequiresCharges"	""
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemShopTags"	"consumable"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/items/item_box.lua"
+				"Function"	"open_box"
+				"box_number"	"1"
+			}
+			"SpendCharge"	{}
+		}
+		"ItemDisplayCharges"	"1"
+	}
+
+	"item_box_2"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_box_2"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	""
+		"AbilityCastPoint"	""
+		"ID"	"1502"
+		"ItemQuality"	"common"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"1800"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemAlertable"	"1"
+		"ItemPermanent"	"0"
+		"ItemRequiresCharges"	""
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemShopTags"	"consumable"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/items/item_box.lua"
+				"Function"	"open_box"
+				"box_number"	"2"
+			}
+			"SpendCharge"	{}
+		}
+		"ItemDisplayCharges"	"1"
+	}
+
+	"item_box_3"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_box_3"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	""
+		"AbilityCastPoint"	""
+		"ID"	"1503"
+		"ItemQuality"	"rare"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"3600"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemAlertable"	"1"
+		"ItemPermanent"	"0"
+		"ItemRequiresCharges"	""
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemShopTags"	"consumable"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/items/item_box.lua"
+				"Function"	"open_box"
+				"box_number"	"3"
+			}
+			"SpendCharge"	{}
+		}
+		"ItemDisplayCharges"	"1"
+	}
+
+	"item_box_4"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_box_4"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	""
+		"AbilityCastPoint"	""
+		"ID"	"1504"
+		"ItemQuality"	"epic"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"5400"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemAlertable"	"1"
+		"ItemPermanent"	"0"
+		"ItemRequiresCharges"	""
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemShopTags"	"consumable"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/items/item_box.lua"
+				"Function"	"open_box"
+				"box_number"	"4"
+			}
+			"SpendCharge"	{}
+		}
+		"ItemDisplayCharges"	"1"
+	}
+
+	"item_box_5"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_box_5"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	""
+		"AbilityCastPoint"	""
+		"ID"	"1505"
+		"ItemQuality"	"secret_shop"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"7200"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemAlertable"	"1"
+		"ItemPermanent"	"0"
+		"ItemRequiresCharges"	""
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemShopTags"	"consumable"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/items/item_box.lua"
+				"Function"	"open_box"
+				"box_number"	"5"
+			}
+			"SpendCharge"	{}
+		}
+		"ItemDisplayCharges"	"1"
+	}
+
+	"item_box_6"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_box_6"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	""
+		"AbilityCastPoint"	""
+		"ID"	"1506"
+		"ItemQuality"	"artifact"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"9000"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemAlertable"	"1"
+		"ItemPermanent"	"0"
+		"ItemRequiresCharges"	""
+		"ItemInitialCharges"	"1"
+		"ItemStackable"	"1"
+		"ItemShopTags"	"consumable"
+		"ItemRequirements"	{}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"scripts/vscripts/items/item_box.lua"
+				"Function"	"open_box"
+				"box_number"	"6"
+			}
+			"SpendCharge"	{}
+		}
+		"ItemDisplayCharges"	"1"
+	}
+}

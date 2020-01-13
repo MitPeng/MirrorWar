@@ -1729,6 +1729,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 				"Duration"	"-1"
 				"IsHidden"	"1"
+				"IsPurgable"	"0"
 			}
 			"modifier_set_energy_count"
 			{
@@ -1737,6 +1738,34 @@
 				"IsBuff"	"1"
 				"Duration"	"-1"
 				"Passive"	"0"
+				"IsPurgable"	"0"
+			}
+			"modifier_get_energy"
+			{
+				"Passive"	"1"
+				"Duration"	"-1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"IsBuff"	"1"
+				"IsHidden"	"1"
+				"IsPurgable"	"0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
+						"Function"	"init_energy"
+					}
+				}
+				"1.0"
+				{
+					"RunScript"
+					{
+						"Target"	"CASTER"
+						"ScriptFile"	"scripts/vscripts/heroes/energy/energy.lua"
+						"Function"	"get_energy"
+					}
+				}
 			}
 		}
 	}

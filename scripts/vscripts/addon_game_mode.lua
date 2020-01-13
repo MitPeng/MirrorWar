@@ -38,12 +38,8 @@ function Precache(context)
                      "particles/items3_fx/octarine_core_lifesteal.vpcf", context)
 
 end
-LinkLuaModifier("modifier_energy", "modifiers/modifier_energy.lua",
-                LUA_MODIFIER_MOTION_NONE)
+
 LinkLuaModifier("modifier_get_attacker", "modifiers/modifier_get_attacker.lua",
-                LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_outpost_vision",
-                "modifiers/modifier_outpost_vision.lua",
                 LUA_MODIFIER_MOTION_NONE)
 
 -- 英雄饰品
@@ -264,8 +260,6 @@ function CEventGameMode:OnNPCSpawned(keys)
             hero.energy = 0
             hero.outpost_score = 0
             hero.kill_score = 0
-            -- 添加自动获取能量buff,hero.energy
-            hero:AddNewModifier(hero, nil, "modifier_energy", {duration = -1})
             -- 添加获取最近15秒被谁攻击,hero.get_attacker
             hero:AddNewModifier(hero, nil, "modifier_get_attacker",
                                 {duration = -1})
