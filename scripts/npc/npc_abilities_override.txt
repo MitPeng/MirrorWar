@@ -5880,7 +5880,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"10 13 16"
+				"bonus_strength"		"10 15 20"
 			}
 			"02"
 			{
@@ -5895,12 +5895,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"warrior_health_tooltip"	"200 300 400"
+				"warrior_health_tooltip"	"700 800 900"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"warrior_damage_tooltip"	"25 40 65"
+				"warrior_damage_tooltip"	"75 100 125"
 			}
 			"06"
 			{
@@ -5915,42 +5915,42 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"explosion"				"200 300 400"
+				"explosion"				"600 700 800"
 			}			
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"warrior_truesight"		"800"
+				"warrior_truesight"		"1000"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"archer_health_tooltip"	"200 300 400"
+				"archer_health_tooltip"	"700 800 900"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"archer_damage_tooltip"	"20 35 50"
+				"archer_damage_tooltip"	"60 90 120"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"archer_mana_burn"		"100 150 200"
+				"archer_mana_burn"		"125 175 225"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"archer_aura_radius_tooltip"	"1000"
+				"archer_aura_radius_tooltip"	"1200"
 			}
 			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"archer_move_speed"	"3 4 5"
+				"archer_move_speed"	"5 7 9"
 			}
 			"15"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"archer_attack_speed"	"5 10 15"
+				"archer_attack_speed"	"5 7 9"
 			}	
 		}
 	}

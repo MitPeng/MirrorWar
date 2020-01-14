@@ -18,4 +18,6 @@
     "lvl_kill_score" "10"
     //设置胜利得分
     "winner_score" "10000"
+    //开箱出更高级箱子的概率
+    "open_great_box_percent"    "5"
 }
