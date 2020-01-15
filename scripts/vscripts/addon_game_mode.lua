@@ -1,8 +1,12 @@
-require("timers")
-require("utils")
 -- Generated from template
 if CEventGameMode == nil then CEventGameMode = class({}) end
 
+-- require files
+require("timers")
+require("utils")
+require("msg")
+
+-- 加载资源
 function Precache(context)
     --[[
 		Precache things we know we'll use.  Possible file types include (but not limited to):
@@ -39,16 +43,18 @@ function Precache(context)
 
 end
 
+-- 关联修改器
 LinkLuaModifier("modifier_get_attacker", "modifiers/modifier_get_attacker.lua",
                 LUA_MODIFIER_MOTION_NONE)
 
--- 英雄饰品
+-- 载入英雄饰品文件
 GameRules.npc_wears_custom = LoadKeyValues("scripts/npc/npc_wears_custom.txt")
+
 -- 载入kv
 _G.load_kv = LoadKeyValues("scripts/vscripts/kv/load_kv.txt")
 _G.load_items = LoadKeyValues("scripts/vscripts/kv/load_items.txt")
 
----玩家数据
+-- 保存玩家数据
 -- key是玩家id，value是一个table，包括各个玩家的数据
 GameRules.player_data = {}
 ---玩家总数，无论是否在线，只要完全连入过游戏，就算一个

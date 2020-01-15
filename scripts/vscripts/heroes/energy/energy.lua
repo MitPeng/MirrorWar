@@ -35,6 +35,7 @@ function is_energy_enough(keys)
     if caster.energy < 100 then
         caster:Stop()
         ability:StartCooldown(1)
+        _G.msg.bottom("#no_enough_energy", caster:GetPlayerID())
     end
 end
 

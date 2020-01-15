@@ -1,0 +1,4 @@
+"addon"
+{
+    "no_enough_energy"  "能量不足!"
+}
