@@ -934,7 +934,7 @@
 						"EffectAttachType"	"follow_origin"
 						"ControlPointEntities"
 						{
-							"TARGET"	"follow_origin"
+							"CASTER"	"follow_origin"
 							"TARGET"	"follow_origin"
 							"TARGET"	"follow_origin"
 							"TARGET"	"follow_origin"
