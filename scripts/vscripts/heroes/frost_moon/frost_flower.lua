@@ -8,7 +8,7 @@ function frost_flower_projectile(keys)
     local end_radius = ability:GetSpecialValueFor("end_radius")
     local distance = ability:GetSpecialValueFor("distance")
     local vision = ability:GetSpecialValueFor("vision")
-    local effect_name = "particles/frost_moon_frost_flower_arrow.vpcf"
+    local effect_name = "particles/frost_moon_frost_flower_arrow_2.vpcf"
     -- 获取施法者位置
     local caster_abs = caster:GetAbsOrigin()
     -- 设置施法者面向角度

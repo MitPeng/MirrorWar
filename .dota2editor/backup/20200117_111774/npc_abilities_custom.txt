@@ -648,7 +648,7 @@
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts"
-			"particle"	"particles/econ/items/mirana/mirana_crescent_arrow/mirana_spell_crescent_arrow.vpcf"
+			"particle"	"frost_moon_ice_leaf_arrow.vpcf"
 			"particle"	"particles/econ/items/drow/drow_ti6/drow_hero_silence_ti6.vpcf"
 			"particle"	"particles/units/heroes/hero_ancient_apparition/ancient_apparition_ice_blast_debuff.vpcf"
 		}
@@ -665,7 +665,7 @@
 				"MoveSpeed"	"850"
 				"TargetTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"StartPosition"	"attach_origin"
-				"EffectName"	"particles/econ/items/mirana/mirana_crescent_arrow/mirana_spell_crescent_arrow.vpcf"
+				"EffectName"	"frost_moon_ice_leaf_arrow.vpcf"
 				"StartRadius"	"50"
 				"EndRadius"	"100"
 				"FixedDistance"	"1100"
@@ -756,6 +756,7 @@
 		"precache"
 		{
 			"particle"	"particles/frost_moon_frost_flower_arrow.vpcf"
+			"particle"	"particles/frost_moon_frost_flower_arrow_2.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts"
 			"particle"	"particles/frost_moon_frost_flower.vpcf"
 			"particle"	"particles/units/heroes/hero_ancient_apparition/ancient_apparition_ice_blast_debuff.vpcf"
@@ -934,7 +935,7 @@
 						"EffectAttachType"	"follow_origin"
 						"ControlPointEntities"
 						{
-							"TARGET"	"follow_origin"
+							"CASTER"	"follow_origin"
 							"TARGET"	"follow_origin"
 							"TARGET"	"follow_origin"
 							"TARGET"	"follow_origin"
