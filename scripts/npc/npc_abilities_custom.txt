@@ -57,7 +57,7 @@
 			"RunScript"
 			{
 				"Target"	"CASTER"
-				"ScriptFile"	"scripts/vscripts/heroes/ascetic_monk/ascetic_monk.lua"
+				"ScriptFile"	"scripts/vscripts/heroes/trip_master/trip_master.lua"
 				"Function"	"double_strik_act"
 			}
 			"DelayedAction"
@@ -98,7 +98,7 @@
 			"RunScript"
 			{
 				"Target"	"TARGET"
-				"ScriptFile"	"scripts/vscripts/heroes/ascetic_monk/ascetic_monk.lua"
+				"ScriptFile"	"scripts/vscripts/heroes/trip_master/trip_master.lua"
 				"Function"	"double_strik_damage"
 			}
 			"RemoveModifier"
@@ -205,7 +205,7 @@
 			"RunScript"
 			{
 				"Target"	"POINT"
-				"ScriptFile"	"scripts/vscripts/heroes/ascetic_monk/ascetic_monk.lua"
+				"ScriptFile"	"scripts/vscripts/heroes/trip_master/trip_master.lua"
 				"Function"	"break_sky_move"
 			}
 		}
@@ -221,7 +221,7 @@
 			"RunScript"
 			{
 				"Target"	"TARGET"
-				"ScriptFile"	"scripts/vscripts/heroes/ascetic_monk/ascetic_monk.lua"
+				"ScriptFile"	"scripts/vscripts/heroes/trip_master/trip_master.lua"
 				"Function"	"break_sky_damage"
 			}
 		}
@@ -285,7 +285,7 @@
 					"RunScript"
 					{
 						"Target"	"CASTER"
-						"ScriptFile"	"scripts/vscripts/heroes/ascetic_monk/ascetic_monk.lua"
+						"ScriptFile"	"scripts/vscripts/heroes/trip_master/trip_master.lua"
 						"Function"	"kasaya_agility"
 					}
 				}
@@ -317,7 +317,7 @@
 					"RunScript"
 					{
 						"Target"	"CASTER"
-						"ScriptFile"	"scripts/vscripts/heroes/ascetic_monk/ascetic_monk.lua"
+						"ScriptFile"	"scripts/vscripts/heroes/trip_master/trip_master.lua"
 						"Function"	"kasaya_count"
 					}
 				}
@@ -326,7 +326,7 @@
 					"RunScript"
 					{
 						"Target"	"CASTER"
-						"ScriptFile"	"scripts/vscripts/heroes/ascetic_monk/ascetic_monk.lua"
+						"ScriptFile"	"scripts/vscripts/heroes/trip_master/trip_master.lua"
 						"Function"	"kasaya_count"
 					}
 				}
@@ -489,7 +489,7 @@
 					"RunScript"
 					{
 						"Target"	"TARGET"
-						"ScriptFile"	"scripts/vscripts/heroes/ascetic_monk/ascetic_monk.lua"
+						"ScriptFile"	"scripts/vscripts/heroes/trip_master/trip_master.lua"
 						"Function"	"vanquish_demon_damage"
 					}
 					"AttachEffect"
@@ -537,7 +537,7 @@
 					"RunScript"
 					{
 						"Target"	""
-						"ScriptFile"	"scripts/vscripts/heroes/ascetic_monk/ascetic_monk.lua"
+						"ScriptFile"	"scripts/vscripts/heroes/trip_master/trip_master.lua"
 						"Function"	"vanquish_demon_act"
 					}
 					"FireSound"
@@ -558,7 +558,7 @@
 					"RunScript"
 					{
 						"Target"	""
-						"ScriptFile"	"scripts/vscripts/heroes/ascetic_monk/ascetic_monk.lua"
+						"ScriptFile"	"scripts/vscripts/heroes/trip_master/trip_master.lua"
 						"Function"	"vanquish_demon_damage"
 					}
 					"AttachEffect"
