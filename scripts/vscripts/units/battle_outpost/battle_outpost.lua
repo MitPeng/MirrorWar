@@ -26,6 +26,7 @@ function get_team_point(keys)
         local particle = ParticleManager:CreateParticle(particle_name,
                                                         PATTACH_OVERHEAD_FOLLOW,
                                                         caster)
+        ParticleManager:SetParticleControl(particle, 1, caster:GetAbsOrigin())
         caster:EmitSound("Outpost.Reward")
         for _, hero in ipairs(bad_hero) do
             hero.outpost_score = hero.outpost_score + 1
@@ -42,6 +43,7 @@ function get_team_point(keys)
         local particle = ParticleManager:CreateParticle(particle_name,
                                                         PATTACH_OVERHEAD_FOLLOW,
                                                         caster)
+        ParticleManager:SetParticleControl(particle, 1, caster:GetAbsOrigin())
         caster:EmitSound("Outpost.Reward")
         for _, hero in ipairs(good_hero) do
             hero.outpost_score = hero.outpost_score + 1

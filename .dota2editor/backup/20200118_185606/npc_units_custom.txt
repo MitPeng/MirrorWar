@@ -487,5 +487,7 @@
 		"SelectionGroup"	""
 		"TeamName"	""
 		"BoundsHullName"	"DOTA_HULL_SIZE_HERO"
+		"MovementSpeed"	"150"
+		"MovementTurnRate"	"1"
 	}
 }

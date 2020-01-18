@@ -5,6 +5,7 @@ if CEventGameMode == nil then CEventGameMode = class({}) end
 require("timers")
 require("utils")
 require("msg")
+require("path")
 
 -- 加载资源
 function Precache(context)
@@ -59,6 +60,10 @@ _G.load_items = LoadKeyValues("scripts/vscripts/kv/load_items.txt")
 GameRules.player_data = {}
 ---玩家总数，无论是否在线，只要完全连入过游戏，就算一个
 GameRules.player_count = 0
+-- 战斗前哨移动路径
+GameRules.path_corners = {
+    "corner_1", "corner_2", "corner_3", "corner_4", "corner_5"
+}
 
 -- Create the game mode when we activate
 -- 激活某些函数
@@ -167,6 +172,8 @@ function CEventGameMode:OnGameRulesStateChange(keys)
         -- 设置位置与朝向
         unit_battle_outpost:SetOrigin(vec)
         unit_battle_outpost:SetForwardVector(Vector(-1, -1, 0))
+        -- 设置战斗前哨运动
+        path:find_path(unit_battle_outpost, GameRules.path_corners)
         -- 设置动作
         unit_battle_outpost:StartGestureWithPlaybackRate(
             ACT_DOTA_CHANNEL_ABILITY_1, 1)
