@@ -482,10 +482,12 @@
 		"HasInventory"	"0"
 		"ConsideredHero"	"0"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
-		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
 		"RingRadius"	""
 		"SelectionGroup"	""
 		"TeamName"	""
 		"BoundsHullName"	"DOTA_HULL_SIZE_HERO"
+		"MovementSpeed"	"100"
+		"MovementTurnRate"	"0.3"
 	}
 }

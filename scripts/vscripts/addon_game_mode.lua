@@ -112,7 +112,7 @@ function CEventGameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetDamageFilter(
         Dynamic_Wrap(CEventGameMode, "DamageFilter"), self)
     -- 设置选择英雄时间
-    GameRules:SetHeroSelectionTime(30)
+    GameRules:SetHeroSelectionTime(10)
     -- 设置决策时间
     GameRules:SetStrategyTime(0)
     -- 设置展示时间
@@ -122,7 +122,7 @@ function CEventGameMode:InitGameMode()
     -- 设置不能买活
     GameRules:GetGameModeEntity():SetBuybackEnabled(false)
     -- 设置复活时间
-    GameRules:GetGameModeEntity():SetFixedRespawnTime(10.0)
+    GameRules:GetGameModeEntity():SetFixedRespawnTime(5.0)
     -- 设置金钱每次增长
     -- GameRules:SetGoldPerTick(3)
     -- 设置金钱增长间隔
@@ -159,6 +159,20 @@ function CEventGameMode:OnGameRulesStateChange(keys)
         -- MakeRandomHeroSelection()
 
     elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+        -- 如果没选英雄，自动判对方获胜          
+        Timers:CreateTimer(1, function()
+            for i = 0, 5 do
+                local player = PlayerResource:GetPlayer(i)
+                if not player or not player:GetAssignedHero() then
+                    if PlayerResource:GetTeam(i) == DOTA_TEAM_GOODGUYS then
+                        GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+                    elseif PlayerResource:GetTeam(i) == DOTA_TEAM_BADGUYS then
+                        GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+                    end
+                end
+            end
+            return nil
+        end)
 
         -- 游戏开始后生成战斗前哨
         local vec = Vector(0, 200, 0)

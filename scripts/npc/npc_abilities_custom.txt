@@ -1849,7 +1849,7 @@
 					}
 				}
 				"Passive"	"1"
-				"ThinkInterval"	"0.5"
+				"ThinkInterval"	"0.3"
 				"IsHidden"	"1"
 				"EffectName"	""
 				"EffectAttachType"	""

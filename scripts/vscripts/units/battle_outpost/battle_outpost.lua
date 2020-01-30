@@ -65,7 +65,7 @@ end
 function vision(keys)
     local loc = keys.caster:GetAbsOrigin()
     local radius = keys.ability:GetSpecialValueFor("radius")
-    AddFOWViewer(DOTA_TEAM_GOODGUYS, loc, radius, 0.5, false)
-    AddFOWViewer(DOTA_TEAM_BADGUYS, loc, radius, 0.5, false)
+    AddFOWViewer(DOTA_TEAM_GOODGUYS, loc, radius, 0.3, false)
+    AddFOWViewer(DOTA_TEAM_BADGUYS, loc, radius, 0.3, false)
 end
 
