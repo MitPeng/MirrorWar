@@ -20,7 +20,7 @@ function get_team_point(keys)
     if good ~= 0 and bad ~= 0 then
         -- print("good=bad")
     elseif good == 0 and bad ~= 0 then
-        print("bad:" .. bad)
+        -- print("bad:" .. bad)
         local particle_name =
             "particles/world_outpost/world_outpost_dire_ambient_shockwave.vpcf"
         local particle = ParticleManager:CreateParticle(particle_name,
@@ -29,7 +29,10 @@ function get_team_point(keys)
         ParticleManager:SetParticleControl(particle, 1, caster:GetAbsOrigin())
         caster:EmitSound("Outpost.Reward")
         for _, hero in ipairs(bad_hero) do
-            hero.outpost_score = hero.outpost_score + 1
+            hero.outpost_score = hero.outpost_score +
+                                     _G.load_kv["base_outpost_score"] +
+                                     hero:GetLevel() *
+                                     _G.load_kv["lvl_outpost_score"]
             local particle_name_2 =
                 "particles/generic_gameplay/outpost_reward.vpcf"
             local particle_2 = ParticleManager:CreateParticle(particle_name_2,
@@ -37,7 +40,7 @@ function get_team_point(keys)
                                                               hero)
         end
     elseif good ~= 0 and bad == 0 then
-        print("good:" .. good)
+        -- print("good:" .. good)
         local particle_name =
             "particles/world_outpost/world_outpost_radiant_ambient_shockwave.vpcf"
         local particle = ParticleManager:CreateParticle(particle_name,
@@ -46,7 +49,10 @@ function get_team_point(keys)
         ParticleManager:SetParticleControl(particle, 1, caster:GetAbsOrigin())
         caster:EmitSound("Outpost.Reward")
         for _, hero in ipairs(good_hero) do
-            hero.outpost_score = hero.outpost_score + 1
+            hero.outpost_score = hero.outpost_score +
+                                     _G.load_kv["base_outpost_score"] +
+                                     hero:GetLevel() *
+                                     _G.load_kv["lvl_outpost_score"]
             local particle_name_2 =
                 "particles/generic_gameplay/outpost_reward.vpcf"
             local particle_2 = ParticleManager:CreateParticle(particle_name_2,

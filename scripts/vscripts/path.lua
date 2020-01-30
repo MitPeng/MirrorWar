@@ -25,6 +25,77 @@ function path:find_path(unit, path_corners)
 end
 -- ]]
 
+-- 规划corner_1到corner_7的100个路点的路线
+function path:get_path()
+    local p = {}
+    for i = 1, 100 do
+        if i == 1 or i == 100 then
+            p[i] = "corner_1"
+        else
+            if p[i - 1] then
+                if p[i - 1] == "corner_1" then
+                    p[i] = "corner_" .. tostring(RandomInt(2, 7))
+                elseif p[i - 1] == "corner_2" then
+                    local num = RandomInt(1, 3)
+                    if num == 1 then
+                        p[i] = "corner_1"
+                    elseif num == 2 then
+                        p[i] = "corner_3"
+                    elseif num == 3 then
+                        p[i] = "corner_4"
+                    end
+                elseif p[i - 1] == "corner_3" then
+                    local num = RandomInt(1, 3)
+                    if num == 1 then
+                        p[i] = "corner_1"
+                    elseif num == 2 then
+                        p[i] = "corner_2"
+                    elseif num == 3 then
+                        p[i] = "corner_5"
+                    end
+                elseif p[i - 1] == "corner_4" then
+                    local num = RandomInt(1, 3)
+                    if num == 1 then
+                        p[i] = "corner_1"
+                    elseif num == 2 then
+                        p[i] = "corner_2"
+                    elseif num == 3 then
+                        p[i] = "corner_6"
+                    end
+                elseif p[i - 1] == "corner_5" then
+                    local num = RandomInt(1, 3)
+                    if num == 1 then
+                        p[i] = "corner_1"
+                    elseif num == 2 then
+                        p[i] = "corner_3"
+                    elseif num == 3 then
+                        p[i] = "corner_7"
+                    end
+                elseif p[i - 1] == "corner_6" then
+                    local num = RandomInt(1, 3)
+                    if num == 1 then
+                        p[i] = "corner_1"
+                    elseif num == 2 then
+                        p[i] = "corner_4"
+                    elseif num == 3 then
+                        p[i] = "corner_7"
+                    end
+                elseif p[i - 1] == "corner_7" then
+                    local num = RandomInt(1, 3)
+                    if num == 1 then
+                        p[i] = "corner_1"
+                    elseif num == 2 then
+                        p[i] = "corner_5"
+                    elseif num == 3 then
+                        p[i] = "corner_6"
+                    end
+                end
+            end
+        end
+    end
+    return p
+end
+
 -- 计算两点（三维向量）之间距离
 function path:distance_between_two_point(point_1, point_2)
     return ((point_1.x - point_2.x) ^ 2 + (point_1.y - point_2.y) ^ 2) ^ 0.5

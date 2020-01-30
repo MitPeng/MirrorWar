@@ -60,10 +60,6 @@ _G.load_items = LoadKeyValues("scripts/vscripts/kv/load_items.txt")
 GameRules.player_data = {}
 ---玩家总数，无论是否在线，只要完全连入过游戏，就算一个
 GameRules.player_count = 0
--- 战斗前哨移动路径
-GameRules.path_corners = {
-    "corner_1", "corner_2", "corner_3", "corner_4", "corner_5"
-}
 
 -- Create the game mode when we activate
 -- 激活某些函数
@@ -165,15 +161,17 @@ function CEventGameMode:OnGameRulesStateChange(keys)
     elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 
         -- 游戏开始后生成战斗前哨
-        local vec = Vector(0, 0, 128)
+        local vec = Vector(0, 200, 0)
         local unit_battle_outpost = Utils:create_unit_simple(
                                         "unit_battle_outpost", vec, true,
                                         DOTA_TEAM_CUSTOM_1)
         -- 设置位置与朝向
         unit_battle_outpost:SetOrigin(vec)
         unit_battle_outpost:SetForwardVector(Vector(-1, -1, 0))
+        -- 规划运动路线
+        local path_corners = path:get_path()
         -- 设置战斗前哨运动
-        path:find_path(unit_battle_outpost, GameRules.path_corners)
+        path:find_path(unit_battle_outpost, path_corners)
         -- 设置动作
         unit_battle_outpost:StartGestureWithPlaybackRate(
             ACT_DOTA_CHANNEL_ABILITY_1, 1)
@@ -443,9 +441,10 @@ end
 function CEventGameMode:OnThink()
     -- 玩家数大于0
     if GameRules.player_count > 0 then
-        -- 获取第一个玩家的得分
-        local hero = GameRules.player_data[0].hero
+        -- 获取所有玩家的得分
+        -- local hero = GameRules.player_data[0].hero
 
+        -- 获取双方队伍总得分
         local good_score = 0
         local bad_score = 0
 
@@ -468,8 +467,8 @@ function CEventGameMode:OnThink()
         end
 
         local show_socre_event = {
-            hero_name = hero:GetUnitName(),
-            hero_score = hero.outpost_score + hero.kill_score,
+            -- hero_name = hero:GetUnitName(),
+            -- hero_score = hero.outpost_score + hero.kill_score,
             good_team = "GOODGUYS",
             good_score = good_score,
             bad_team = "BADGUYS",
