@@ -1816,12 +1816,6 @@
 						"ScriptFile"	"scripts/vscripts/units/battle_outpost/battle_outpost.lua"
 						"Function"	"get_team_point"
 					}
-					"ApplyModifier"
-					{
-						"Target"	"CASTER"
-						"ModifierName"	"modifier_phased"
-						"Duration"	"-1"
-					}
 				}
 				"OnIntervalThink"
 				{
@@ -1871,36 +1865,6 @@
 					{
 						"Target"	"CASTER"
 						"EffectName"	"Outpost.Channel"
-					}
-				}
-			}
-			"modifier_ability_outpost_corner_vision"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"Target"	""
-						"ScriptFile"	"scripts/vscripts/units/battle_outpost/battle_outpost.lua"
-						"Function"	"get_corners"
-					}
-					"RunScript"
-					{
-						"Target"	""
-						"ScriptFile"	"scripts/vscripts/units/battle_outpost/battle_outpost.lua"
-						"Function"	"corner_vision"
-					}
-				}
-				"ThinkInterval"	"60"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"Target"	""
-						"ScriptFile"	"scripts/vscripts/units/battle_outpost/battle_outpost.lua"
-						"Function"	"corner_vision"
 					}
 				}
 			}

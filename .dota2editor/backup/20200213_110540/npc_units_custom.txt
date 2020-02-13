@@ -429,7 +429,7 @@
 		"Ability15"	""
 		"Ability16"	""
 		"Model"	"models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl"
-		"ModelScale"	"1.5"
+		"ModelScale"	"2"
 		"HasInventory"	"0"
 		"ConsideredHero"	"1"
 		"BoundsHullName"	"DOTA_HULL_SIZE_HUGE"
@@ -464,7 +464,6 @@
 		"IsNeutralUnitType"	"1"
 		"CanBeDominated"	"0"
 		"AutoAttacksByDefault"	"1"
-		"HealthBarOffset"	"400"
 	}
 
 	"unit_battle_outpost"

@@ -69,3 +69,21 @@ function vision(keys)
     AddFOWViewer(DOTA_TEAM_BADGUYS, loc, radius, 0.3, false)
 end
 
+function corner_vision(keys)
+    for i = 1, 7 do
+        local loc = keys.caster.corners[i]
+        local radius = keys.ability:GetSpecialValueFor("radius")
+        AddFOWViewer(DOTA_TEAM_GOODGUYS, loc, radius, 60, false)
+        AddFOWViewer(DOTA_TEAM_BADGUYS, loc, radius, 60, false)
+    end
+
+end
+
+function get_corners(keys)
+    keys.caster.corners = {}
+    for i = 1, 7 do
+        keys.caster.corners[i] = Entities:FindByName(nil, "corner_" .. i)
+                                     :GetAbsOrigin()
+    end
+end
+
