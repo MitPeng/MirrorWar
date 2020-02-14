@@ -3,5 +3,4 @@ function create_boss(keys)
                     :GetOrigin()
     local boss = Utils:create_unit_simple("boss_1", vec, true,
                                           DOTA_TEAM_CUSTOM_1)
-    boss:CreatureLevelUp(10)
 end
