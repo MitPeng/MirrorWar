@@ -112,7 +112,7 @@ function CEventGameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetDamageFilter(
         Dynamic_Wrap(CEventGameMode, "DamageFilter"), self)
     -- 设置选择英雄时间
-    GameRules:SetHeroSelectionTime(10)
+    GameRules:SetHeroSelectionTime(90)
     -- 设置决策时间
     GameRules:SetStrategyTime(0)
     -- 设置展示时间

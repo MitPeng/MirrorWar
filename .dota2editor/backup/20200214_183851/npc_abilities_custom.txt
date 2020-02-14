@@ -1626,14 +1626,29 @@
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"	"1"
-		"AbilityCooldown"	""
-		"AbilityCastRange"	"400"
+		"AbilityCooldown"	"4"
+		"AbilityCastRange"	"500"
 		"AOERadius"	"500"
 		"Modifiers"
 		{
 			"modifier_fire_trap_damage"
 			{
 				"IsDebuff"	"0"
+				"OnCreated"
+				{
+					"Damage"
+					{
+						"Target"
+						{
+							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Center"	"CASTER"
+							"Radius"	"500"
+						}
+						"Type"	"DAMAGE_TYPE_PURE"
+						"MaxHealthPercentBasedDamage"	"10"
+					}
+				}
 				"OnIntervalThink"
 				{
 					"Damage"
@@ -1643,11 +1658,10 @@
 							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Center"	"CASTER"
-							"Radius"	"400"
+							"Radius"	"500"
 						}
 						"Type"	"DAMAGE_TYPE_PURE"
-						"MaxHealthPercentBasedDamage"	""
-						"Damage"	"100"
+						"MaxHealthPercentBasedDamage"	"10"
 					}
 				}
 				"ThinkInterval"	"1.0"

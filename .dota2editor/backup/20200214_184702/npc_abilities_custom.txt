@@ -1627,7 +1627,7 @@
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"	"1"
 		"AbilityCooldown"	""
-		"AbilityCastRange"	"400"
+		"AbilityCastRange"	"500"
 		"AOERadius"	"500"
 		"Modifiers"
 		{
@@ -1643,11 +1643,11 @@
 							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Center"	"CASTER"
-							"Radius"	"400"
+							"Radius"	"600"
 						}
 						"Type"	"DAMAGE_TYPE_PURE"
-						"MaxHealthPercentBasedDamage"	""
-						"Damage"	"100"
+						"MaxHealthPercentBasedDamage"	"10"
+						"Damage"	""
 					}
 				}
 				"ThinkInterval"	"1.0"

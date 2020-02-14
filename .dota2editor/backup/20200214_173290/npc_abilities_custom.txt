@@ -1620,41 +1620,53 @@
 	"fire_trap"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"	"1"
-		"AbilityCooldown"	""
-		"AbilityCastRange"	"400"
+		"AbilityCooldown"	"4"
+		"AbilityCastRange"	"9999"
 		"AOERadius"	"500"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
+		}
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"	"POINT"
+				"ModifierName"	"modifier_fire_trap_damage"
+				"Duration"	"20"
+			}
+		}
 		"Modifiers"
 		{
 			"modifier_fire_trap_damage"
 			{
-				"IsDebuff"	"0"
+				"IsDebuff"	"1"
+				"OnCreated"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"	"DAMAGE_TYPE_PURE"
+						"MaxHealthPercentBasedDamage"	"10"
+					}
+				}
 				"OnIntervalThink"
 				{
 					"Damage"
 					{
-						"Target"
-						{
-							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Center"	"CASTER"
-							"Radius"	"400"
-						}
+						"Target"	"TARGET"
 						"Type"	"DAMAGE_TYPE_PURE"
-						"MaxHealthPercentBasedDamage"	""
-						"Damage"	"100"
+						"MaxHealthPercentBasedDamage"	"10"
 					}
 				}
 				"ThinkInterval"	"1.0"
-				"EffectName"	""
-				"Passive"	"1"
-				"Duration"	"-1"
-				"IsHidden"	"1"
+				"EffectName"	"particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
 			}
 		}
 	}
