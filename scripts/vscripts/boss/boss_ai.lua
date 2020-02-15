@@ -19,9 +19,9 @@ AI.Init = function(self)
         self.bIsRoaring = false
 
         local tWaypoints = {}
-        local nWaypointsPerRoamNode = 40
-        local nMinWaypointSearchDistance = 2048
-        local nMaxWaypointSearchDistance = 4096
+        local nWaypointsPerRoamNode = 20
+        local nMinWaypointSearchDistance = 1024
+        local nMaxWaypointSearchDistance = 3072
 
         while #tWaypoints < nWaypointsPerRoamNode do
             local vWaypoint = self:GetAbsOrigin() +
