@@ -3026,7 +3026,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"self_damage_percent"	"3.0 3.5 4.0 4.5"
+				"self_damage_percent"	"3.0 4.5 6.0 7.5"
 			}
 			"02"
 			{
@@ -3041,7 +3041,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"base_damage"	"16 22 28 34"
+				"base_damage"	"10 16 22 28"
 			}
 			"05"
 			{
@@ -3147,7 +3147,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"max_hp_regain"	"10 15 20 25"
+				"max_hp_regain"	"5 10 15 20"
 			}
 			"03"
 			{
@@ -3162,12 +3162,12 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"max_hp_regain_2"	"30 45 60 75"
+				"max_hp_regain_2"	"15 30 45 60"
 			}
 			"06"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"5.0"
+				"duration"	"4.5 5.0 5.5 6.0"
 			}
 		}
 	}

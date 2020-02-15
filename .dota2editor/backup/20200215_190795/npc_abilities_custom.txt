@@ -662,7 +662,7 @@
 			"LinearProjectile"
 			{
 				"Target"	"POINT"
-				"MoveSpeed"	"950"
+				"MoveSpeed"	"900"
 				"TargetTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"StartPosition"	"attach_origin"
 				"EffectName"	"particles/frost_moon_ice_leaf_arrow.vpcf"
@@ -1429,7 +1429,7 @@
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"30 50 70 90"
+				"damage"	"50 75 100 125"
 			}
 		}
 	}
@@ -1649,10 +1649,6 @@
 						"Type"	"DAMAGE_TYPE_MAGICAL"
 						"MaxHealthPercentBasedDamage"	""
 						"Damage"	"%damage"
-					}
-					"FireEffect"
-					{
-						"Target"	""
 					}
 				}
 				"ThinkInterval"	"1.0"
@@ -2328,7 +2324,7 @@
 			{
 				"Target"	"POINT"
 				"EffectName"	"particles/immortal_soul_soul_draw_projectile2.vpcf"
-				"MoveSpeed"	"1100"
+				"MoveSpeed"	"1000"
 				"StartRadius"	"50"
 				"EndRadius"	"115"
 				"FixedDistance"	"%distance"
@@ -2871,7 +2867,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"self_damage_percent"	"15 17 19 21"
+				"self_damage_percent"	"20 24 28 32"
 			}
 			"02"
 			{
@@ -2886,7 +2882,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"base_damage"	"100 150 200 250"
+				"base_damage"	"50 100 150 200"
 			}
 			"05"
 			{
@@ -3026,7 +3022,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"self_damage_percent"	"3.0 3.5 4.0 4.5"
+				"self_damage_percent"	"3.0 4.5 6.0 7.5"
 			}
 			"02"
 			{
@@ -3041,7 +3037,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"base_damage"	"16 22 28 34"
+				"base_damage"	"10 16 22 28"
 			}
 			"05"
 			{
@@ -3147,7 +3143,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"max_hp_regain"	"10 15 20 25"
+				"max_hp_regain"	"5 10 15 20"
 			}
 			"03"
 			{
@@ -3162,12 +3158,12 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"max_hp_regain_2"	"30 45 60 75"
+				"max_hp_regain_2"	"15 30 45 60"
 			}
 			"06"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"5.0"
+				"duration"	"4.5 5.0 5.5 6.0"
 			}
 		}
 	}
@@ -3816,7 +3812,7 @@
 			{
 				"Target"	"POINT"
 				"EffectName"	"particles/units/heroes/hero_shadow_demon/shadow_demon_shadow_poison_projectile.vpcf"
-				"MoveSpeed"	"1000"
+				"MoveSpeed"	"950"
 				"StartRadius"	"100"
 				"EndRadius"	"160"
 				"FixedDistance"	"1000"

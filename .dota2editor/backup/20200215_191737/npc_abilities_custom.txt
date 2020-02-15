@@ -3026,7 +3026,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"self_damage_percent"	"3.0 3.5 4.0 4.5"
+				"self_damage_percent"	"3.0 4.5 6.0 7.5"
 			}
 			"02"
 			{
@@ -3041,7 +3041,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"base_damage"	"16 22 28 34"
+				"base_damage"	"10 16 22 28"
 			}
 			"05"
 			{
