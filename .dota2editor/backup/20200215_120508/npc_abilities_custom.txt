@@ -4487,16 +4487,7 @@
 				"Passive"	"1"
 				"Duration"	"-1"
 				"IsHidden"	"1"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"Target"	""
-						"ScriptFile"	"scripts/vscripts/units/battle_outpost/create_boss.lua"
-						"Function"	"create_boss"
-					}
-				}
-				"ThinkInterval"	"300"
+				"ThinkInterval"	"180"
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -4536,6 +4527,8 @@
 					"RunScript"
 					{
 						"Target"	"ATTACKER"
+						"ScriptFile"	"scripts/vscripts/boss/boss_behavior.lua"
+						"Function"	"death"
 					}
 				}
 			}
