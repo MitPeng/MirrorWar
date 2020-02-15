@@ -6,8 +6,9 @@ function create_boss(keys)
     if keys.ability.boss_lvl ~= nil then
         boss:CreatureLevelUp(keys.ability.boss_lvl)
         keys.ability.boss_lvl = keys.ability.boss_lvl + 5
+        -- boss最高20级
+        if keys.ability.boss_lvl >= 19 then keys.ability.boss_lvl = 19 end
     else
-        keys.ability.boss_lvl = 4
-        boss:CreatureLevelUp(keys.ability.boss_lvl)
+        keys.ability.boss_lvl = -1
     end
 end
