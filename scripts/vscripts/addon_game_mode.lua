@@ -285,6 +285,7 @@ function CEventGameMode:OnNPCSpawned(keys)
             hero.energy = 0
             hero.outpost_score = 0
             hero.kill_score = 0
+            hero.boss_score = 0
             -- 添加获取最近15秒被谁攻击,hero.get_attacker
             hero:AddNewModifier(hero, nil, "modifier_get_attacker",
                                 {duration = -1})
@@ -466,10 +467,10 @@ function CEventGameMode:OnThink()
             local hero_data = GameRules.player_data[i].hero
             if hero_data:GetTeam() == DOTA_TEAM_GOODGUYS then
                 good_score = good_score + hero_data.outpost_score +
-                                 hero_data.kill_score
+                                 hero_data.kill_score + hero_data.boss_score
             elseif hero_data:GetTeam() == DOTA_TEAM_BADGUYS then
                 bad_score = bad_score + hero_data.outpost_score +
-                                hero_data.kill_score
+                                hero_data.kill_score + hero_data.boss_score
             end
         end
         -- 设置胜利条件

@@ -1626,30 +1626,28 @@
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"	"1"
-		"AbilityCooldown"	"4"
-		"AbilityCastRange"	"500"
+		"AbilityCooldown"	""
+		"AbilityCastRange"	"400"
 		"AOERadius"	"500"
 		"Modifiers"
 		{
 			"modifier_fire_trap_damage"
 			{
 				"IsDebuff"	"0"
-				"OnCreated"
-				{
-					"Damage"
-					{
-						"Target"	"TARGET"
-						"Type"	"DAMAGE_TYPE_PURE"
-						"MaxHealthPercentBasedDamage"	"10"
-					}
-				}
 				"OnIntervalThink"
 				{
 					"Damage"
 					{
-						"Target"	"TARGET"
+						"Target"
+						{
+							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Center"	"CASTER"
+							"Radius"	"400"
+						}
 						"Type"	"DAMAGE_TYPE_PURE"
-						"MaxHealthPercentBasedDamage"	"10"
+						"MaxHealthPercentBasedDamage"	""
+						"Damage"	"100"
 					}
 				}
 				"ThinkInterval"	"1.0"
@@ -4506,6 +4504,40 @@
 						"Target"	""
 						"ScriptFile"	"scripts/vscripts/units/battle_outpost/create_boss.lua"
 						"Function"	"create_boss"
+					}
+				}
+			}
+		}
+	}
+
+	"boss_behavior"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"roshan_spell_block"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Modifiers"
+		{
+			"modifier_boss_behavior"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"Target"	""
+						"ScriptFile"	"scripts/vscripts/boss/boss_behavior.lua"
+						"Function"	"lvlup"
+					}
+				}
+				"ThinkInterval"	"60"
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"Target"	"ATTACKER"
+						"ScriptFile"	"scripts/vscripts/boss/boss_behavior.lua"
+						"Function"	"death"
 					}
 				}
 			}

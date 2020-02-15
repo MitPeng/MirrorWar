@@ -19,6 +19,9 @@
     //战斗前哨得分
     "base_outpost_score" "10"
     "lvl_outpost_score" "1"
+    //boss击杀得分
+    "base_boss_score"   "500"
+    "lvl_boss_score"    "50"
     //设置胜利得分
     "winner_score" "10000"
     //开箱出更高级箱子的概率
