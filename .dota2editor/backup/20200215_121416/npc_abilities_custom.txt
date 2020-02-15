@@ -1620,6 +1620,7 @@
 	"fire_trap"
 	{
 		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"roshan_spell_block"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -1647,7 +1648,7 @@
 						}
 						"Type"	"DAMAGE_TYPE_PURE"
 						"MaxHealthPercentBasedDamage"	""
-						"Damage"	"100"
+						"Damage"	"%damage"
 					}
 				}
 				"ThinkInterval"	"1.0"
@@ -1655,6 +1656,14 @@
 				"Passive"	"1"
 				"Duration"	"-1"
 				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"100"
 			}
 		}
 	}
@@ -4487,16 +4496,7 @@
 				"Passive"	"1"
 				"Duration"	"-1"
 				"IsHidden"	"1"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"Target"	""
-						"ScriptFile"	"scripts/vscripts/units/battle_outpost/create_boss.lua"
-						"Function"	"create_boss"
-					}
-				}
-				"ThinkInterval"	"300"
+				"ThinkInterval"	"180"
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -4513,8 +4513,8 @@
 	"boss_behavior"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"roshan_spell_block"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"	""
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Modifiers"
 		{
 			"modifier_boss_behavior"
