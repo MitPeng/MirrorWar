@@ -55,7 +55,7 @@ function get_exp_and_gold(keys)
     local level = caster:GetLevel()
     local xp = _G.load_kv["base_xp"] + level * _G.load_kv["lvl_xp"]
     caster:AddExperience(xp, 0, false, false)
-    local gold = caster:GetGold() + _G.load_kv["base_gold"] + level *
-                     _G.load_kv["lvl_gold"]
-    caster:SetGold(gold, false)
+    local gold = PlayerResource:GetUnreliableGold(caster:GetPlayerID()) +
+                     _G.load_kv["base_gold"] + level * _G.load_kv["lvl_gold"]
+    PlayerResource:SetGold(caster:GetPlayerID(), gold, false)
 end
