@@ -634,7 +634,7 @@
 	"ice_leaf"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"ice_leaf"
+		"AbilityTextureName"	"ice_leaf_simple"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -741,7 +741,7 @@
 	"frost_flower"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"frost_flower"
+		"AbilityTextureName"	"frost_flower_simple"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -891,7 +891,7 @@
 	"moonlight"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"moonlight"
+		"AbilityTextureName"	"moonlight_simple"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_PURE"
@@ -979,7 +979,7 @@
 	"falling_star"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"falling_star"
+		"AbilityTextureName"	"falling_star_simple"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -1620,6 +1620,7 @@
 	"fire_trap"
 	{
 		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"roshan_spell_block"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -1643,11 +1644,11 @@
 							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Center"	"CASTER"
-							"Radius"	"400"
+							"Radius"	"%radius"
 						}
 						"Type"	"DAMAGE_TYPE_PURE"
 						"MaxHealthPercentBasedDamage"	""
-						"Damage"	"100"
+						"Damage"	"%damage"
 					}
 				}
 				"ThinkInterval"	"1.0"
@@ -1655,6 +1656,19 @@
 				"Passive"	"1"
 				"Duration"	"-1"
 				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"100"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"400"
 			}
 		}
 	}
@@ -4504,8 +4518,8 @@
 	"boss_behavior"
 	{
 		"BaseClass"	"ability_datadriven"
-		"AbilityTextureName"	"roshan_spell_block"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"	""
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Modifiers"
 		{
 			"modifier_boss_behavior"
