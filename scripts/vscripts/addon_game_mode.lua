@@ -160,19 +160,19 @@ function CEventGameMode:OnGameRulesStateChange(keys)
 
     elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
         -- 如果没选英雄，自动判对方获胜          
-        Timers:CreateTimer(1, function()
-            for i = 0, 5 do
-                local player = PlayerResource:GetPlayer(i)
-                if not player or not player:GetAssignedHero() then
-                    if PlayerResource:GetTeam(i) == DOTA_TEAM_GOODGUYS then
-                        GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
-                    elseif PlayerResource:GetTeam(i) == DOTA_TEAM_BADGUYS then
-                        GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
-                    end
-                end
-            end
-            return nil
-        end)
+        -- Timers:CreateTimer(1, function()
+        --     for i = 0, 5 do
+        --         local player = PlayerResource:GetPlayer(i)
+        --         if not player or not player:GetAssignedHero() then
+        --             if PlayerResource:GetTeam(i) == DOTA_TEAM_GOODGUYS then
+        --                 GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+        --             elseif PlayerResource:GetTeam(i) == DOTA_TEAM_BADGUYS then
+        --                 GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+        --             end
+        --         end
+        --     end
+        --     return nil
+        -- end)
 
         -- 游戏开始后生成战斗前哨
         local vec = Vector(0, 200, 0)
