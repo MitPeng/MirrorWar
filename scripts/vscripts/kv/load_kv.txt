@@ -14,7 +14,7 @@
     "base_energy_per_second" "0.5"
     "lvl_energy_per_second" "0.05"
     //击杀得分
-    "base_kill_score" "20"
+    "base_kill_score" "100"
     "lvl_kill_score" "10"
     //战斗前哨得分
     "base_outpost_score" "10"
