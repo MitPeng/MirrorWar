@@ -5,7 +5,7 @@ AI.Init = function(self)
     self.aiState = {
         hAggroTarget = nil,
         flShoutRange = 100,
-        nWalkingMoveSpeed = 240,
+        nWalkingMoveSpeed = 200,
         nAggroMoveSpeed = self:GetBaseMoveSpeed(),
         flAcquisitionRange = 600,
         vTargetWaypoint = nil,
@@ -19,7 +19,7 @@ AI.Init = function(self)
         self.bIsRoaring = false
 
         local tWaypoints = {}
-        local nWaypointsPerRoamNode = 50
+        local nWaypointsPerRoamNode = 40
         local nMinWaypointSearchDistance = 2048
         local nMaxWaypointSearchDistance = 4096
 
