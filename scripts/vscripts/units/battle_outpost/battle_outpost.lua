@@ -72,7 +72,7 @@ end
 function corner_vision(keys)
     for i = 1, 7 do
         local loc = keys.caster.corners[i]
-        local radius = keys.ability:GetSpecialValueFor("radius")
+        local radius = keys.ability:GetSpecialValueFor("corner_vision_radius")
         AddFOWViewer(DOTA_TEAM_GOODGUYS, loc, radius, 60, false)
         AddFOWViewer(DOTA_TEAM_BADGUYS, loc, radius, 60, false)
     end

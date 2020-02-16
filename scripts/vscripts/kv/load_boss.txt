@@ -1,0 +1,21 @@
+"load_boss"
+{
+    "boss_count"    "4"
+    //设置击杀boss获取的buff及层数
+    //暗龙
+    "boss_1" "dark_dragon"
+    "dark_dragon_buff" "modifier_boss_behavior_attack_buff"
+    "dark_dragon_buff_count"    "50"
+    //耀龙
+    "boss_2" "shine_dragon"
+    "shine_dragon_buff" "modifier_boss_behavior_hp_buff"
+    "shine_dragon_buff_count"   "300"
+    //雷龙
+    "boss_3" "thunder_dragon"
+    "thunder_dragon_buff" "modifier_boss_behavior_move_speed_buff"
+    "thunder_dragon_buff_count" "30"
+    //石龙
+    "boss_4" "stone_dragon"
+    "stone_dragon_buff" "modifier_boss_behavior_damage_block_buff"
+    "stone_dragon_buff_count" "30"
+}

@@ -38,9 +38,15 @@ function Precache(context)
                      "soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts",
                      context)
     PrecacheResource("soundfile", "soundevents/game_sounds.vsndevts", context)
+    PrecacheResource("soundfile", "soundevents/game_sounds_creeps.vsndevts",
+                     context)
 
     PrecacheResource("particle",
                      "particles/items3_fx/octarine_core_lifesteal.vpcf", context)
+    PrecacheResource("particle", "particles/dark_dragon_buff.vpcf", context)
+    PrecacheResource("particle", "particles/shine_dragon_buff.vpcf", context)
+    PrecacheResource("particle", "particles/thunder_dragon_buff.vpcf", context)
+    PrecacheResource("particle", "particles/stone_dragon_buff.vpcf", context)
 
 end
 
@@ -54,6 +60,7 @@ GameRules.npc_wears_custom = LoadKeyValues("scripts/npc/npc_wears_custom.txt")
 -- 载入kv
 _G.load_kv = LoadKeyValues("scripts/vscripts/kv/load_kv.txt")
 _G.load_items = LoadKeyValues("scripts/vscripts/kv/load_items.txt")
+_G.load_boss = LoadKeyValues("scripts/vscripts/kv/load_boss.txt")
 
 -- 保存玩家数据
 -- key是玩家id，value是一个table，包括各个玩家的数据

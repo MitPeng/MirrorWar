@@ -4512,7 +4512,16 @@
 				"Passive"	"1"
 				"Duration"	"-1"
 				"IsHidden"	"1"
-				"ThinkInterval"	"180"
+				"ThinkInterval"	"30"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"Target"	""
+						"ScriptFile"	"scripts/vscripts/units/battle_outpost/create_boss.lua"
+						"Function"	"create_boss"
+					}
+				}
 				"OnIntervalThink"
 				{
 					"RunScript"
