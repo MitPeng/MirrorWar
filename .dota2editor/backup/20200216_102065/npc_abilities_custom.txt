@@ -4318,12 +4318,12 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"700 750 800 850"
+				"radius"	"900 1000 1100 1200"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"block_damage"	"1 1 2 3"
+				"block_damage"	"1 2 3 4"
 			}
 		}
 	}

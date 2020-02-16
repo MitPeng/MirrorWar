@@ -4227,7 +4227,7 @@
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCooldown"	"9 8 7 6"
+		"AbilityCooldown"	"12 10 8 6"
 		"AbilityCastRange"	"700"
 		"AOERadius"	""
 		"OnSpellStart"
@@ -4259,7 +4259,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"70 130 190 250"
+				"damage"	"60 120 180 240"
 			}
 		}
 	}
@@ -4318,12 +4318,12 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"700 750 800 850"
+				"radius"	"900 1000 1100 1200"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"block_damage"	"1 1 2 3"
+				"block_damage"	"1 2 3 4"
 			}
 		}
 	}
@@ -4427,7 +4427,7 @@
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"AbilityCastPoint"	"0.3"
-		"AbilityCooldown"	"11 10 9 8"
+		"AbilityCooldown"	"10 9 8 7"
 		"AbilityCastRange"	"500"
 		"precache"
 		{
@@ -4477,12 +4477,12 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"4.0"
+				"duration"	"5.0"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"health_regen"	"20 25 30 35"
+				"health_regen"	"10 15 20 25"
 			}
 			"03"
 			{
