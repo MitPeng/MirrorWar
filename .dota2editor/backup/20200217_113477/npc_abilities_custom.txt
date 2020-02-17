@@ -22,7 +22,7 @@
 		"AnimationPlaybackRate"	"1.5"
 		// Time
 		// -------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"	"6.0 5.5 5.0 4.0"
+		"AbilityCooldown"	"6.0 5.5 5.0 4.5"
 		// Cost
 		// -------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"	"0"
@@ -345,7 +345,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"duration"	"4"
+				"duration"	"6"
 			}
 			"02"
 			{
@@ -616,17 +616,17 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"1.8 2.1 2.4"
+				"duration"	"2.1 2.4 2.7"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"reduce_damage_percent"	"-50 -40 -30"
+				"reduce_damage_percent"	"-30"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_percent"	"0.5 0.6 0.7"
+				"damage_percent"	"0.7"
 			}
 		}
 	}
@@ -728,7 +728,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"slow_time"	"1 1.5 2 2.5"
+				"slow_time"	"2.5"
 			}
 			"04"
 			{
@@ -750,7 +750,7 @@
 		"AbilityCastPoint"	"0.3"
 		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_2"
 		"AnimationPlaybackRate"	"1.5"
-		"AbilityCooldown"	"15 13 11 9"
+		"AbilityCooldown"	"13 12 11 10"
 		"AbilityManaCost"	"0"
 		"AbilityCastRange"	"1100"
 		"precache"
@@ -863,7 +863,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"slow_percent"	"-15 -20 -25 -30"
+				"slow_percent"	"-10 -15 -20 -25"
 			}
 			"06"
 			{
@@ -961,7 +961,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"40 50 60 70"
+				"damage"	"35 40 45 50"
 			}
 			"02"
 			{
@@ -971,7 +971,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"stun_time"	"0.1"
+				"stun_time"	"0.2"
 			}
 		}
 	}
@@ -1130,12 +1130,12 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"50 65 80"
+				"damage"	"20 40 60"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"interval"	"0.4 0.3 0.2"
+				"interval"	"0.2"
 			}
 		}
 	}
@@ -1274,9 +1274,9 @@
 		"AbilityCastPoint"	"0.3"
 		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate"	"1"
-		"AbilityCooldown"	"11 10 9 8"
+		"AbilityCooldown"	"13 12 11 10"
 		"AbilityManaCost"	"0"
-		"AbilityCastRange"	"1500"
+		"AbilityCastRange"	"1000"
 		"AOERadius"	"%radius"
 		"precache"
 		{
@@ -1409,7 +1409,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"slow_percent"	"-15 -20 -25 -30"
+				"slow_percent"	"-10 -15 -20 -25"
 			}
 			"03"
 			{
@@ -1429,7 +1429,7 @@
 			"06"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"30 50 70 90"
+				"damage"	"20 40 60 80"
 			}
 		}
 	}
@@ -1624,7 +1624,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitDamageType"	"DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"	"1"
 		"AbilityCooldown"	""
@@ -2204,7 +2204,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"hp_regain"	"0.5 0.7 0.9 1.1"
+				"hp_regain"	"0.7 0.8 0.9 1.0"
 			}
 			"03"
 			{
@@ -2320,7 +2320,7 @@
 		"AbilityCastPoint"	"0.4"
 		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_3"
 		"AnimationPlaybackRate"	"1"
-		"AbilityCooldown"	"8 7 6 5"
+		"AbilityCooldown"	"5"
 		"AbilityCastRange"	"1000"
 		"precache"
 		{
@@ -2335,7 +2335,7 @@
 			{
 				"Target"	"POINT"
 				"EffectName"	"particles/immortal_soul_soul_draw_projectile2.vpcf"
-				"MoveSpeed"	"1100"
+				"MoveSpeed"	"1000"
 				"StartRadius"	"50"
 				"EndRadius"	"115"
 				"FixedDistance"	"%distance"
@@ -2378,12 +2378,12 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"70 140 210 280"
+				"damage"	"60 100 140 180"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"intellect_multiple"	"1.8"
+				"intellect_multiple"	"1.5"
 			}
 			"03"
 			{
@@ -2522,7 +2522,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"break_distance"	"750 800 850 900"
+				"break_distance"	"900"
 			}
 			"02"
 			{
@@ -2537,7 +2537,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"5 6 7 8"
+				"duration"	"8"
 			}
 		}
 	}
@@ -2588,6 +2588,10 @@
 				"EffectName"	"particles/econ/items/dazzle/dazzle_ti6/dazzle_ti6_shallow_grave.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"IsBuff"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK"	"9999"
+				}
 			}
 		}
 		"AbilitySpecial"
@@ -2600,12 +2604,12 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"life_steal_percent"	"20 40 60 80"
+				"life_steal_percent"	"50 60 70 80"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"cooldown"	"80 60 40 20"
+				"cooldown"	"50 40 30 20"
 			}
 		}
 	}
@@ -3499,12 +3503,12 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"heal_amount"	"50 100 150 200"
+				"heal_amount"	"90 180 270 360"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"100 200 300 400"
+				"damage"	"90 180 270 360"
 			}
 			"04"
 			{
@@ -3644,7 +3648,7 @@
 		"AbilityCastPoint"	"0.3"
 		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_4"
 		"AnimationPlaybackRate"	"1"
-		"AbilityCooldown"	"50 40 30"
+		"AbilityCooldown"	"35 30 25"
 		"AbilityCastRange"	"500"
 		"AbilityChannelTime"	"1.5"
 		"AOERadius"	"500"
@@ -3792,7 +3796,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"attack_percent"	"300 350 400"
+				"attack_percent"	"300 400 500"
 			}
 		}
 	}
@@ -3883,7 +3887,7 @@
 		"AbilityCastPoint"	"0.5"
 		"AbilityCastAnimation"	"ACT_DOTA_RAZE_1"
 		"AnimationPlaybackRate"	"1"
-		"AbilityCooldown"	"15 14 13 12"
+		"AbilityCooldown"	"13 12 11 10"
 		"AbilityCastRange"	"500"
 		"precache"
 		{
@@ -3987,12 +3991,12 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"percent"	"-25 -30 -35 -40"
+				"percent"	"-35 -40 -45 -50"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"6.0"
+				"duration"	"5.0"
 			}
 		}
 	}
@@ -4234,8 +4238,8 @@
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCooldown"	"9 8 7 6"
-		"AbilityCastRange"	"700"
+		"AbilityCooldown"	"10 9 8 7"
+		"AbilityCastRange"	"600"
 		"AOERadius"	""
 		"OnSpellStart"
 		{
@@ -4251,22 +4255,22 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"700"
+				"radius"	"600"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"number"	"9 10 11 12"
+				"number"	"7 8 9 10"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"1.5 2.0 2.5 3.0"
+				"duration"	"2.25 2.5 2.75 3.0"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"70 130 190 250"
+				"damage"	"60 90 120 150"
 			}
 		}
 	}
@@ -4325,12 +4329,12 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"radius"	"750 800 850 900"
+				"radius"	"700"
 			}
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"block_damage"	"2 2 3 4"
+				"block_damage"	"1 2 3 4"
 			}
 		}
 	}
@@ -4415,7 +4419,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"base_damage"	"400 500 600"
+				"base_damage"	"300"
 			}
 			"03"
 			{
@@ -4434,7 +4438,7 @@
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
 		"AbilityCastPoint"	"0.3"
-		"AbilityCooldown"	"11 10 9 8"
+		"AbilityCooldown"	"13 12 11 10"
 		"AbilityCastRange"	"500"
 		"precache"
 		{
@@ -4512,16 +4516,7 @@
 				"Passive"	"1"
 				"Duration"	"-1"
 				"IsHidden"	"1"
-				"ThinkInterval"	"30"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"Target"	""
-						"ScriptFile"	"scripts/vscripts/units/battle_outpost/create_boss.lua"
-						"Function"	"create_boss"
-					}
-				}
+				"ThinkInterval"	"180"
 				"OnIntervalThink"
 				{
 					"RunScript"

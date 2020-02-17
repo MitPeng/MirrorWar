@@ -1,3 +1,9 @@
 "AddonInfo"
 {
+  "maps"      "mw_test"
+  "IsPlayable"	"1"
+  "mw_test"
+  {
+          "MaxPlayers"                    "6"
+  }
 }

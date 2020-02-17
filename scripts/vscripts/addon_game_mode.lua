@@ -323,6 +323,11 @@ function CEventGameMode:OnNPCSpawned(keys)
                     end
                 end
             end
+            -- 移除在选人界面购买的物品
+            for i = 1, 10 do
+                item = hero:GetItemInSlot(i)
+                if item then hero:SellItem(item) end
+            end
         end
 
     end
@@ -331,13 +336,13 @@ end
 
 -- 伤害过滤器
 function CEventGameMode:DamageFilter(damageTable)
-    if not damageTable.entindex_attacker_const and
-        damageTable.entindex_victim_const then return true end
+    if not damageTable.entindex_attacker_const then return true end
+    if not damageTable.entindex_victim_const then return true end
 
     local attacker = EntIndexToHScript(damageTable.entindex_attacker_const)
     local victim = EntIndexToHScript(damageTable.entindex_victim_const)
 
-    -- 英雄造成和收到伤害时加能量
+    -- 英雄造成和受到伤害时加能量
     local damage = damageTable.damage
     local attacker_level = attacker:GetLevel()
     local attacker_add_energy = damage /
@@ -362,84 +367,53 @@ function CEventGameMode:DamageFilter(damageTable)
     -- 处理圣盾的防御姿态技能
     if victim:HasAbility('defensive_attitude') and
         victim:HasModifier('modifier_defensive_attitude_self_buff') then
-        if not damageTable.entindex_inflictor_const then
-            -- 获取单位位置
-            local victim_origin = victim:GetOrigin()
-            local attacker_origin = attacker:GetOrigin()
-            -- 获取被攻击者到攻击者的单位向量
-            local victim_to_attacker =
-                (attacker_origin - victim_origin):Normalized()
-            -- 获取被攻击者朝向的单位向量
-            local victim_forword = victim:GetForwardVector():Normalized()
-            -- 计算向量夹角
-            local angle =
-                Utils:getAngleByPos(victim_to_attacker, victim_forword)
-            -- 被攻击者是否面对攻击者
-            if angle <= 90 then
-                local ability = victim:FindAbilityByName('defensive_attitude')
-                local damage_block_percent =
-                    ability:GetLevelSpecialValueFor("reduce_percent",
-                                                    ability:GetLevel() - 1) /
-                        100
-                damageTable.damage = (1 - damage_block_percent) *
-                                         damageTable.damage
-                EmitSoundOn("Hero_Mars.Shield.Block", victim)
-            end
+        -- 获取单位位置
+        local victim_origin = victim:GetOrigin()
+        local attacker_origin = attacker:GetOrigin()
+        -- 获取被攻击者到攻击者的单位向量
+        local victim_to_attacker =
+            (attacker_origin - victim_origin):Normalized()
+        -- 获取被攻击者朝向的单位向量
+        local victim_forword = victim:GetForwardVector():Normalized()
+        -- 计算向量夹角
+        local angle = Utils:getAngleByPos(victim_to_attacker, victim_forword)
+        -- 被攻击者是否面对攻击者
+        if angle <= 90 then
+            local ability = victim:FindAbilityByName('defensive_attitude')
+            local damage_block_percent =
+                ability:GetLevelSpecialValueFor("reduce_percent",
+                                                ability:GetLevel() - 1) / 100
+            damageTable.damage = (1 - damage_block_percent) * damageTable.damage
+            EmitSoundOn("Hero_Mars.Shield.Block", victim)
         end
     end
 
     -- 处理不灭灵魂的灵魂连接技能
     if victim:HasModifier('modifier_soul_connection_target') then
-        if not damageTable.entindex_inflictor_const then
-            -- 获取灵魂连接施法者和技能实体
-            if victim.soul_conn_caster and victim.soul_conn_ability then
-                local ability = victim.soul_conn_ability
-                local transfer_damage_percent =
-                    ability:GetLevelSpecialValueFor("transfer_damage_percent",
-                                                    ability:GetLevel() - 1) /
-                        100
-                -- 减伤
-                damageTable.damage = (1 - transfer_damage_percent) *
-                                         damageTable.damage
-                -- 伤害转移
-                local damage_type = damageTable.damagetype_const
-                if damage_type then
-                    local damage_table =
-                        {
-                            victim = victim.soul_conn_caster,
-                            attacker = attacker,
-                            damage = transfer_damage_percent *
-                                damageTable.damage,
-                            damage_type = damage_type
-                        }
-                    ApplyDamage(damage_table)
-                end
+        -- 获取灵魂连接施法者和技能实体
+        if victim.soul_conn_caster and victim.soul_conn_ability then
+            local ability = victim.soul_conn_ability
+            local transfer_damage_percent =
+                ability:GetLevelSpecialValueFor("transfer_damage_percent",
+                                                ability:GetLevel() - 1) / 100
+            -- 减伤
+            damageTable.damage = (1 - transfer_damage_percent) *
+                                     damageTable.damage
+            -- 伤害转移
+            local damage_type = damageTable.damagetype_const
+            if damage_type then
+                local damage_table = {
+                    victim = victim.soul_conn_caster,
+                    attacker = attacker,
+                    damage = transfer_damage_percent * damageTable.damage,
+                    damage_type = damage_type
+                }
+                ApplyDamage(damage_table)
             end
         end
     end
 
     -- 处理不灭灵魂的不灭技能
-    if victim:HasAbility('immortal') then
-        local ability = victim:FindAbilityByName("immortal")
-        if ability:GetLevel() >= 1 and
-            not victim:HasModifier('modifier_immortal_cd') then
-            if not damageTable.entindex_inflictor_const then
-                local hp = victim:GetHealth() - damageTable.damage
-                if hp <= 0 then
-                    -- 没生效则加生效buff
-                    if not victim:HasModifier("modifier_immortal_apply") then
-                        -- 生效buff结束后自动加计时buff
-                        ability:ApplyDataDrivenModifier(victim, victim,
-                                                        "modifier_immortal_apply",
-                                                        {})
-                    end
-                    -- 最低生命为1
-                    victim:SetHealth(1)
-                    damageTable.damage = 0
-                end
-            end
-        end
-    end
     if attacker:HasAbility('immortal') then
         local ability = attacker:FindAbilityByName("immortal")
         if ability:GetLevel() >= 1 and
@@ -453,6 +427,25 @@ function CEventGameMode:DamageFilter(damageTable)
             ParticleManager:CreateParticle(
                 "particles/items3_fx/octarine_core_lifesteal.vpcf",
                 PATTACH_ABSORIGIN_FOLLOW, caster)
+        end
+    end
+    if victim:HasAbility('immortal') then
+        local ability = victim:FindAbilityByName("immortal")
+        if ability:GetLevel() >= 1 and
+            not victim:HasModifier('modifier_immortal_cd') then
+            local hp = victim:GetHealth() - damageTable.damage
+            if hp <= 0 then
+                -- 没生效则加生效buff
+                if not victim:HasModifier("modifier_immortal_apply") then
+                    -- 生效buff结束后自动加计时buff
+                    ability:ApplyDataDrivenModifier(victim, victim,
+                                                    "modifier_immortal_apply",
+                                                    {})
+                end
+                -- 最低生命为1
+                victim:SetHealth(1)
+                damageTable.damage = 0
+            end
         end
     end
 
