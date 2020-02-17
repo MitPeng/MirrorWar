@@ -4490,7 +4490,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"health_regen"	"20 25 30 35"
+				"health_regen"	"15 20 25 30"
 			}
 			"03"
 			{

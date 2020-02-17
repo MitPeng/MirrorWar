@@ -1625,7 +1625,7 @@
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"	"1"
 		"AbilityCooldown"	""
 		"AbilityCastRange"	"400"
@@ -2016,7 +2016,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"cd"	"15 13 11 9"
+				"cd"	"13 11 9 7"
 			}
 		}
 	}
@@ -2378,7 +2378,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"damage"	"60 90 120 150"
+				"damage"	"60 100 140 180"
 			}
 			"02"
 			{
@@ -2588,10 +2588,7 @@
 				"EffectName"	"particles/econ/items/dazzle/dazzle_ti6/dazzle_ti6_shallow_grave.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"IsBuff"	"1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK"	"9999"
-				}
+				"Properties"	{}
 			}
 		}
 		"AbilitySpecial"
@@ -3498,7 +3495,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"knockback_distance"	"100 150 200 250"
+				"knockback_distance"	"250"
 			}
 			"02"
 			{
@@ -4493,7 +4490,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"health_regen"	"20 25 30 35"
+				"health_regen"	"15 20 25 30"
 			}
 			"03"
 			{
