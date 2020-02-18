@@ -67,7 +67,9 @@ _G.load_boss = LoadKeyValues("scripts/vscripts/kv/load_boss.txt")
 GameRules.player_data = {}
 ---玩家总数，无论是否在线，只要完全连入过游戏，就算一个
 GameRules.player_count = 0
-
+-- boss击杀有可能为泉水
+GameRules.good_boss_score = 0
+GameRules.bad_boss_score = 0
 -- Create the game mode when we activate
 -- 激活某些函数
 function Activate()
@@ -203,24 +205,37 @@ end
 
 -- 单位击杀得分
 function CEventGameMode:OnEntityKilled(keys)
-    local killed = EntIndexToHScript(keys.entindex_killed)
-    local attacker = EntIndexToHScript(keys.entindex_attacker)
-    if killed:IsHero() and attacker:IsHero() and killed ~= attacker then
-        local particle_name = "particles/generic_gameplay/outpost_reward.vpcf"
-        local particle = ParticleManager:CreateParticle(particle_name,
-                                                        PATTACH_ABSORIGIN_FOLLOW,
-                                                        attacker)
-        attacker:EmitSound("Outpost.Reward")
-        attacker.kill_score = attacker.kill_score +
-                                  _G.load_kv["base_kill_score"] +
-                                  killed:GetLevel() *
-                                  _G.load_kv["lvl_kill_score"]
+    if keys.entindex_killed and keys.entindex_attacker then
+        local killed = EntIndexToHScript(keys.entindex_killed)
+        local attacker = EntIndexToHScript(keys.entindex_attacker)
+        if killed and attacker then
+            if killed:IsHero() and attacker:IsHero() and killed ~= attacker then
+                local particle_name =
+                    "particles/generic_gameplay/outpost_reward.vpcf"
+                local particle = ParticleManager:CreateParticle(particle_name,
+                                                                PATTACH_ABSORIGIN_FOLLOW,
+                                                                attacker)
+                attacker:EmitSound("Outpost.Reward")
+                attacker.kill_score = attacker.kill_score +
+                                          _G.load_kv["base_kill_score"] +
+                                          killed:GetLevel() *
+                                          _G.load_kv["lvl_kill_score"]
+            end
+        end
     end
+
 end
 
 function CEventGameMode:PlayerChat(keys)
     if keys.text == "energy" then
-        GameRules.player_data[keys.userid - 1].hero.energy = 100
+        local hero = GameRules.player_data[keys.userid - 1].hero
+        hero.energy = 100
+    end
+    if keys.text == "boss_1" or keys.text == "boss_2" or keys.text == "boss_3" or
+        keys.text == "boss_4" then
+        local vec = Entities:FindByName(nil, "corner_2"):GetOrigin()
+        local boss = Utils:create_unit_simple(_G.load_boss[keys.text], vec,
+                                              true, DOTA_TEAM_CUSTOM_1)
     end
 end
 
@@ -327,6 +342,19 @@ function CEventGameMode:OnNPCSpawned(keys)
             for i = 1, 10 do
                 item = hero:GetItemInSlot(i)
                 if item then hero:SellItem(item) end
+            end
+        else
+            -- 不是初次重生，判断一下是否在死亡期间第一次获得boss奖励buff
+            if hero.boss_bonus_buff_name and hero.boss_bonus_buff_count and
+                hero.boss_bonus_ability then
+                hero.boss_bonus_ability:ApplyDataDrivenModifier(hero, hero,
+                                                                hero.boss_bonus_buff_name,
+                                                                {})
+                hero:SetModifierStackCount(hero.boss_bonus_buff_name, hero,
+                                           hero.boss_bonus_buff_count)
+                hero.boss_bonus_buff_name = nil
+                hero.boss_bonus_buff_count = nil
+                hero.boss_bonus_ability = nil
             end
         end
 
@@ -462,15 +490,16 @@ function CEventGameMode:OnThink()
         -- 获取双方队伍总得分
         local good_score = 0
         local bad_score = 0
-
         for i = 0, GameRules.player_count - 1 do
             local hero_data = GameRules.player_data[i].hero
             if hero_data:GetTeam() == DOTA_TEAM_GOODGUYS then
                 good_score = good_score + hero_data.outpost_score +
-                                 hero_data.kill_score + hero_data.boss_score
+                                 hero_data.kill_score + hero_data.boss_score +
+                                 GameRules.good_boss_score
             elseif hero_data:GetTeam() == DOTA_TEAM_BADGUYS then
                 bad_score = bad_score + hero_data.outpost_score +
-                                hero_data.kill_score + hero_data.boss_score
+                                hero_data.kill_score + hero_data.boss_score +
+                                GameRules.bad_boss_score
             end
         end
         -- 设置胜利条件
