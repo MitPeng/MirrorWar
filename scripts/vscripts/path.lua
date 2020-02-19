@@ -28,8 +28,8 @@ end
 -- 规划corner_1到corner_7的100个路点的路线
 function path:get_path()
     local p = {}
-    for i = 1, 100 do
-        if i == 1 or i == 100 then
+    for i = 1, 150 do
+        if i == 1 or i == 150 then
             p[i] = "corner_1"
         else
             if p[i - 1] then

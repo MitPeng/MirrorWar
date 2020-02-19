@@ -1,11 +1,18 @@
 -- 每分钟升1级
 function lvlup(keys)
     local boss = keys.caster
-    -- 最高25级
-    if boss:GetLevel() < 25 then
+    -- 最高24级
+    if boss:GetLevel() < 24 then
         local health_percent = boss:GetHealthPercent() / 100
         boss:CreatureLevelUp(1)
         boss:SetHealth(boss:GetMaxHealth() * health_percent)
+        local level = boss:GetLevel()
+        for i = 0, boss:GetAbilityCount() - 1 do
+            abi = boss:GetAbilityByIndex(i)
+            if abi and abi:GetMaxLevel() == 4 then
+                abi:SetLevel(math.ceil(level / 8))
+            end
+        end
     end
 end
 

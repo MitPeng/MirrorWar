@@ -37,6 +37,22 @@ function Precache(context)
     PrecacheResource("soundfile",
                      "soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts",
                      context)
+    PrecacheResource("soundfile",
+                     "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts",
+                     context)
+    PrecacheResource("soundfile",
+                     "soundevents/game_sounds_heroes/game_sounds_riki.vsndevts",
+                     context)
+    PrecacheResource("soundfile",
+                     "soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts",
+                     context)
+    PrecacheResource("soundfile",
+                     "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts",
+                     context)
+    PrecacheResource("soundfile",
+                     "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts",
+                     context)
+
     PrecacheResource("soundfile", "soundevents/game_sounds.vsndevts", context)
     PrecacheResource("soundfile", "soundevents/game_sounds_creeps.vsndevts",
                      context)
@@ -236,6 +252,14 @@ function CEventGameMode:PlayerChat(keys)
         local vec = Entities:FindByName(nil, "corner_2"):GetOrigin()
         local boss = Utils:create_unit_simple(_G.load_boss[keys.text], vec,
                                               true, DOTA_TEAM_CUSTOM_1)
+        boss:CreatureLevelUp(6)
+        local level = boss:GetLevel()
+        for i = 0, boss:GetAbilityCount() - 1 do
+            abi = boss:GetAbilityByIndex(i)
+            if abi and abi:GetMaxLevel() == 4 then
+                abi:SetLevel(math.ceil(level / 8))
+            end
+        end
     end
 end
 
